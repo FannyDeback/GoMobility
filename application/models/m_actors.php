@@ -8,10 +8,9 @@ class m_actors extends CI_Model {
 		$this->load->database();
 	}
 
-	public function actors()
+	public function actors_count()
 	{
-		$query = $this->db->query("SELECT COUNT(*) AS act FROM eco_actors");
-		return $query->result_array();
+		return $this->db->count_all("eco_actors");
 	}
 
 	public function last_exp()
@@ -29,10 +28,20 @@ class m_actors extends CI_Model {
 		return $query->result_array();
 	}
 
-	public function experiences()
+	public function experiences($limit, $start)
 	{
-		$query = $this->db->query("SELECT * FROM eco_actors ORDER BY id");
-		return $query->result_array();
+		$this->db->limit($limit, $start);
+		$query = $this->db->get("eco_actors");
+
+		if ($query->num_rows() > 0)
+		{
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+
+		return false;
 	}
 
 	public function add_exp($titre, $id, $email, $type, $start, $arrival, $description, $game, $ges)

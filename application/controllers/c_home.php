@@ -7,12 +7,7 @@ class c_home extends CI_Controller {
 		$this->load->helper('url');
 		
 		$this->load->model('m_actors');
-		/*$this->load->model('m_categorie');
-
-		$data['cat']=$this->m_categorie->categorie();
-
-		$data['prod']=$this->m_produit->produits();*/
-		$data['act']=$this->m_actors->actors();
+		$data['act']=$this->m_actors->actors_count();
 		$data['exp']=$this->m_actors->last_exp();
 
 		$this->load->view('v_header');

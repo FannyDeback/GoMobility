@@ -26,8 +26,7 @@
 
 </div>
 <aside>
-	<p>Nombres d'eco-actors: </p>
-	<?php echo $act[0]['act']; ?>
+	<p>Nombres d'eco-actors: <?php echo $act; ?></p>
 </aside>
 <div class="clear"></div>	
 </div>

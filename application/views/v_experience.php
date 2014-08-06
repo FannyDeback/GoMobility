@@ -6,39 +6,41 @@
 ?>
 <script type="text/javascript">
 	var map;
-	var panel;
 	var initialize;
 	var calculate;
 	var direction;
 
 	calculate = function() {
 		initialize();
-	    origin      = new google.maps.LatLng(<?php echo $latStart; ?>, <?php echo $lngStart; ?>);
-	    destination = new google.maps.LatLng(<?php echo $latArrival; ?>, <?php echo $lngArrival; ?>);
+		var latStart = <?php echo $latStart; ?>;
+		var lngStart = <?php echo $lngStart; ?>;
+		var latArrival = <?php echo $latArrival; ?>;
+		var lngArrival = <?php echo $lngArrival; ?>;
 
-	    if(origin && destination) {
-	        var request = {
-	            origin      : origin,
-	            destination : destination,
-	            travelMode  : google.maps.DirectionsTravelMode.DRIVING
-	        }
-	        var directionsService = new google.maps.DirectionsService();
-	        directionsService.route(request, function(response, status){
-	            if(status == google.maps.DirectionsStatus.OK) {
-	            	console.log(response);
-	                direction.setDirections(response);
-	            }
-	        });
-	    }
+	    origin      = new google.maps.LatLng(latStart, lngStart);
+	    destination = new google.maps.LatLng(latArrival, lngArrival);
+
+	    var request = {
+	    	origin: origin,
+	    	destination: destination,
+	    	travelMode: google.maps.TravelMode['WALKING']
+	    };
+        var directionsService = new google.maps.DirectionsService();
+        directionsService.route(request, function(response, status){
+            if(status == google.maps.DirectionsStatus.OK) {
+                direction.setDirections(response);
+            }
+        });
 
 	};
 
 	function initialize() {
 		direction = new google.maps.DirectionsRenderer({
-		    map   : map, 
-		    panel : panel 
+		    map   : map
 		});
-		var map = new google.maps.Map(document.getElementById("map-canvas"), direction);
+		map = new google.maps.Map(document.getElementById("map-canvas"));
+		direction.setMap(map);
+		// direction.setPanel(document.getElementById("map-panel")); // 
 	}
 
 	google.maps.event.addDomListener(window, 'load', calculate);
@@ -48,8 +50,10 @@
 	<div class="bloc">
 		<h1>Derni&egrave;re Exp&eacute;rience</h1>
 		<div id="map-canvas">
-			<p>Veuillez patienter pendant le chargement de la carte...</p>
+			<p>Un problème est survenue lors du chargement de la map...</p>
 		</div>
-
 	</div>
 </div>
+
+<!-- TODO panel d'affichage de la route  -->
+<!--<div id="map-panel"></div>-->

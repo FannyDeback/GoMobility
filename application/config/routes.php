@@ -41,7 +41,8 @@
 $route['default_controller'] = "Welcome";
 $route['404_override'] = '';
 $route['home'] = "c_home";
-$route['experiences'] = "c_experience";
+$route['experiences'] = "c_experience/index/0";
+$route['experiences/(:num)'] = "c_experience/index/$1";
 $route['experience/(:num)'] = "c_experience/experience/$1";
 $route['jeparticipe'] = "c_jeparticipe/jeparticipe";
 
