@@ -67,36 +67,46 @@
 <body>
 
 <div id="container">
-	<?php 
-		  echo form_open('c_jeparticipe');
-		  echo validation_errors(); ?>
+	<?php
 
-		  <h5>Titre du parcours :</h5>
-		  <input type="text" name="titre" value="" size="50" />
+	  	echo form_open('c_jeparticipe');
+	  	echo validation_errors() 
 
-		  <h5>Type de transport :</h5>
-		  <input type="text" name="type" value="" size="50" />
+	 	.'<h5>Titre du parcours :</h5>';
+	  	echo form_input('titre')
 
-		  <h5>Email :</h5>
-		  <input type="text" name="email" value="" size="50" />
+		.'<h5>Type de transport :</h5>';
+		 
+		echo form_radio('type') .'A pieds';
+		echo form_radio('type') .'En transpors en commun';
+		echo form_radio('type') .'En Covoiturage';
+		echo form_radio('type') .'En Vélo'
+		
 
-		  <h5>Coordonnées GPS du départ :</h5>
-		  <input type="text" name="start" value="" size="50" />
+		.'<h5>Email :</h5>';
+		echo form_input('email')
 
-		  <h5>Coordonnées GPS de l'arrivée :</h5>
-		  <input type="text" name="mail" value="" size="50" />
+		.'<h5>Lattitude du départ :</h5>';
+		echo form_input('latStart')
 
-		  <h5>Email :</h5>
-		  <input type="text" name="mail" value="" size="50" />
+		.'<h5>Longitude du départ :</h5>';
+		echo form_input('longStart')
 
-		  <h5>Email :</h5>
-		  <input type="text" name="mail" value="" size="50" />
+		."<h5>Lattitude l'arrivée :</h5>";
+		echo form_input('longStart')
 
-		  <h5>Mot de passe :</h5>
-		  <input type="text" name="password" value="" size="50" />
+		."<h5>Longitude l'arrivée :</h5>";
+		echo form_input('longStart')
 
-		  <input type="submit" value="Submit" />
-	<?php echo form_close();?>
+		."<h5>Description du parcours :</h5>";
+		echo form_input('description')
+
+		.'<h5>Je souhaite participer au jeu concours :</h5>';
+		echo form_radio('jeu') .'Oui';
+		echo form_radio('jeu') .'Non';
+
+		echo form_submit('submit', 'Envoyer');
+		echo form_close(); ?>
 </div>
 
 </body>

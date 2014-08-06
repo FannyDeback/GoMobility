@@ -152,7 +152,7 @@
 		<nav>
 			<ul>
 				<?php 
-				$url = site_url('jeparticipe');
+				$url = base_url('jeparticipe');
 				echo '<li><a href="">Le Projet</a></li>				
 					  <li><a href="#">Vos exp&eacute;riences</a></li>				
 					  <li><a href="'.$url.'">Je participe</a></li>';
