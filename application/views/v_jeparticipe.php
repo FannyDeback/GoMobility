@@ -1,113 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
-
-	<style type="text/css">
-
-	::selection{ background-color: #E13300; color: white; }
-	::moz-selection{ background-color: #E13300; color: white; }
-	::webkit-selection{ background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body{
-		margin: 0 15px 0 15px;
-	}
-	
-	p.footer{
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-	
-	#container{
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		-webkit-box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
-</head>
-<body>
-
 <div id="container">
 	<?php
+	  	echo form_open('jeparticipe');
 
-	  	echo form_open('c_jeparticipe');
-	  	echo validation_errors() 
-
-	 	.'<h5>Titre du parcours :</h5>';
-	  	echo form_input('titre')
-
-		.'<h5>Type de transport :</h5>';
-		 
-		echo form_radio('type') .'A pieds';
-		echo form_radio('type') .'En transpors en commun';
-		echo form_radio('type') .'En Covoiturage';
-		echo form_radio('type') .'En Vélo'
+	  	echo form_label('Titre', 'titre');
+	  	echo form_input(array(
+	  		'id' => 'titre',
+	  		'name' => 'titre',
+	  		'placeholder' => 'Titre',
+	  		'value' => set_value('titre')
+	  	));
+	  	echo form_error('titre');
 		
+		echo '<br/>';
 
-		.'<h5>Email :</h5>';
-		echo form_input('email')
+	  	echo form_label('Type de transport', 'WALKING');
+	  	echo form_radio('type', 'DRIVING', TRUE) .'En Covoiturage';
+		echo form_radio('type', 'WALKING') .'A pieds';
+		echo form_radio('type', 'TRANSIT') .'En transpors en commun';
+		echo form_radio('type', 'BICYCLING') .'En Vélo<br/>';
+	  	echo form_error('type');
 
-		.'<h5>Lattitude du départ :</h5>';
-		echo form_input('latStart')
+		echo form_label('Email', 'email');
+		echo form_input(array(
+	  		'id' => 'email',
+	  		'name' => 'email',
+	  		'placeholder' => 'Email',
+	  		'value' => set_value('email')
+	  	));
+	  	echo form_error('email');
 
-		.'<h5>Longitude du départ :</h5>';
-		echo form_input('longStart')
+		echo '<br/>';
+		
+		echo form_input(array(
+	  		'id' => 'latStart',
+	  		'name' => 'latStart',
+	  		'placeholder' => 'Lattitude du départ',
+	  		'value' => set_value('latStart')
+	  	));
+	  	echo form_error('latStart');
+	  	echo form_input(array(
+	  		'id' => 'longStart',
+	  		'name' => 'longStart',
+	  		'placeholder' => 'Longitude du départ',
+	  		'value' => set_value('longStart')
+	  	));
+	  	echo form_error('longStart');
+		echo '<br/>';
+	  	echo form_input(array(
+	  		'id' => 'latArrival',
+	  		'name' => 'latArrival',
+	  		'placeholder' => 'Lattitude de l\'arrivée',
+	  		'value' => set_value('latArrival')
+	  	));
+	  	echo form_error('latArrival');
+	  	echo form_input(array(
+	  		'id' => 'longArrival',
+	  		'name' => 'longArrival',
+	  		'placeholder' => 'Longitude de l\'arrivée',
+	  		'value' => set_value('longArrival')
+	  	));
+	  	echo form_error('longArrival');
 
-		."<h5>Lattitude l'arrivée :</h5>";
-		echo form_input('longStart')
+		echo '<br/>';
 
-		."<h5>Longitude l'arrivée :</h5>";
-		echo form_input('longStart')
+	  	echo form_label('Description', 'description');
+		echo '<br/>';
+		echo form_textarea(array(
+	  		'id' => 'description',
+	  		'name' => 'description',
+	  		'value' => set_value('description')
+	  	));
+	  	echo form_error('description');
 
-		."<h5>Description du parcours :</h5>";
-		echo form_input('description')
+		echo '<br/>';
 
-		.'<h5>Je souhaite participer au jeu concours :</h5>';
-		echo form_radio('jeu') .'Oui';
-		echo form_radio('jeu') .'Non';
-
+		echo 'Je participe <br/>';
+		echo form_radio('jeu', 'non');
+		echo form_label('Oui', 'oui');
+		echo form_radio('jeu', 'non', true);
+		echo form_label('Non', 'non');
+		echo form_error('jeu');
+		
+		echo '<br/>';
+		
 		echo form_submit('submit', 'Envoyer');
-		echo form_close(); ?>
+		echo form_close();
+	?>
 </div>
-
-</body>
-</html>
