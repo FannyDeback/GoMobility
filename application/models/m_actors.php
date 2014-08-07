@@ -44,9 +44,12 @@ class m_actors extends CI_Model {
 		return false;
 	}
 
-	public function add_exp($titre, $id, $email, $type, $start, $arrival, $description, $game, $ges)
+	public function add_exp($data)
 	{
-		$query = $this->db->query("INSERT INTO profil(titre, email, type, start, arrival, description, game, ges) VALUES('". $titre ."','". $email ."', '". $type ."''". $start ."','". $arrival ."','". $description ."','". $game ."','". $ges ."',) ");
+		$this->db->insert("eco_actors", $data);
+
+		return $this->db->insert_id();
+		//$query = $this->db->query("INSERT INTO profil(titre, email, type, start, arrival, description, game, ges) VALUES('". $titre ."','". $email ."', '". $type ."''". $start ."','". $arrival ."','". $description ."','". $game ."','". $ges ."',) ");
 	}
 }
 

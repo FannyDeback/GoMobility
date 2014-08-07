@@ -2,11 +2,15 @@
 
 class c_home extends CI_Controller {
 
+	public function __construct()
+	{
+		parent:: __construct();
+		$this->load->helper('url');
+		$this->load->model('m_actors');
+	}
+
 	public function index()
 	{
-		$this->load->helper('url');
-		
-		$this->load->model('m_actors');
 		$data['act']=$this->m_actors->actors_count();
 		$data['exp']=$this->m_actors->last_exp();
 
@@ -17,7 +21,6 @@ class c_home extends CI_Controller {
 
 	public function lastexp()
 	{
-
 		$this->load->view('v_header');
 		$this->load->view('v_lastexp');
 		$this->load->view('v_footer');
