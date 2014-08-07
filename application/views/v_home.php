@@ -17,14 +17,6 @@
 		}
 	} ?>-->
 </div>
-<div class="bloc">
-	<h3>Mon panier</h3>
-	<!--<?php foreach ($prom as $prom_title) {
-		$chaine = $prom_title['titre'];
-		echo '<h4>' .substr($chaine, 0, 15) . '...</h4><p>' . $prom_title['prix'] . ' &euro;</p><div class="clear"></div>';
-	} ?>-->
-
-</div>
 <aside>
 	<p>Nombres d'eco-actors: <?php echo $act; ?></p>
 </aside>

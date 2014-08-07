@@ -14,10 +14,6 @@
 		padding: 0px
 	}
 
-	#map-canvas {
-		height: 400px;
-	}
-
 	::selection{ background-color: #E13300; color: white; }
 	::moz-selection{ background-color: #E13300; color: white; }
 	::webkit-selection{ background-color: #E13300; color: white; }
@@ -103,6 +99,7 @@
 	.bloc
 	{
 		width: 800px;
+		height: 400px;
 		margin: 0 10px 0 0;
 		float: left;
 		background-color: #bdc3c7;
@@ -155,10 +152,9 @@
 		<nav>
 			<ul>
 				<?php 
-				$url = base_url('jeparticipe');
-				echo '<li><a href="">Le Projet</a></li>				
-					  <li><a href="#">Vos exp&eacute;riences</a></li>				
-					  <li><a href="'.$url.'">Je participe</a></li>';
+				echo '<li><a href="#">Le Projet</a></li>				
+					  <li><a href="'.base_url('experiences').'">Vos exp&eacute;riences</a></li>				
+					  <li><a href="'.base_url('jeparticipe').'">Je participe</a></li>';
 				?>								
 			</ul>
 		</nav>
