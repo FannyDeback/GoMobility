@@ -12,12 +12,15 @@ class c_contact extends CI_Controller {
 	}
 	// envoyer un mail avec gmail
 	public function index(){
-	    $email_config = Array(
+
+		$this->load->view('v_contact');
+
+	    /*$email_config = Array(
 	        'protocol'  => 'smtp',
 	        'smtp_host' => 'ssl://smtp.googlemail.com',
 	        'smtp_port' => '465',
-	        'smtp_user' => 'codinglikeasir@gmail.com',
-	        'smtp_pass' => 'MySirPassword',
+	        'smtp_user' => 'fannydeback@gmail.com',
+	        'smtp_pass' => 'avalon88',
 	        'mailtype'  => 'html',
 	        'starttls'  => true,
 	        'newline'   => "\r\n"
@@ -25,7 +28,7 @@ class c_contact extends CI_Controller {
 	 
 	 	$this->email->clear();
 	 	
-	    $this->email->from('sir@codinglikeasir.com', 'A. Sir');
+	    $this->email->from('', 'A. Sir');
 	    $this->email->to('john.sir@example.com');
 	 
 	    $this->email->subject('Sire Subject');
@@ -33,6 +36,6 @@ class c_contact extends CI_Controller {
 	    $email = $this->load->view('email/template', $data, TRUE);
 	 
 	    $this->email->message( $email );
-	    $this->email->send();
+	    $this->email->send();*/
 	}
 }
