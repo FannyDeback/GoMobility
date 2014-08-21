@@ -30,12 +30,19 @@ class c_experience extends CI_Controller {
 		$this->load->view('v_footer');
 	}
 
+	public function experience_ajax($id)
+	{
+		$data = $this->m_actors->experienceById($id);
+		if (null != $data[0])
+			echo json_encode($data[0]);
+	}
+
 	public function experience($id)
 	{
-		$experience = $this->m_actors->experienceById($id);
+		$data["id"] = $id;
 
 		$this->load->view('v_header');
-		$this->load->view('v_experience', $experience[0]);
+		$this->load->view('v_experience', $data);
 		$this->load->view('v_footer');
 	}
 }
