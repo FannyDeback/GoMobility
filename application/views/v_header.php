@@ -3,10 +3,9 @@
 <head>
 	<title>Go Mobility</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDroY6Zm8jCQsT8W7Ztt21UAZh9bMIuL7M">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDroY6Zm8jCQsT8W7Ztt21UAZh9bMIuL7M">
     </script>
--->
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>-->
 	<style type="text/css">
 	html, body, #map-canvas {
 		height: 100%;
