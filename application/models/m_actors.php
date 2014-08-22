@@ -2,6 +2,8 @@
 
 class m_actors extends CI_Model {
 
+	protected $table = 'eco_actors';
+
 	public function __construct()
 	{
 		parent:: __construct();
@@ -50,6 +52,15 @@ class m_actors extends CI_Model {
 
 		return $this->db->insert_id();
 		//$query = $this->db->query("INSERT INTO profil(titre, email, type, start, arrival, description, game, ges) VALUES('". $titre ."','". $email ."', '". $type ."''". $start ."','". $arrival ."','". $description ."','". $game ."','". $ges ."',) ");
+	}
+
+	public function best_actor()
+	{
+		return $this->db->select("*")
+					 	->from($this->table)
+					 	->where('ges = (select max(ges) from eco_actors)')
+					 	->get()
+					 	->result();
 	}
 }
 

@@ -11,8 +11,9 @@ class c_home extends CI_Controller {
 
 	public function index()
 	{
-		$data['act']=$this->m_actors->actors_count();
-		$data['exp']=$this->m_actors->last_exp();
+		$data['act'] = $this->m_actors->actors_count();
+		$data['exp'] = $this->m_actors->last_exp();
+		$data['best'] = $this->m_actors->best_actor()[0];
 
 		$this->load->view('v_header');
 		$this->load->view('v_home',$data);
@@ -23,6 +24,13 @@ class c_home extends CI_Controller {
 	{
 		$this->load->view('v_header');
 		$this->load->view('v_lastexp');
+		$this->load->view('v_footer');
+	}
+
+	public function jeu()
+	{
+		$this->load->view('v_header');
+		$this->load->view('v_jeu');
 		$this->load->view('v_footer');
 	}
 }
