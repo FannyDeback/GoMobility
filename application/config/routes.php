@@ -48,6 +48,8 @@ $route['experience_ajax/(:num)'] = "c_experience/experience_ajax/$1";
 $route['jeparticipe'] = "c_jeparticipe";
 $route['contact'] = "c_contact";
 
+/* Routes pour l'administration */
+$route['admin'] = "admin/index";
 
 
 /* End of file routes.php */
