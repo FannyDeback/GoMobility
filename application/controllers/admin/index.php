@@ -39,7 +39,7 @@ class index extends CI_Controller {
 				$this->load->view('admin/index');
 				$this->load->view('v_footer');
 			}
-			elseif ($this->form_validation->run() && ($userExists != 1))
+			elseif ($this->form_validation->run() && empty($userExists))
 			{
 				$this->session->set_flashdata('noconnect', 'Aucun compte ne correspond à vos identifiants');
 				redirect('admin/index');
@@ -47,6 +47,7 @@ class index extends CI_Controller {
 			else
 			{
 				$this->session->set_userdata('id_user', $this->input->post('login'));
+				$this->session->set_userdata('droit', $userExists[0]->status);
 
 				redirect('admin/index');
 			}
@@ -65,6 +66,6 @@ class index extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect('home');
+		redirect('admin/index');
 	}
 }

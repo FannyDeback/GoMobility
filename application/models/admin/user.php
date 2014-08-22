@@ -12,8 +12,11 @@ class user extends CI_Model {
 
 	public function exists($login, $password)
 	{
-		return	(int) $this->db->where('username', $login)
+		return	$this->db->select('username, status')
+				->from($this->table)
+				->where('username', $login)
 				->where('password', md5($password))
-				->count_all_results($this->table);
+				->get()
+				->result();
 	}
 }
