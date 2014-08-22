@@ -32,35 +32,20 @@
 		echo '<br/>';
 		
 		echo form_input(array(
-	  		'id' => 'latStart',
-	  		'name' => 'latStart',
-	  		'placeholder' => 'Lattitude du départ',
-	  		'value' => set_value('latStart')
+	  		'id' => 'start',
+	  		'name' => 'start',
+	  		'placeholder' => 'Point de départ',
+	  		'value' => set_value('start')
 	  	));
-	  	echo form_error('latStart');
-	  	echo form_input(array(
-	  		'id' => 'longStart',
-	  		'name' => 'longStart',
-	  		'placeholder' => 'Longitude du départ',
-	  		'value' => set_value('longStart')
-	  	));
-	  	echo form_error('longStart');
+	  	echo form_error('start');
 		echo '<br/>';
 	  	echo form_input(array(
-	  		'id' => 'latArrival',
-	  		'name' => 'latArrival',
-	  		'placeholder' => 'Lattitude de l\'arrivée',
-	  		'value' => set_value('latArrival')
+	  		'id' => 'arrival',
+	  		'name' => 'arrival',
+	  		'placeholder' => 'Point d\'arrivée',
+	  		'value' => set_value('arrival')
 	  	));
-	  	echo form_error('latArrival');
-	  	echo form_input(array(
-	  		'id' => 'longArrival',
-	  		'name' => 'longArrival',
-	  		'placeholder' => 'Longitude de l\'arrivée',
-	  		'value' => set_value('longArrival')
-	  	));
-	  	echo form_error('longArrival');
-
+	  	echo form_error('arrival');
 		echo '<br/>';
 
 	  	echo form_label('Description', 'description');

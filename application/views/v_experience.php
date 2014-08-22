@@ -1,4 +1,4 @@
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>  
+<script type="text/javascript" src="<?php echo js_url('jquery-min') ?>"></script>  
 
 <script type="text/javascript">
 	var map;
@@ -19,8 +19,10 @@
 				var latArrival	= data.arrival.substr(0, data.arrival.indexOf(";"));
 				var lngArrival	= data.arrival.substr(data.arrival.indexOf(";") + 1, data.arrival.length);
 
-			    origin      = new google.maps.LatLng(latStart, lngStart);
-			    destination = new google.maps.LatLng(latArrival, lngArrival);
+			    //origin      = new google.maps.LatLng(latStart, lngStart);
+			    //destination = new google.maps.LatLng(latArrival, lngArrival);
+			    origin		= data.start;
+			    destination	= data.arrival;
 
 			    var request = {
 			    	origin: origin,
