@@ -50,6 +50,7 @@ $route['contact'] = "c_contact";
 
 /* Routes pour l'administration */
 $route['admin'] = "admin/index";
+$route['admin/logout'] = "admin/index/logout";
 
 
 /* End of file routes.php */

@@ -1,6 +1,9 @@
 <div id="container">
-<h1>Connexion à l'administration</h1>
 	<?php
+	// Si pas de connexion
+	if (!isset($id_user))
+	{
+		echo "<h1>Connexion à l'administration</h1>";
 		echo form_open('admin/index');
 
 		echo form_label('Login', 'login');
@@ -27,5 +30,16 @@
 
 		echo form_submit('submit', 'Envoyer');
 		echo form_close();
+
+		if ($this->session->flashdata('noconnect'))
+			echo "<div>
+					<strong>" . $this->session->flashdata('noconnect') . "<strong>
+				 </div>";
+	}
+	else
+	{
+		echo "user : " . $id_user;
+		echo "<a href='".base_url('admin/logout')."'>Déconnexion</a>";
+	}
 	?>
 </div>
