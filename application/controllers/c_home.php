@@ -12,7 +12,7 @@ class c_home extends CI_Controller {
 	public function index()
 	{
 		$data['act']=$this->m_actors->actors_count();
-		$data['exp']=$this->m_actors->last_exp();
+		$data['exp']=$this->m_actors->last_exp()[0];
 
 		$this->load->view('v_header');
 		$this->load->view('v_home',$data);
