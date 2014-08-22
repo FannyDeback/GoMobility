@@ -1,4 +1,4 @@
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>  
+<script type="text/javascript" src="<?php echo js_url('jquery-min') ?>"></script>  
 
 <script type="text/javascript">
 	var map;
