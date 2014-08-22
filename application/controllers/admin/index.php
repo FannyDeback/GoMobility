@@ -8,6 +8,8 @@ class index extends CI_Controller {
 		$this->load->helper(array('form','url'));
 		$this->load->library('form_validation');
 		$this->load->model('admin/user');
+		$this->load->model('m_actors');
+		$this->load->model('messages');
 	}
 
 	public function index()
@@ -56,6 +58,10 @@ class index extends CI_Controller {
 		{
 			$data = array();
 			$data['id_user'] = $this->session->userdata('id_user');
+			$data['exp_ligne'] = count($this->m_actors->experienceByStatus("published"));
+			$data['exp_attente'] = count($this->m_actors->experienceByStatus("unpublished"));
+			$data['message_lu'] = count($this->messages->messageByStatus("read"));
+			$data['message_nonlu'] = count($this->messages->messageByStatus("unread"));
 
 			$this->load->view('v_header');
 			$this->load->view('admin/index', $data);
