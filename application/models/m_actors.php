@@ -3,8 +3,6 @@
 class m_actors extends CI_Model {
 	protected $table = "eco_actors";
 
-	protected $table = 'eco_actors';
-
 	public function __construct()
 	{
 		parent:: __construct();
