@@ -3,6 +3,7 @@
 	  	echo form_open('c_contact');
 
  	  	echo form_label('Nom', 'nom');
+ 	  	echo '<br/>';
 
  	  	echo form_input(array(
  	  		'id' => 'nom',
@@ -15,15 +16,15 @@
  		echo '<br/>';
 
  	  	echo form_label('E-mail', 'email');
-
+ 	  	echo '<br/>';
  	  	echo form_input(array(
  	  		'id' => 'email',
  	  		'name' => 'email',
- 	  		'placeholder' => 'Email',
  	  		'value' => set_value('email')
  	  	));
  	  	echo form_error('email');
 
+ 	  	echo '<br/>';
   	  	echo form_label('Votre message', 'message');
   		echo '<br/>';
   		echo form_textarea(array(
@@ -35,5 +36,4 @@
 
   	  	echo form_submit('submit', 'Envoyer');
 	  	echo form_close(); ?>
-	?>
 </div>
