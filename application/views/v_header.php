@@ -153,7 +153,7 @@
 				<?php 
 				echo '<li><a href="#">Le Projet</a></li>				
 					  <li><a href="'.base_url('experiences').'">Vos exp&eacute;riences</a></li>				
-					  <li><a href="'.base_url('jeparticipe').'">Je participe</a></li>;
+					  <li><a href="'.base_url('jeparticipe').'">Je participe</a></li>
 					  <li><a href="'.base_url('home').'">Accueil</a></li>';
 				?>								
 			</ul>

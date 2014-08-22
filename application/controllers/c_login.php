@@ -18,4 +18,3 @@ class C_login extends CI_Controller {
 		}
 	}
 }
-?>

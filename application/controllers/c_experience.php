@@ -47,6 +47,3 @@ class c_experience extends CI_Controller {
 		$this->load->view('v_footer');
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
