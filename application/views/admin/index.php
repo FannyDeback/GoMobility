@@ -51,7 +51,8 @@
 								<span>" . $message_lu . "</span>
 		</div>";
 
-		echo "<br/>";
+		echo "<div>
+			Meilleur eco acteur: " . $bestactor . "</div>";
 
 		echo "<a href='".base_url('admin/logout')."'>Déconnexion</a>";
 	}
