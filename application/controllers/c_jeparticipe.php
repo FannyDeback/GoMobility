@@ -29,23 +29,13 @@ class c_jeparticipe extends CI_Controller {
 				'rules' => 'trim|required|valid_email|xss_clean'
 			),
 			array(
-				'field' => 'latStart',
-				'label' => 'Lattitude du départ',
+				'field' => 'start',
+				'label' => 'Point de départ',
 				'rules' => 'trim|required'
 			),
 			array(
-				'field' => 'longStart',
-				'label' => 'Longitude du départ',
-				'rules' => 'trim|required'
-			),
-			array(
-				'field' => 'latArrival',
-				'label' => 'Lattitude de l\'arrivée',
-				'rules' => 'trim|required'
-			),
-			array(
-				'field' => 'longArrival',
-				'label' => 'Longitude de l\'arrivée',
+				'field' => 'arrival',
+				'label' => 'Point d\'arrivée',
 				'rules' => 'trim|required'
 			),
 			array(
@@ -75,8 +65,8 @@ class c_jeparticipe extends CI_Controller {
 				'titre' 		=> $this->input->post('titre'),
 				'type'			=> $this->input->post('type'),
 				'email'			=> $this->input->post('email'),
-				'start'			=> $this->input->post('latStart').";".$this->input->post('longStart'),
-				'arrival'		=> $this->input->post('latArrival').";".$this->input->post('longArrival'),
+				'start'			=> $this->input->post('start'),
+				'arrival'		=> $this->input->post('arrival'),
 				'description'	=> $this->input->post('description'),
 				'game'			=> $this->input->post('jeu'),
 				'ges'			=> 210

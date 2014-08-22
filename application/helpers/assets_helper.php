@@ -1,4 +1,4 @@
-<?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 if (!function_exists('css_url'))
 {
@@ -31,3 +31,4 @@ if (!function_exists('img'))
 	return '<img src="' . img_url($nom) . '" alt="' . $alt . '" />';
 	}
 }
+?>
