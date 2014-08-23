@@ -47,7 +47,7 @@
 
 			<section class="appli-mobile">
 				<?php echo image('appli-mobile.gif');
-					  echo'<a href="' . base_url('application') . '" id="appli-mobile">Télécharger<br/>
+					  echo'<a href="' . base_url('application_mobile') . '" id="appli-mobile">Télécharger<br/>
 							<span class="f15 light">L\'application Mobile</span></a>';?>
 			</section>
 

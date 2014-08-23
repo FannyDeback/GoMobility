@@ -35,4 +35,9 @@ class c_home extends CI_Controller {
 	{
 		$this->layout->view('v_contact');	
 	}
+
+	public function appli()
+	{
+		$this->layout->view('v_appli');	
+	}
 }
