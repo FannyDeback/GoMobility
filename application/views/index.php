@@ -76,7 +76,7 @@
 		<ul>
 			<?php echo '<li><strong>© 2014 GO MOBILITY</strong></li>
 						<li><a href="'.base_url("mentions_legales").'">Mentions l&eacute;gales</a></li>
-						<li><a href="#">Contact</a></li>';
+						<li><a href="'.base_url("contact").'">Contact</a></li>';
 			?>
 			
 		</ul>

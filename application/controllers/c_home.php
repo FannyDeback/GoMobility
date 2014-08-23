@@ -22,5 +22,13 @@ class c_home extends CI_Controller {
 	public function mentions()
 	{
 		$this->layout->view('v_mentionslegales');
+	
+	{
+
+	}}
+
+	public function contact()
+	{
+		$this->layout->view('v_contact');	
 	}
 }
