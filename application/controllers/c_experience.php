@@ -46,4 +46,13 @@ class c_experience extends CI_Controller {
 		$this->load->view('v_experience', $data);
 		$this->load->view('v_footer');
 	}
+
+	public function best_actor()
+	{
+		$data['best'] = $this->m_actors->best_actor()[0];
+
+		$this->load->view('v_header');
+		$this->load->view('v_bestactor',$data);
+		$this->load->view('v_footer');
+	}
 }

@@ -46,6 +46,7 @@ $route['experiences/(:num)'] = "c_experience/index/$1";
 $route['experience/(:num)'] = "c_experience/experience/$1";
 $route['experience_ajax/(:num)'] = "c_experience/experience_ajax/$1";
 $route['jeu'] = "c_home/jeu";
+$route['meilleur_eco_acteur'] = "c_experience/best_actor";
 $route['jeparticipe'] = "c_jeparticipe";
 $route['contact'] = "c_contact";
 
