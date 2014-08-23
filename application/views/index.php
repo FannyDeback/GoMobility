@@ -39,7 +39,9 @@
 
 
 			<section>
-				<?php echo '<a href="' . base_url('meilleur_eco_acteur') . '">Meilleur eco-acteur</a><br />
+				<?php
+				$url = base_url("experience"); 
+				echo '<a href="'.$url.'/'.$best->id.'">Meilleur eco-acteur</a><br />
 				<a href="' . base_url('jeu') . '">Description du jeu</a>'; ?>
 			</section>
 
@@ -72,10 +74,11 @@
 
 	<footer>
 		<ul>
-			<li><strong>© 2014 GO MOBILITY</strong></li>
-			<li><a href="#">Mentions l&eacute;gales</a></li>
-			<li><a href="#">CGV</a></li>
-			<li><a href="#">Contact</a></li>
+			<?php echo '<li><strong>© 2014 GO MOBILITY</strong></li>
+						<li><a href="'.base_url("mentions_legales").'">Mentions l&eacute;gales</a></li>
+						<li><a href="#">Contact</a></li>';
+			?>
+			
 		</ul>
 
 		<div id="logos-partenaires">
