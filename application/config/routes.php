@@ -56,6 +56,9 @@ $route['admin'] = "admin/index";
 $route['admin/logout'] = "admin/index/logout";
 $route['admin/messages'] = "admin/message/index/0";
 $route['admin/messages/(:num)'] = "admin/message/index/$1";
+$route['admin/message/supprimer/(:num)'] = "admin/message/supprimer/$1";
+$route['admin/message/update/(:num)'] = "admin/message/update/$1";
+$route['admin/message/(:num)'] = "admin/message/read/$1";
 
 
 /* End of file routes.php */

@@ -60,9 +60,13 @@ class MY_Model extends CI_Model
 		{
 			$where = array('id' => $where);
 		}
-		
-		return (bool) $this->db->where($where)
-							   ->delete($this->table);
+
+		$this->db->where($where)
+				 ->delete($this->table);
+
+        if ($this->db->affected_rows() > 0)
+		    return TRUE;
+        return FALSE;
 	}
 
 	/**
