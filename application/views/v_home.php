@@ -8,9 +8,9 @@
 </div>
 <aside>
 	<p>Nombres d'eco-acteurs: <?php echo $act; ?></p>
-	<p>Meilleur eco-acteur: </p>
-	<?php echo $best->titre . ' avec ' . $best->ges . ' de gaz à effet de serre utilisés ! <br />
-	<a href="' . base_url('jeu') . '">Description du jeu</a>'; ?>
+	<?php echo '<a href="' . base_url('meilleur_eco_acteur') . '">Meilleur eco-acteur</a><br />
+				<a href="' . base_url('jeu') . '">Description du jeu</a>'; ?>
+	<!-- $best->titre . ' avec ' . $best->ges . ' de gaz à effet de serre utilisés ! <br /> -->
 </aside>
 <div class="clear"></div>	
 </div>

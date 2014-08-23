@@ -1,9 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class m_actors extends CI_Model {
+	
 	protected $table = "eco_actors";
-
-	protected $table = 'eco_actors';
 
 	public function __construct()
 	{
