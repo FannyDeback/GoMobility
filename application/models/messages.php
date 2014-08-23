@@ -19,12 +19,14 @@ class messages extends MY_Model
 						->result();
 	}
 
-	public function messages($status, $limit, $start)
+	public function messages($limit, $start)
 	{
+		$order = array("status" => "desc", "id" => "desc");
 		$this->db->limit($limit, $start);
 		$result = $this->db->select("*")
 				 ->from($this->table)
-				 ->order_by("status", $status)
+				 ->order_by("status", "desc")
+				 ->order_by("id", "desc")
 				 ->get()
 				 ->result();
 
@@ -34,5 +36,15 @@ class messages extends MY_Model
 		}
 
 		return false;
+	}
+
+	public function messageByID($id)
+	{
+		return $this->db->select("*")
+						->limit(1)
+						->from($this->table)
+						->where("id", $id)
+						->get()
+						->result();
 	}
 }
