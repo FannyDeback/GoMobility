@@ -1,0 +1,456 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, #map-canvas {
+	height: 100%;
+	margin: 0px;
+	padding: 0px
+}
+
+.f15{font-size: 15px;}
+.light{font-family: 'ralewaylight';}
+
+#map-canvas {
+	height: 400px;
+}
+
+::selection{ background-color: #E13300; color: white; }
+::moz-selection{ background-color: #E13300; color: white; }
+::webkit-selection{ background-color: #E13300; color: white; }
+
+*{
+	padding:0;
+}
+
+/* ///////////// GENERAL //////////////*/
+
+body {
+	background: url(../img/fond-body.gif) repeat-x top left;
+	font-size: 13px;
+	font-family: 'ralewayregular';
+}
+
+
+code {
+	font-family: Consolas, Monaco, Courier New, Courier, monospace;
+	font-size: 12px;
+	background-color: #f9f9f9;
+	border: 1px solid #D0D0D0;
+	color: #002166;
+	display: block;
+	margin: 14px 0 14px 0;
+	padding: 12px 10px 12px 10px;
+}
+
+#body{
+	margin: 0 15px 0 15px;
+}
+
+p.footer{
+	text-align: right;
+	font-size: 11px;
+	border-top: 1px solid #D0D0D0;
+	line-height: 32px;
+	padding: 0 10px 0 10px;
+	margin: 20px 0 0 0;
+}
+
+#container{
+	margin: 10px;
+	border: 1px solid #D0D0D0;
+	-webkit-box-shadow: 0 0 8px #D0D0D0;
+}
+
+
+/* ///////////// HEADER //////////////*/
+
+header{
+	height: 97px;
+	width: 1024px;
+	margin: 0 auto 20px auto;
+}
+
+header #logo{
+	margin-top: 10px;
+	float: left;
+}
+
+header nav{
+	width: 600px;
+	float: right;
+	margin-top: 60px;
+}
+
+header ul{
+	display: table;
+	width: 100%;
+	padding: 0;
+}
+
+header li{
+	list-style-type: none;
+	display: table-cell;
+	text-align: center;
+	font-size: 20px;
+	color: #fff;
+	height: 37px;
+}
+
+header li a{
+	height: 20px;
+	border-left: 1px solid #fff;
+}
+
+header li a:first-child{
+	border-left: none;
+}
+
+header li:hover{
+	background: url(../img/fond-li-hover.gif) no-repeat bottom center;
+}
+
+
+/* ///////////// CONTENT //////////////*/
+
+#content{
+	width: 1024px;
+	margin: 0 auto;
+}
+
+#content #col-gauche{
+	width: 702px;
+	float: left;
+}
+
+/* ************************************************************************************ */
+/*  DERNIERE EXPERIENCE HOME   */
+#content #col-gauche section.derniere-experience{
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #efefef;
+}
+
+#content #col-gauche section.derniere-experience h1, #content #col-gauche h1.form, #content #col-gauche section.toutes-les-experiences h1{
+	height: 40px;
+	background: #f3e7d2;
+	text-align: center;
+	font-size: 16px;
+	line-height: 40px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+#content #col-gauche section.derniere-experience h2{
+	font-size: 16px;
+	color: #7ed2ec;
+	text-transform: uppercase;
+	font-family: 'ralewayextrabold';
+}
+
+#content #col-gauche section.derniere-experience h3{
+	font-size: 12px;
+	color: #6a6a6a;
+	font-family: 'ralewaylight';
+}
+
+#content #col-gauche section.derniere-experience p{
+	font-size: 14px;
+	text-align: justify;
+	color: #c4c4c4;
+	font-family: 'ralewaylight';
+}
+
+#content #col-gauche section.derniere-experience a#en-savoir-plus{
+	background: #efefef;
+	height: 40px;
+	line-height: 40px;
+	text-transform: uppercase;
+	color: #6a6a6a;
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	margin-top: 20px;
+}
+
+#content #col-gauche section.derniere-experience a#en-savoir-plus:hover{
+	background: #e1e1e1;
+}
+
+
+/* ************************************************************************************ */
+/*  10 DERNIERES EXPERIENCES HOME  */
+#content #col-gauche section.dernieres-experiences{
+	background: #7ed2ec;
+	padding: 0 20px 20px 20px;
+}
+
+#content #col-gauche section.dernieres-experiences h1{
+	height: 40px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 40px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: normal;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #fff;
+}
+
+/* ************************************************************************************ */
+/*  TOUTES LES EXPERIENCES  */
+#content #col-gauche section.toutes-les-experiences{
+	
+}
+
+#content #col-gauche section.toutes-les-experiences{
+	
+}
+
+
+
+/* ************************************************************************************ */
+
+
+/* ///////////// FORM //////////////*/
+form{
+	font-size: 14px;
+	color: #ababab;
+}
+
+form .espace{
+	width: 10px;
+	display: inline-block;
+}
+
+form a.jeu{color: #7ed2ec; text-decoration: underline;}
+
+form label{
+	display: block;
+	font-size: 16px;
+	color: #ababab;
+	font-family: 'ralewaylight';
+	margin-bottom: 10px;
+}
+
+form span{
+	color: red;
+}
+
+form input[type="text"]{
+	width: 94%;
+	height: 30px;
+	border: 1px solid #d8d8d8;
+	padding: 5px;
+	color: #ababab;
+	font-size: 16px;
+}
+
+form input[type="text"].input-gps{
+	width: 45%;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+form textarea{
+	width: 94%;
+	height: 130px;
+	border: 1px solid #d8d8d8;
+	padding: 5px;
+	color: #ababab;
+	font-size: 16px;
+}
+
+form input[type="submit"]{
+	background: #f08951;
+	height: 40px;
+	line-height: 40px;
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	display: block;
+	margin-top: 20px;
+	width: 94%;
+	border:none;
+	cursor: pointer;
+}
+
+form input[type="submit"]:hover{
+	background: #e57e46;
+}
+
+
+/* ///////////// ASIDE //////////////*/
+#content aside{
+	width: 282px;
+	float: right;
+}
+
+/* ************************************************************************************ */
+/*  NOMBRE ECO ACTEUR  */
+#content aside section.nombre-ecoacteur{
+	background: url(../img/nombre-eco-acteur.gif) no-repeat top left;
+	width: 280px;
+	height: 124px;
+	position: relative;
+	border: 1px solid #efefef;
+}
+
+#content aside section.nombre-ecoacteur p{
+	color: #fff;
+	font-size: 50px;
+	font-family: 'ralewayextrabold';
+	position: absolute;
+	top: 20px;
+	left: 101px;
+	height: 50px;
+	width: 100px;
+	text-align: right;
+	text-shadow : 2px 2px 2px #999;
+}
+
+/* ************************************************************************************ */
+/*  APPLICATION MOBILE  */
+#content aside section.appli-mobile{
+	width: 282px;
+}
+
+#content aside section.appli-mobile a#appli-mobile{
+	background: #f08951;
+	color: #fff;
+	display: block;
+	height: 50px;
+	text-align: center;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-family: 'ralewayextrabold';
+	padding-top: 10px;
+}
+
+#content aside section.appli-mobile a#appli-mobile:hover{
+	background: #e57e46;
+}
+
+/* ************************************************************************************ */
+/*  DERNIERE ACTUALITE  */
+#content aside section.derniere-actualite{
+	width: 282px;
+	position: relative;
+	margin-top: 20px;
+}
+
+#content aside section.derniere-actualite h1{
+	height: 40px;
+	background: #f3e7d2;
+	text-align: center;
+	font-size: 16px;
+	line-height: 40px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+#content aside section.derniere-actualite footer{
+	position: absolute;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 10px;
+	font-size: 16px;
+	color: #7a7a7a;
+	font-family: 'ralewaylight';
+	width: 262px;
+	background: #fff;
+	opacity: 0.9;
+	bottom: 0;
+	left: 0;
+}
+
+#content aside section.derniere-actualite h3{
+	position: absolute;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 10px;
+	font-size: 12px;
+	color: #fff;
+	background: #7dd1eb;
+	width: 100px;
+	bottom: 40px;
+	right: 0;
+	text-transform: uppercase;
+	font-weight: normal;
+	text-align: center;
+}
+
+/* ************************************************************************************ */
+/*  BOUTON FACEBOOK  */
+#content aside section.facebook{
+	margin-top: 20px;
+}
+
+
+.bloc{
+	width: 800px;
+	margin: 0 10px 0 0;
+	background-color: #bdc3c7;
+	padding: 5px;
+}
+
+.bloc h3{
+	text-align: center;
+}
+
+.bloc h4{
+	width: 125px;
+	float: left;
+	margin: 0;
+}
+
+.bloc p{
+	width: 100px;
+	text-align: right;
+	float: right;
+	margin: 0;
+}
+
+
+/* ///////////// FOOTER //////////////*/
+
+footer{
+	width: 1004px;
+	margin: 0 auto;
+	height: 90px;
+	background: #efefef;
+	color: #999999;
+	padding: 0 10px;
+	margin-top: 20px;
+}
+
+footer ul{
+	float: left;
+	width: 450px;
+}
+
+footer li{
+	float: left;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-right: 1px solid #999;
+	height: 15px;
+	margin-top: 40px;
+}
+
+footer li:last-child{
+	border-right: none;
+}
+
+footer #logos-partenaires{
+	float: right;
+	width: 205px;
+	margin-top: 20px;
+}
+
+footer #logos-partenaires img{
+	margin-right: 10px;
+}
