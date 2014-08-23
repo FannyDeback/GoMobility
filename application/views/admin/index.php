@@ -1,6 +1,6 @@
 <div id="container">
 	<?php
-	// Si pas de connexion
+	// Affichage du formulaire si non connecté
 	if (!isset($id_user))
 	{
 		echo "<h1>Connexion à l'administration</h1>";
@@ -36,9 +36,24 @@
 					<strong>" . $this->session->flashdata('noconnect') . "<strong>
 				 </div>";
 	}
+	// Sinon affichage du dashboard
 	else
 	{
-		echo "user : " . $id_user;
+		echo "user : " . $id_user . ' ';
+
+		echo "<div>
+				Nombre d'éco-acteurs: <span>" . $exp_attente . "</span>
+									   <span>" . $exp_ligne	   . "</span>
+			</div>";
+
+		echo "<div>
+			Nombre de messages: <span>" . $message_nonlu    . "</span>
+								<span>" . $message_lu . "</span>
+		</div>";
+
+		echo "<div>
+			Meilleur eco acteur: " . $bestactor . "</div>";
+
 		echo "<a href='".base_url('admin/logout')."'>Déconnexion</a>";
 	}
 	?>

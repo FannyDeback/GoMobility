@@ -39,14 +39,15 @@ class m_actors extends CI_Model {
 	public function experiences($limit, $start)
 	{
 		$this->db->limit($limit, $start);
-		$query = $this->db->get($this->table);
+		$result = $this->db->select("*")
+				 ->from($this->table)
+				 ->where("status", "published")
+				 ->get()
+				 ->result();
 
-		if ($query->num_rows() > 0)
+		if (count($result) > 0)
 		{
-			foreach ($query->result() as $row) {
-				$data[] = $row;
-			}
-			return $data;
+			return $result;
 		}
 
 		return false;
@@ -57,6 +58,15 @@ class m_actors extends CI_Model {
 		$this->db->insert($this->table, $data);
 
 		return $this->db->insert_id();
+	}
+
+	public function experienceByStatus($status)
+	{
+		return $this->db->select("*")
+						->from($this->table)
+						->where("status", $status)
+						->get()
+						->result();
 	}
 
 	public function best_actor()

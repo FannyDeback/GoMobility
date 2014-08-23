@@ -17,6 +17,7 @@ class c_contact extends CI_Controller {
 		    'charset'   => 'iso-8859-1'
 		);
 		$this->load->library('email', $config);
+		$this->load->model('messages');
 	}
 
 	// envoyer un mail avec gmail
@@ -51,6 +52,15 @@ class c_contact extends CI_Controller {
 		}
 		else
 		{
+			// Insertion dans bdd
+			$data = array(
+				'nom'		=> $this->input->post('nom'),
+				'email'		=> $this->input->post('email'),
+				'message'	=> $this->input->post('message')
+			);
+			$this->messages->addMessage($data);
+
+			// Envoie email
 			$this->email->clear();
 			$this->email->set_newline("\r\n");
 
