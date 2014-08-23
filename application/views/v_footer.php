@@ -1,11 +1,17 @@
 	<footer>
 		<ul>
-		<?php
-			echo '<li><a href="#">Mentions l&eacute;gales</a></li>
-				  <li>Partenaires: Le Pays de L\'Ardèche méridional, Le conseil général de l\'Ardèche</li>
-				  <li><a href="'.base_url('contact').'">Contact</a></li>';
-		?>		
+			<li><strong>© 2014 GO MOBILITY</strong></li>
+			<li><a href="#">Mentions l&eacute;gales</a></li>
+			<li><a href="#">CGV</a></li>
+			<li><a href="#">Contact</a></li>
 		</ul>
+
+		<div id="logos-partenaires">
+			<img src="<?php echo(IMG.'logo-ardeche.gif'); ?>"/>
+			<img src="<?php echo(IMG.'logo-ardeche-2.gif'); ?>"/>
+		</div>
+		<div class="clear"></div>
+
 	</footer>
 </body>
 </html>
