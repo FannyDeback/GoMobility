@@ -47,6 +47,7 @@ $route['experience/(:num)'] = "c_experience/experience/$1";
 $route['experience_ajax/(:num)'] = "c_experience/experience_ajax/$1";
 $route['jeu'] = "c_home/jeu";
 $route['meilleur_eco_acteur'] = "c_experience/best_actor";
+$route['projet'] = "c_home/projet";
 $route['jeparticipe'] = "c_jeparticipe";
 $route['application_mobile'] = "c_home/appli";
 $route['mentions_legales'] = "c_home/mentions";

@@ -40,4 +40,9 @@ class c_home extends CI_Controller {
 	{
 		$this->layout->view('v_appli');	
 	}
+
+	public function projet()
+	{
+		$this->layout->view('v_projet');
+	}
 }
