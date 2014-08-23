@@ -22,7 +22,7 @@
 				$url = base_url('jeparticipe');
 				echo '<li><a href="' . base_url('home') . '">Accueil</a></li>
 					  <li><a href="' .base_url('projet'). '">Le Projet</a></li>
-					  <li><a href="#">Vos exp&eacute;riences</a></li>
+					  <li><a href="' .base_url('experiences'). '">Vos exp&eacute;riences</a></li>
 					  <li><a href="' .$url. '">Je participe</a></li>';
 				?>
 			</ul>
