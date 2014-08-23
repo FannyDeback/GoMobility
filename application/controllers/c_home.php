@@ -18,4 +18,9 @@ class c_home extends CI_Controller {
 	{
 		$this->layout->view('v_jeu');
 	}
+
+	public function mentions()
+	{
+		$this->layout->view('v_mentionslegales');
+	}
 }
