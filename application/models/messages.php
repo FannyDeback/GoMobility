@@ -24,4 +24,26 @@ class messages extends CI_Model {
 						->get()
 						->result();
 	}
+
+	public function count()
+	{
+		return $this->db->count_all($this->table);
+	}
+
+	public function messages($status, $limit, $start)
+	{
+		$this->db->limit($limit, $start);
+		$result = $this->db->select("*")
+				 ->from($this->table)
+				 ->order_by("status", $status)
+				 ->get()
+				 ->result();
+
+		if (count($result) > 0)
+		{
+			return $result;
+		}
+
+		return false;
+	}
 }
