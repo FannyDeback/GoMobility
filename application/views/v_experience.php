@@ -49,46 +49,13 @@
 	}
 </script>
 
-<div id="content">
-	<div id="col-gauche">
-		<section class="derniere-experience">
-			<h1>Exp&eacute;rience <span id="experience-id"><?php echo $id; ?></span></h1>
-			<div id="map-canvas">
-				<p>Un problème est survenue lors du chargement de la map...</p>
-			</div>
-		</section>
-	</div>
-
-	<aside>
-		<section class="nombre-ecoacteur">
-			<p><!--<?php echo $act; ?>--></p>
-		</section>
-
-		<section class="appli-mobile">
-			<?php echo image('appli-mobile.gif'); ?>
-			<a href="#" id="appli-mobile">
-				Télécharger<br/>
-				<span class="f15 light">L'application Mobile</span>
-			</a>
-		</section>
-
-		<section class="derniere-actualite">
-			<h1><strong>Dernière</strong> actualité</h1>
-			<?php echo image('img-actualite.jpg'); ?>
-			<h3><a href="#"><strong>Plus</strong> d'infos</a></h3>
-			<footer>
-				Titre acutalité
-			</footer>
-		</section> 
-
-		<section class="facebook">
-			<a href="#">
-				<?php echo image('bouton-facebook.png'); ?>
-			</a>
-		</section>
-	</aside>
-
-	<div class="clear"></div>
+<div id="col-gauche">
+	<section class="derniere-experience">
+		<h1>Exp&eacute;rience <span id="experience-id"><?php echo $id; ?></span></h1>
+		<div id="map-canvas">
+			<p>Un problème est survenue lors du chargement de la map...</p>
+		</div>
+	</section>
 </div>
 
 

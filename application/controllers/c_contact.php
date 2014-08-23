@@ -46,9 +46,7 @@ class c_contact extends CI_Controller {
 
 		if ($this->form_validation->run() == false)
 		{
-			$this->load->view('v_header');
-			$this->load->view('v_contact');
-			$this->load->view('v_footer');	
+			$this->layout->view('v_contact');
 		}
 		else
 		{
@@ -72,9 +70,7 @@ class c_contact extends CI_Controller {
 
 			$this->email->send();
 
-			$this->load->view('v_header');
-			$this->load->view('v_contact_succes');
-			$this->load->view('v_footer');
+			$this->layout->view('v_contact_succes');
 		}
 	}
 }

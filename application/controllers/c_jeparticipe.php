@@ -55,9 +55,7 @@ class c_jeparticipe extends CI_Controller {
 
 		if ($this->form_validation->run() == false)
 		{
-			$this->load->view('v_header');
-			$this->load->view('v_jeparticipe');
-			$this->load->view('v_footer');	
+			$this->layout->view('v_jeparticipe');
 		}
 		else
 		{

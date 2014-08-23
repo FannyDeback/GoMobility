@@ -1,4 +1,4 @@
-<div id="container">
+<div id="col-gauche">
 	<?php
 		echo form_open('c_contact');
 

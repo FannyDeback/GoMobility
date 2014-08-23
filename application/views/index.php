@@ -20,16 +20,55 @@
 				<?php 
 				$url = base_url('jeparticipe');
 				echo '<li><a href="'. base_url('home') . '">Accueil</a></li>
-					  <li><a href="">Le Projet</a></li>				
-					  <li><a href="#">Vos exp&eacute;riences</a></li>				
+					  <li><a href="">Le Projet</a></li>
+					  <li><a href="#">Vos exp&eacute;riences</a></li>
 					  <li><a href="'.$url.'">Je participe</a></li>';
-				?>								
+				?>
 			</ul>
 		</nav>
 		<div class="clear"></div>
 	</header>
 
-	<?php echo $output; ?>
+	<div id="content">
+		<?php echo $output; ?>
+
+		<aside>
+			<section class="nombre-ecoacteur">
+				<p><?php echo $act; ?></p>
+			</section>
+
+
+			<section>
+				<?php echo '<a href="' . base_url('meilleur_eco_acteur') . '">Meilleur eco-acteur</a><br />
+				<a href="' . base_url('jeu') . '">Description du jeu</a>'; ?>
+			</section>
+
+			<section class="appli-mobile">
+				<?php echo image('appli-mobile.gif'); ?>
+				<a href="#" id="appli-mobile">
+					Télécharger<br/>
+					<span class="f15 light">L'application Mobile</span>
+				</a>
+			</section>
+
+			<section class="derniere-actualite">
+				<h1><strong>Dernière</strong> actualité</h1>
+				<?php echo image('img-actualite.jpg'); ?>
+				<h3><a href="#"><strong>Plus</strong> d'infos</a></h3>
+				<footer>
+					Titre acutalité
+				</footer>
+			</section> 
+
+			<section class="facebook">
+				<a href="#">
+				<?php echo image('bouton-facebook.png') ?>
+				</a>
+			</section>
+		</aside>
+		<div class="clear"></div>
+
+	</div>
 
 	<footer>
 		<ul>

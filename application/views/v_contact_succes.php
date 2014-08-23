@@ -1,3 +1,3 @@
-<div id="container">
+<div id="col-gauche">
 	Message envoyé avec succès.
 </div>

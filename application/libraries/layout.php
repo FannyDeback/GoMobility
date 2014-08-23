@@ -1,4 +1,4 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Layout
 {
@@ -13,6 +13,7 @@ class Layout
 
 	public function view($name, $data = array())
 	{
+		$data['act'] = $this->CI->m_actors->actors_count();
 		$this->output .= $this->CI->load->view($name, $data, true);
 		$this->CI->load->view('index.php', array('output' => $this->output));
 	}

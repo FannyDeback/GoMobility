@@ -6,32 +6,17 @@ class c_home extends CI_Controller {
 	{
 		parent:: __construct();
 		$this->load->helper('url');
-		$this->load->model('m_actors');
 	}
 
 	public function index()
 	{
-		$data['act'] = $this->m_actors->actors_count();
 		$data['exp'] = $this->m_actors->last_exp()[0];
 
 		$this->layout->view('v_home', $data);
-
-		// $this->load->view('v_header');
-		// $this->load->view('v_home',$data);
-		// $this->load->view('v_footer');
-	}
-
-	public function lastexp()
-	{
-		$this->load->view('v_header');
-		$this->load->view('v_lastexp');
-		$this->load->view('v_footer');
 	}
 
 	public function jeu()
 	{
-		$this->load->view('v_header');
-		$this->load->view('v_jeu');
-		$this->load->view('v_footer');
+		$this->layout->view('v_jeu');
 	}
 }

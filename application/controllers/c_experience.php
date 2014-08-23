@@ -25,9 +25,7 @@ class c_experience extends CI_Controller {
 		$data["experiences"] = $this->m_actors->experiences($config["per_page"], $page);
 		$data["links"] = $this->pagination->create_links();
 
-		$this->load->view('v_header');
-		$this->load->view('v_experiences',$data);
-		$this->load->view('v_footer');
+		$this->layout->view('v_experiences', $data);
 	}
 
 	public function experience_ajax($id)
@@ -41,17 +39,6 @@ class c_experience extends CI_Controller {
 	{
 		$data["id"] = $id;
 
-		$this->load->view('v_header');
-		$this->load->view('v_experience', $data);
-		$this->load->view('v_footer');
-	}
-
-	public function best_actor()
-	{
-		$data['best'] = $this->m_actors->best_actor()[0];
-
-		$this->load->view('v_header');
-		$this->load->view('v_bestactor',$data);
-		$this->load->view('v_footer');
+		$this->layout->view('v_experience', $data);
 	}
 }
