@@ -74,9 +74,11 @@
 
 	<footer>
 		<ul>
-			<li><strong>© 2014 GO MOBILITY</strong></li>
-			<li><a href="#">Mentions l&eacute;gales</a></li>
-			<li><a href="#">Contact</a></li>
+			<?php echo '<li><strong>© 2014 GO MOBILITY</strong></li>
+						<li><a href="'.base_url("mentions_legales").'">Mentions l&eacute;gales</a></li>
+						<li><a href="#">Contact</a></li>';
+			?>
+			
 		</ul>
 
 		<div id="logos-partenaires">
