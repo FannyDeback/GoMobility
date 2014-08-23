@@ -37,7 +37,6 @@
 				<p><?php echo $act; ?></p>
 			</section>
 
-
 			<section>
 				<?php
 				$url = base_url("experience"); 
@@ -53,11 +52,17 @@
 
 			<section class="derniere-actualite">
 				<h1><strong>Dernière</strong> actualité</h1>
-				<?php echo image('img-actualite.jpg'); ?>
-				<h3><a href="#"><strong>Plus</strong> d'infos</a></h3>
+
+				<?php echo image('img-actualite.jpg');
+				if (isset($actu))
+				{
+				echo '<h3><a href="'.base_url('actualite').'/'.$actu->id.'"><strong>Plus</strong> d`\'infos</a></h3>
+					  <div class="clear"></div>';
+				?>
 				<footer>
-					Titre acutalité
+					<?php echo character_limiter($actu->titre, 30); ?>
 				</footer>
+				<?php } ?>
 			</section> 
 
 			<section class="facebook">

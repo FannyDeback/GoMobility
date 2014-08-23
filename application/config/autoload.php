@@ -64,7 +64,7 @@ $autoload['libraries'] = array('session', 'layout');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('assets');
+$autoload['helper'] = array('assets', 'text');
 
 
 /*
@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('m_actors');
+$autoload['model'] = array('m_actors', 'm_actu');
 
 
 /* End of file autoload.php */

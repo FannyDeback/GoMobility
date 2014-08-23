@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class m_actors extends My_Model
+class m_actors extends MY_Model
 {
 	protected $table = "eco_actors";
 
@@ -12,7 +12,6 @@ class m_actors extends My_Model
 
 	public function last_exp()
 	{
-		//$query = $this->db->query("SELECT * FROM eco_actors ORDER BY id DESC LIMIT 1");
 		return $this->db->select("*")
 						->from($this->table)
 						->where("status", "published")
@@ -20,7 +19,6 @@ class m_actors extends My_Model
 						->limit("1")
 						->get()
 						->result();
-		//return $query->result_array();
 	}
 
 	public function experienceById($id)

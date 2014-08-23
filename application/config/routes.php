@@ -50,6 +50,7 @@ $route['meilleur_eco_acteur'] = "c_experience/best_actor";
 $route['projet'] = "c_home/projet";
 $route['jeparticipe'] = "c_jeparticipe";
 $route['application_mobile'] = "c_home/appli";
+$route['actualite/(:num)'] = "c_actualite/actualite/$1";
 $route['mentions_legales'] = "c_home/mentions";
 $route['contact'] = "c_contact";
 

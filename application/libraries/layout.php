@@ -13,6 +13,12 @@ class Layout
 
 	public function view($name, $data = array())
 	{
+		$actu = $this->CI->m_actu->lastActu();
+		if ($actu != null)
+		{
+			$data['actu'] = $actu[0];
+		}
+
 		$data['act'] = $this->CI->m_actors->count();
 		$data['best'] = $this->CI->m_actors->bestActorId()[0];
 
