@@ -6,13 +6,12 @@ class c_experience extends CI_Controller {
 		parent:: __construct();
 		$this->load->helper('url');
 		$this->load->library('pagination');
-		$this->load->model('m_actors');
 	}
 
 	public function index()
 	{
 		$config['base_url'] = $this->config->base_url("experiences");
-		$config['total_rows'] = $this->m_actors->actors_count();
+		$config['total_rows'] = $this->m_actors->count();
 		$config['per_page'] = 10;
 		$config["uri_segment"] = 2;
 		$choice = $config["total_rows"] / $config["per_page"];

@@ -5,7 +5,6 @@ class c_jeparticipe extends CI_Controller {
 	public function __construct()
 	{
 		parent:: __construct();
-		$this->load->model('m_actors');
 		$this->load->helper(array('form','url'));
 		$this->load->library('form_validation');
 	}
@@ -70,7 +69,8 @@ class c_jeparticipe extends CI_Controller {
 				'ges'			=> 210
 			);
 
-			$id = $this->m_actors->add_exp($data);
+			// $id = $this->m_actors->add_exp($data);
+			$id = $this->m_actors->create($data);
 			redirect(base_url("experience/$id"));
 		}
 	}

@@ -13,7 +13,7 @@ class Layout
 
 	public function view($name, $data = array())
 	{
-		$data['act'] = $this->CI->m_actors->actors_count();
+		$data['act'] = $this->CI->m_actors->count();
 		$data['best'] = $this->CI->m_actors->bestActorId()[0];
 
 		$this->output .= $this->CI->load->view($name, $data, true);
