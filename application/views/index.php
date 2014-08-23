@@ -39,7 +39,9 @@
 
 
 			<section>
-				<?php echo '<a href="' . base_url('meilleur_eco_acteur') . '">Meilleur eco-acteur</a><br />
+				<?php
+				$url = base_url("experience"); 
+				echo '<a href="'.$url.'/'.$best->id.'">Meilleur eco-acteur</a><br />
 				<a href="' . base_url('jeu') . '">Description du jeu</a>'; ?>
 			</section>
 

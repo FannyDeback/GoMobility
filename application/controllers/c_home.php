@@ -11,7 +11,6 @@ class c_home extends CI_Controller {
 	public function index()
 	{
 		$data['exp'] = $this->m_actors->last_exp()[0];
-
 		$this->layout->view('v_home', $data);
 	}
 

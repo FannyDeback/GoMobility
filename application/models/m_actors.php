@@ -71,7 +71,8 @@ class m_actors extends CI_Model {
 
 	public function best_actor()
 	{
-		return $this->db->select("*")
+		return $this->db->select("id")
+						->limit(1)
 					 	->from($this->table)
 					 	->where('ges = (select max(ges) from eco_actors)')
 					 	->get()
