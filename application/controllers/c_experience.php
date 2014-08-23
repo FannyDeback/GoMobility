@@ -21,7 +21,8 @@ class c_experience extends CI_Controller {
 
 		$page = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
 
-		$data["experiences"] = $this->m_actors->experiences($config["per_page"], $page);
+		$where = array("status" => "published");
+		$data["experiences"] = $this->m_actors->experiences($config["per_page"], $page, $where);
 		$data["links"] = $this->pagination->create_links();
 
 		$this->layout->view('v_experiences', $data);

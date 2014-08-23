@@ -38,15 +38,15 @@
 	// Sinon affichage du dashboard
 	else
 	{
-		echo "user : " . $id_user . ' ';
+		echo "user: " . $id_user . "<br/>";
 
 		echo "<div>
 				Nombre d'éco-acteurs: <span>" . $exp_attente . "</span>
-									   <span>" . $exp_ligne	   . "</span>
+									  <span>" . $exp_ligne	   . "</span>
 			</div>";
 
 		echo "<div>
-			Nombre de messages: <span>" . $message_nonlu    . "</span>
+			<a href='" . base_url('admin/messages') . "'>Nombre de messages</a>: <span>" . $message_nonlu    . "</span>
 								<span>" . $message_lu . "</span>
 		</div>";
 

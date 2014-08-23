@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class m_actors extends My_Model
+class m_actors extends MY_Model
 {
 	protected $table = "eco_actors";
 
@@ -32,12 +32,12 @@ class m_actors extends My_Model
 						->result();
 	}
 
-	public function experiences($limit, $start)
+	public function experiences($limit, $start, $where=array())
 	{
 		$this->db->limit($limit, $start);
 		$result = $this->db->select("*")
 				 ->from($this->table)
-				 ->where("status", "published")
+				 ->where($where)
 				 ->get()
 				 ->result();
 
