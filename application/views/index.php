@@ -19,10 +19,10 @@
 			<ul>
 				<?php 
 				$url = base_url('jeparticipe');
-				echo '<li><a href="'. base_url('home') . '">Accueil</a></li>
-					  <li><a href="">Le Projet</a></li>
+				echo '<li><a href="' . base_url('home') . '">Accueil</a></li>
+					  <li><a href="' .base_url('projet'). '">Le Projet</a></li>
 					  <li><a href="#">Vos exp&eacute;riences</a></li>
-					  <li><a href="'.$url.'">Je participe</a></li>';
+					  <li><a href="' .$url. '">Je participe</a></li>';
 				?>
 			</ul>
 		</nav>
@@ -46,11 +46,9 @@
 			</section>
 
 			<section class="appli-mobile">
-				<?php echo image('appli-mobile.gif'); ?>
-				<a href="#" id="appli-mobile">
-					Télécharger<br/>
-					<span class="f15 light">L'application Mobile</span>
-				</a>
+				<?php echo image('appli-mobile.gif');
+					  echo'<a href="' . base_url('application_mobile') . '" id="appli-mobile">Télécharger<br/>
+							<span class="f15 light">L\'application Mobile</span></a>';?>
 			</section>
 
 			<section class="derniere-actualite">
@@ -76,7 +74,7 @@
 		<ul>
 			<?php echo '<li><strong>© 2014 GO MOBILITY</strong></li>
 						<li><a href="'.base_url("mentions_legales").'">Mentions l&eacute;gales</a></li>
-						<li><a href="#">Contact</a></li>';
+						<li><a href="'.base_url("contact").'">Contact</a></li>';
 			?>
 			
 		</ul>
