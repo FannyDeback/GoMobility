@@ -10,7 +10,13 @@ class c_home extends CI_Controller {
 
 	public function index()
 	{
-		$data['exp'] = $this->m_actors->last_exp()[0];
+		$exp = $this->m_actors->last_exp();
+		$data = array();
+		if ($exp != null)
+		{
+			$data['exp'] = $exp[0];
+		}
+		
 		$this->layout->view('v_home', $data);
 	}
 
@@ -23,9 +29,7 @@ class c_home extends CI_Controller {
 	{
 		$this->layout->view('v_mentionslegales');
 	
-	{
-
-	}}
+	}
 
 	public function contact()
 	{

@@ -2,12 +2,19 @@
 	<section class="derniere-experience">
 		<h1><strong>La dernière</strong> expérience</h1>
 		<?php
+		if (isset($exp))
+		{
 			$url = base_url("experience");
 			echo '<h2>'.$exp->titre.'</h2>
 				  <h3>'.$exp->type. /* A REMPLACER PAR LA DATE */'</h3>
 				  <p>' . $exp->description . '</p>
 				  <a href="'.$url.'/'.$exp->id.'" id="en-savoir-plus">En savoir plus</a>
 				  <div class="clear"></div>';
+		}
+		else
+		{
+			echo "Pas d'expérience trouvée";
+		}
 		?>
 	</section>
 
