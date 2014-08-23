@@ -5,6 +5,16 @@
 		<?php
 		  	echo form_open('jeparticipe');
 
+		  	echo form_label('Titre<span>*</span>', 'titre');
+			echo form_input(array(
+		  		'id' => 'titre',
+		  		'name' => 'titre',
+		  		'value' => set_value('titre')
+		  	));
+		  	echo form_error('titre');
+
+			echo '<br/><br/><br/>';
+
 		  	echo form_label('Email<span>*</span>', 'email');
 			echo form_input(array(
 		  		'id' => 'email',
@@ -24,40 +34,24 @@
 
 			echo '<br/><br/><br/>';
 			
-			echo form_label('Coordonnées GPS<span>*</span>', 'gps');
+			echo form_label('Coordonnées GPS<span>*</span>', 'start');
 			echo form_input(array(
-		  		'id' => 'latStart',
-		  		'class'=> 'input-gps',
-		  		'name' => 'latStart',
-		  		'placeholder' => 'Lattitude du départ',
-		  		'value' => set_value('latStart')
+		  		'id' => 'start',
+		  		'class' => 'input-gps',
+		  		'name' => 'start',
+		  		'placeholder' => 'Point de départ',
+		  		'value' => set_value('start')
 		  	));
-		  	echo form_error('latStart');
-		  	echo form_input(array(
-		  		'id' => 'longStart',
-		  		'class'=> 'input-gps',
-		  		'name' => 'longStart',
-		  		'placeholder' => 'Longitude du départ',
-		  		'value' => set_value('longStart')
-		  	));
-		  	echo form_error('longStart');
+		  	echo form_error('start');
 			echo '<br/>';
 		  	echo form_input(array(
-		  		'id' => 'latArrival',
-		  		'class'=> 'input-gps',
-		  		'name' => 'latArrival',
-		  		'placeholder' => 'Lattitude de l\'arrivée',
-		  		'value' => set_value('latArrival')
+		  		'id' => 'arrival',
+		  		'class' => 'input-gps',
+		  		'name' => 'arrival',
+		  		'placeholder' => 'Point d\'arrivée',
+		  		'value' => set_value('arrival')
 		  	));
-		  	echo form_error('latArrival');
-		  	echo form_input(array(
-		  		'id' => 'longArrival',
-		  		'class'=> 'input-gps',
-		  		'name' => 'longArrival',
-		  		'placeholder' => 'Longitude de l\'arrivée',
-		  		'value' => set_value('longArrival')
-		  	));
-		  	echo form_error('longArrival');
+		  	echo form_error('arrival');
 
 			echo '<br/><br/><br/>';
 
@@ -89,7 +83,7 @@
 		</section>
 
 		<section class="appli-mobile">
-			<img src="<?php echo(IMG.'appli-mobile.gif'); ?>" />
+		<?php echo image('appli-mobile.gif') ?>
 			<a href="#" id="appli-mobile">
 				Télécharger<br/>
 				<span class="f15 light">L'application Mobile</span>
@@ -98,7 +92,7 @@
 
 		<section class="derniere-actualite">
 			<h1><strong>Dernière</strong> actualité</h1>
-			<img src="<?php echo(IMG.'img-actualite.jpg'); ?>"/>
+			<?php echo image('img-actualite.jpg') ?>
 			<h3><a href="#"><strong>Plus</strong> d'infos</a></h3>
 			<footer>
 				Titre acutalité
@@ -107,7 +101,7 @@
 
 		<section class="facebook">
 			<a href="#">
-				<img src="<?php echo(IMG.'bouton-facebook.png'); ?>"/>
+				<?php echo image('bouton-facebook.png') ?>
 			</a>
 		</section>
 	</aside>

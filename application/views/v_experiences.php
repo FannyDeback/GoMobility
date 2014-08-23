@@ -6,7 +6,7 @@
 			if ($experiences != null) {
 				foreach ($experiences as $experience) {
 					var_dump($experience);
-					echo '<p>'.$experiences[17]['titre'].'</p>';
+					echo '<p>'.$experience->titre.'</p>';
 				}
 			}
 			else {
@@ -22,7 +22,7 @@
 		</section>
 
 		<section class="appli-mobile">
-			<img src="<?php echo(IMG.'appli-mobile.gif'); ?>" />
+			<?php image('appli-mobile.gif') ?>
 			<a href="#" id="appli-mobile">
 				Télécharger<br/>
 				<span class="f15 light">L'application Mobile</span>
@@ -31,7 +31,7 @@
 
 		<section class="derniere-actualite">
 			<h1><strong>Dernière</strong> actualité</h1>
-			<img src="<?php echo(IMG.'img-actualite.jpg'); ?>"/>
+			<?php image('img-actualite.jpg') ?>
 			<h3><a href="#"><strong>Plus</strong> d'infos</a></h3>
 			<footer>
 				Titre acutalité
@@ -40,7 +40,7 @@
 
 		<section class="facebook">
 			<a href="#">
-				<img src="<?php echo(IMG.'bouton-facebook.png'); ?>"/>
+				<?php image('bouton-facebook.png') ?>
 			</a>
 		</section>
 	</aside>

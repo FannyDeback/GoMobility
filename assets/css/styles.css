@@ -25,7 +25,7 @@ html, body, #map-canvas {
 /* ///////////// GENERAL //////////////*/
 
 body {
-	background: url(../img/fond-body.gif) repeat-x top left;
+	background: url(../image/fond-body.gif) repeat-x top left;
 	font-size: 13px;
 	font-family: 'ralewayregular';
 }
@@ -106,7 +106,7 @@ header li a:first-child{
 }
 
 header li:hover{
-	background: url(../img/fond-li-hover.gif) no-repeat bottom center;
+	background: url(../image/fond-li-hover.gif) no-repeat bottom center;
 }
 
 
@@ -291,7 +291,7 @@ form input[type="submit"]:hover{
 /* ************************************************************************************ */
 /*  NOMBRE ECO ACTEUR  */
 #content aside section.nombre-ecoacteur{
-	background: url(../img/nombre-eco-acteur.gif) no-repeat top left;
+	background: url(../image/nombre-eco-acteur.gif) no-repeat top left;
 	width: 280px;
 	height: 124px;
 	position: relative;

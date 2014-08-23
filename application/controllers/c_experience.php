@@ -39,7 +39,6 @@ class c_experience extends CI_Controller {
 
 	public function experience($id)
 	{
-		$this->load->helper('assets');
 		$data["id"] = $id;
 
 		$this->load->view('v_header');

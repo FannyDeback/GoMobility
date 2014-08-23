@@ -7,8 +7,8 @@
 		</ul>
 
 		<div id="logos-partenaires">
-			<img src="<?php echo(IMG.'logo-ardeche.gif'); ?>"/>
-			<img src="<?php echo(IMG.'logo-ardeche-2.gif'); ?>"/>
+			<?php echo image('logo-ardeche.gif'); ?>
+			<?php echo image('logo-ardeche-2.gif'); ?>
 		</div>
 		<div class="clear"></div>
 

@@ -16,19 +16,19 @@ if (!function_exists('js_url'))
 	}
 }
 
-if (!function_exists('img_url'))
+if (!function_exists('image_url'))
 {
-	function img_url($nom)
+	function image_url($nom)
 	{
 		return base_url() . 'assets/image/' . $nom;
 	}
 }
 
-if (!function_exists('img'))
+if (!function_exists('image'))
 {
-	function img($nom, $alt = '')
+	function image($nom, $alt = '')
 	{
-	return '<img src="' . img_url($nom) . '" alt="' . $alt . '" />';
+	return '<img src="' . image_url($nom) . '" alt="' . $alt . '" />';
 	}
 }
 ?>
