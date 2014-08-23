@@ -25,7 +25,7 @@ class c_experience extends CI_Controller {
 		$data["experiences"] = $this->m_actors->experiences($config["per_page"], $page);
 		$data["links"] = $this->pagination->create_links();
 
-		$this->load->view('v_header');		
+		$this->load->view('v_header');
 		$this->load->view('v_experiences',$data);
 		$this->load->view('v_footer');
 	}
