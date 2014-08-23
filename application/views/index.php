@@ -9,6 +9,7 @@
 
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDroY6Zm8jCQsT8W7Ztt21UAZh9bMIuL7M">
     </script>
+	<script type="text/javascript" src="<?php echo js_url('bootstrap') ?>"></script>
 </head>
 <body>
 	<header>

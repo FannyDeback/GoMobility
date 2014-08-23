@@ -6,9 +6,12 @@
 	<link rel="stylesheet" href="<?php echo css_url('reset'); ?>">
 	<link rel="stylesheet" href="<?php echo css_url('styles'); ?>">
 	<link rel="stylesheet" href="<?php echo css_url('font'); ?>">
+	<link rel="stylesheet" href="<?php echo css_url('bootstrap.min'); ?>">
 
+	<script type="text/javascript" src="<?php echo js_url('jquery-min') ?>"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDroY6Zm8jCQsT8W7Ztt21UAZh9bMIuL7M">
     </script>
+	<script type="text/javascript" src="<?php echo js_url('bootstrap.min') ?>"></script>
 </head>
 <body>
 	<header>

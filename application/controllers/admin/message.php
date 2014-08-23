@@ -37,7 +37,8 @@ class message extends CI_Controller {
 		$data = array();
 		$data['message'] = $this->messages->delete((int) $id);
 
-		$this->layout->viewAdmin('admin/message/supprimer', $data);
+		redirect('admin/messages');
+		//$this->layout->viewAdmin('admin/message/messages', $data);
 	}
 /*
 	public function update($id)
