@@ -13,8 +13,8 @@ class Layout
 
 	public function view($name, $data = array())
 	{
-		$data['act'] = $this->CI->m_actors->actors_count();
-		$data['best'] = $this->CI->m_actors->best_actor()[0];
+		$data['act'] = $this->CI->m_actors->count();
+		$data['best'] = $this->CI->m_actors->bestActorId()[0];
 
 		$this->output .= $this->CI->load->view($name, $data, true);
 		$this->CI->load->view('index.php', array('output' => $this->output));
@@ -24,5 +24,16 @@ class Layout
 	{
 		$this->output .= $this->CI->load->view($name, $data, true);
 		return $this;
+	}
+
+	public function viewAdmin($name, $data = array())
+	{
+		$this->output .= $this->CI->load->view($name, $data, true);
+		$this->CI->load->view('admin/index.php', array('output' => $this->output));
+	}
+
+	public function viewsAdmin($name, $data = array())
+	{
+		
 	}
 }

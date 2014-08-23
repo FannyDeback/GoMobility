@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class m_actors extends CI_Model {
-	
+class m_actors extends My_Model
+{
 	protected $table = "eco_actors";
 
 	public function __construct()
@@ -10,16 +10,12 @@ class m_actors extends CI_Model {
 		$this->load->database();
 	}
 
-	public function actors_count()
-	{
-		return $this->db->count_all($this->table);
-	}
-
 	public function last_exp()
 	{
 		//$query = $this->db->query("SELECT * FROM eco_actors ORDER BY id DESC LIMIT 1");
 		return $this->db->select("*")
 						->from($this->table)
+						->where("status", "published")
 						->order_by("id", "desc")
 						->limit("1")
 						->get()
@@ -53,13 +49,6 @@ class m_actors extends CI_Model {
 		return false;
 	}
 
-	public function add_exp($data)
-	{
-		$this->db->insert($this->table, $data);
-
-		return $this->db->insert_id();
-	}
-
 	public function experienceByStatus($status)
 	{
 		return $this->db->select("*")
@@ -69,9 +58,19 @@ class m_actors extends CI_Model {
 						->result();
 	}
 
-	public function best_actor()
+	public function bestActorId()
 	{
 		return $this->db->select("id")
+						->limit(1)
+					 	->from($this->table)
+					 	->where('ges = (select max(ges) from eco_actors)')
+					 	->get()
+					 	->result();
+	}
+
+	public function bestActor()
+	{
+		return $this->db->select("email")
 						->limit(1)
 					 	->from($this->table)
 					 	->where('ges = (select max(ges) from eco_actors)')

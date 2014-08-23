@@ -56,7 +56,7 @@ class c_contact extends CI_Controller {
 				'email'		=> $this->input->post('email'),
 				'message'	=> $this->input->post('message')
 			);
-			$this->messages->addMessage($data);
+			$this->messages->create($data);
 
 			// Envoie email
 			$this->email->clear();

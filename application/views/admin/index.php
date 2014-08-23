@@ -1,60 +1,47 @@
-<div id="container">
-	<?php
-	// Affichage du formulaire si non connecté
-	if (!isset($id_user))
-	{
-		echo "<h1>Connexion à l'administration</h1>";
-		echo form_open('admin/index');
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Go Mobility</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="<?php echo css_url('reset'); ?>">
+	<link rel="stylesheet" href="<?php echo css_url('styles'); ?>">
+	<link rel="stylesheet" href="<?php echo css_url('font'); ?>">
 
-		echo form_label('Login', 'login');
-		echo form_input(array(
-			'id' => 'login',
-			'name' => 'login',
-			'placeholder' => 'Login',
-			'value' => set_value('login')
-		));
-		echo form_error('login');
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDroY6Zm8jCQsT8W7Ztt21UAZh9bMIuL7M">
+    </script>
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<a href="<?php echo base_url('home'); ?>"><?php echo image('logo.png', 'Logo GoMobility'); ?></a>
+		</div>
+		<nav>
+		</nav>
+		<div class="clear"></div>
+	</header>
 
-		echo '<br/>';
+	<div id="content">
+		<?php echo $output; ?>
+		<aside>
+		</aside>
+		<div class="clear"></div>
 
-		echo form_label('Password', 'password');
-		echo form_password(array(
-			'id' => 'password',
-			'name' => 'password',
-			'placeholder' => 'Password',
-			'value' => set_value('password')
-		));
-		echo form_error('password');
+	</div>
 
-		echo '<br/>';
+	<footer>
+		<ul>
+			<li><strong>© 2014 GO MOBILITY</strong></li>
+			<li><a href="#">Mentions l&eacute;gales</a></li>
+			<li><a href="#">CGV</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
 
-		echo form_submit('submit', 'Envoyer');
-		echo form_close();
+		<div id="logos-partenaires">
+			<?php echo image('logo-ardeche.gif'); ?>
+			<?php echo image('logo-ardeche-2.gif'); ?>
+		</div>
+		<div class="clear"></div>
 
-		if ($this->session->flashdata('noconnect'))
-			echo "<div>
-					<strong>" . $this->session->flashdata('noconnect') . "<strong>
-				 </div>";
-	}
-	// Sinon affichage du dashboard
-	else
-	{
-		echo "user : " . $id_user . ' ';
-
-		echo "<div>
-				Nombre d'éco-acteurs: <span>" . $exp_attente . "</span>
-									   <span>" . $exp_ligne	   . "</span>
-			</div>";
-
-		echo "<div>
-			Nombre de messages: <span>" . $message_nonlu    . "</span>
-								<span>" . $message_lu . "</span>
-		</div>";
-
-		echo "<div>
-			Meilleur eco acteur: " . $bestactor . "</div>";
-
-		echo "<a href='".base_url('admin/logout')."'>Déconnexion</a>";
-	}
-	?>
-</div>
+	</footer>
+</body>
+</html>

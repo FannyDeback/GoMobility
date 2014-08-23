@@ -54,6 +54,8 @@ $route['contact'] = "c_contact";
 /* Routes pour l'administration */
 $route['admin'] = "admin/index";
 $route['admin/logout'] = "admin/index/logout";
+$route['admin/messages'] = "admin/message/index/0";
+$route['admin/messages/(:num)'] = "admin/message/index/$1";
 
 
 /* End of file routes.php */

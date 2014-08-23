@@ -8,7 +8,6 @@ class index extends CI_Controller {
 		$this->load->helper(array('form','url'));
 		$this->load->library('form_validation');
 		$this->load->model('admin/user');
-		$this->load->model('m_actors');
 		$this->load->model('messages');
 	}
 
@@ -37,9 +36,7 @@ class index extends CI_Controller {
 
 			if ($this->form_validation->run() == false)
 			{
-				$this->load->view('v_header');
-				$this->load->view('admin/index');
-				$this->load->view('v_footer');
+				$this->layout->viewAdmin('admin/home');
 			}
 			elseif ($this->form_validation->run() && empty($userExists))
 			{
@@ -62,11 +59,9 @@ class index extends CI_Controller {
 			$data['exp_attente'] = count($this->m_actors->experienceByStatus("unpublished"));
 			$data['message_lu'] = count($this->messages->messageByStatus("read"));
 			$data['message_nonlu'] = count($this->messages->messageByStatus("unread"));
-			$data['bestactor'] = $this->m_actors->best_actor()[0]->email;
+			$data['bestactor'] = $this->m_actors->bestActor()[0]->email;
 
-			$this->load->view('v_header');
-			$this->load->view('admin/index', $data);
-			$this->load->view('v_footer');
+			$this->layout->viewAdmin('admin/home', $data);
 		}
 	}
 
