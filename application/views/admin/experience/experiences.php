@@ -57,6 +57,7 @@
 						</div>
 					</div>
 				</div>
+				<a href="<?php echo base_url('admin/experience/update') . '/' . $experience->id ?>">Mettre à jour</a>
 				<?php
 			}
 			echo "<br/>" . $links;

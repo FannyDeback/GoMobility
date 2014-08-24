@@ -30,13 +30,24 @@ class c_experience extends CI_Controller {
 
 	public function experience_ajax($id)
 	{
-		$data = $this->m_actors->experienceById($id);
+		$data = $this->m_actors->experienceById($id, array('status' => 'published'));
 		if (null != $data[0])
 			echo json_encode($data[0]);
 	}
 
 	public function experience($id)
 	{
+		$exp = $this->m_actors->experienceById($id);
+		if ($exp != null)
+		{
+			if ($exp[0]->status == 'published')
+				$data['expStatus'] = 'published';
+			else
+				$data['expStatus'] = 'unpublished';
+		}
+		else
+			$data['expStatus'] = '';
+
 		$data["id"] = $id;
 
 		$this->layout->view('v_experience', $data);

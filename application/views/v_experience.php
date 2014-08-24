@@ -1,5 +1,7 @@
-<script type="text/javascript" src="<?php echo js_url('jquery-min') ?>"></script>  
-
+<?php
+if ($expStatus == 'published')
+{
+?>
 <script type="text/javascript">
 	var map;
 	var initialize;
@@ -61,3 +63,10 @@
 
 <!-- TODO panel d'affichage de la route  -->
 <!--<div id="map-panel"></div>-->
+<?php
+}
+else if ($expStatus == 'unpublished')
+	echo "Expérience en attente de validation par l'administrateur.";
+else
+	echo "Aucune expérience ne correspond.";
+?>

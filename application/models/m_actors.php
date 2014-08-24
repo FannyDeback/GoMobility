@@ -21,11 +21,12 @@ class m_actors extends MY_Model
 						->result();
 	}
 
-	public function experienceById($id)
+	public function experienceById($id, $where=array())
 	{
 		return $this->db->select("*")
 						->from($this->table)
 						->where("id", $id)
+						->where($where)
 						->get()
 						->result();
 	}

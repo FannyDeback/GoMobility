@@ -6,6 +6,7 @@ class experience extends MY_Controller
 	{
 		parent:: __construct();
 		$this->load->library('pagination');
+		$this->load->library('form_validation');
 	}
 
 	public function index()
@@ -34,20 +35,81 @@ class experience extends MY_Controller
 
 		redirect('admin/experiences');
 	}
-/*
+
 	public function update($id)
 	{
-		$data = array();
 		$experience = $this->m_actors->experienceById($id);
 		if ($experience != null)
 		{
-			$status = array("status" => "read");
-			$this->messages->update((int) $id, $status);
-		}
+			$experience = $experience[0];
+			$validation = array(
+				array(
+					'field' => 'titre',
+					'label' => 'Titre',
+					'rules' => 'trim|required'
+				),
+				array(
+					'field' => 'type',
+					'label' => 'Type de transport',
+					'rules' => 'trim|required'
+				),
+				array(
+					'field' => 'email',
+					'label' => 'Email',
+					'rules' => 'trim|required|valid_email|xss_clean'
+				),
+				array(
+					'field' => 'start',
+					'label' => 'Point de départ',
+					'rules' => 'trim|required'
+				),
+				array(
+					'field' => 'arrival',
+					'label' => 'Point d\'arrivée',
+					'rules' => 'trim|required'
+				),
+				array(
+					'field' => 'description',
+					'label' => 'Description',
+					'rules' => 'trim|required'
+				)
+			);
 
-		redirect('admin/experiences');
+			$this->form_validation->set_rules($validation);
+			$this->form_validation->set_error_delimiters('<div class="error">','</div>');
+
+			if ($this->form_validation->run() == false)
+			{
+				$data['experience'] = $experience;
+
+				$this->layout->viewAdmin('admin/experience/experience', $data);
+			}
+			else
+			{
+				// var_dump($this->input->post('jeu'), $this->input->post('status'));die();
+				$data = array(
+					'titre' 		=> $this->input->post('titre'),
+					'type'			=> $this->input->post('type'),
+					'email'			=> $this->input->post('email'),
+					'start'			=> $this->input->post('start'),
+					'arrival'		=> $this->input->post('arrival'),
+					'description'	=> $this->input->post('description'),
+					'game'			=> ($this->input->post('jeu') == 'yes') ? 'yes' : 'no',
+					'ges'			=> 210,
+					"status"		=> ($this->input->post('status') == 'yes') ? 'published' : 'unpublished'
+				);
+
+				$this->m_actors->update((int) $id, $data);
+				redirect(base_url("admin/experiences"));
+			}
+		}
+		// Si l'expérience n'éxiste pas
+		else
+		{
+			$this->layout->viewAdmin("admin/experience/experience");
+		}
 	}
-*/
+
 	public function publish($id)
 	{
 		$status = array("status" => "published");
