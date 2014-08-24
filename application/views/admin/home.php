@@ -53,6 +53,9 @@
 		echo "<div>
 			Meilleur eco acteur: " . $bestactor . "</div>";
 
+		echo "<div>
+			<a href='" . base_url('admin/actualites') . "'>Actualités</a></div>";
+
 		echo "<a href='".base_url('admin/logout')."'>Déconnexion</a>";
 	}
 ?>

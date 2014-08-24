@@ -16,7 +16,7 @@
 <body>
 	<header>
 		<div id="logo">
-			<a href="<?php echo base_url('home'); ?>"><?php echo image('logo.png', 'Logo GoMobility'); ?></a>
+			<a href="<?php echo base_url('admin'); ?>"><?php echo image('logo.png', 'Logo GoMobility'); ?></a>
 		</div>
 		<nav>
 		</nav>
@@ -25,18 +25,17 @@
 
 	<div id="content">
 		<?php echo $output; ?>
+		<!-- Lien vers site public -->
 		<aside>
+		<a href="<?php echo base_url('home'); ?>">Go Mobility </a>
 		</aside>
 		<div class="clear"></div>
-
 	</div>
 
 	<footer>
 		<ul>
 			<li><strong>© 2014 GO MOBILITY</strong></li>
 			<li><a href="#">Mentions l&eacute;gales</a></li>
-			<li><a href="#">CGV</a></li>
-			<li><a href="#">Contact</a></li>
 		</ul>
 
 		<div id="logos-partenaires">

@@ -32,4 +32,21 @@ class m_actu extends MY_Model
 						->get()
 						->result();
 	}
+
+	public function actualites($limit, $start, $where=array())
+	{
+		$this->db->limit($limit, $start);
+		$result = $this->db->select("*")
+				 ->from($this->table)
+				 ->where($where)
+				 ->get()
+				 ->result();
+
+		if (count($result) > 0)
+		{
+			return $result;
+		}
+
+		return false;
+	}
 }

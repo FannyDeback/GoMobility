@@ -134,7 +134,7 @@ class experience extends MY_Controller
 				redirect(base_url("admin/experiences"));
 			}
 		}
-		// Si l'expérience n'éxiste pas
+		// Si l'expérience n'existe pas
 		else
 		{
 			$this->layout->viewAdmin("admin/experience/experience");
