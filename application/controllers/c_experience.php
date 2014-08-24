@@ -52,4 +52,11 @@ class c_experience extends CI_Controller {
 
 		$this->layout->view('v_experience', $data);
 	}
+
+	public function dixExperienceAjax()
+	{
+		$data = $this->m_actors->experiences(10, 0, array("status" => "published"));
+		if (null != $data)
+			echo json_encode($data);
+	}
 }

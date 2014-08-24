@@ -20,12 +20,25 @@
 
 	<section class="dix-dernieres-experiences">
 		<h1><strong>Les 10 dernières</strong> expériences</h1>
+		<div id="col-gauche">
+			<section class="derniere-experience">
+				<div id="map-canvas">
+					<p>Un problème est survenue lors du chargement de la map...</p>
+				</div>
+			</section>
+		</div>
 		<?php
-		if (isset($dixexp)) {
-			foreach ($dixexp as $experience) {
-				var_dump($experience);
-				echo '<p>'.$experience->titre.'</p>';
-			}
+		if (isset($exp)) {
+				echo '
+					<script type="text/javascript">
+					$(function() {
+						show_marker();
+					});
+					</script>';
+			?>
+			<script type="text/javascript" src="<?php echo js_url('maps'); ?>">
+			</script>
+		<?php
 		}
 		else {
 			echo "Aucune expérience ne correspond.";
