@@ -67,6 +67,10 @@ $route['admin/experiences'] = "admin/experience/index/0";
 $route['admin/experiences/(:num)'] = "admin/experience/index/$1";
 $route['admin/experience/publish/(:num)'] = "admin/experience/publish/$1";
 $route['admin/experience/update/(:num)'] = "admin/experience/update/$1";
+$route['admin/actualites'] = "admin/actualite/index/0";
+$route['admin/actualite'] = "admin/actualite/create";
+
+
 
 
 

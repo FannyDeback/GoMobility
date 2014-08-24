@@ -41,7 +41,7 @@
 		echo "user: " . $id_user . "<br/>";
 
 		echo "<div>
-				Nombre d'éco-acteurs: <span>" . $exp_attente . "</span>
+				<a href='" . base_url('admin/experiences') . "'>Nombre d'éco-acteurs</a>: <span>" . $exp_attente . "</span>
 									  <span>" . $exp_ligne	   . "</span>
 			</div>";
 
@@ -52,6 +52,9 @@
 
 		echo "<div>
 			Meilleur eco acteur: " . $bestactor . "</div>";
+
+		echo "<div>
+			<a href='" . base_url('admin/actualites') . "'>Actualités</a></div>";
 
 		echo "<a href='".base_url('admin/logout')."'>Déconnexion</a>";
 	}
