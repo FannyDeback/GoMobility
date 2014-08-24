@@ -19,7 +19,7 @@ class Layout
 			$data['actu'] = $actu[0];
 		}
 
-		$data['act'] = $this->CI->m_actors->count();
+		$data['act'] = $this->CI->m_actors->count("status", "published");
 		$data['best'] = $this->CI->m_actors->bestActorId()[0];
 
 		$this->output .= $this->CI->load->view($name, $data, true);
