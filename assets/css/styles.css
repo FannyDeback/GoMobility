@@ -61,6 +61,13 @@ p.footer{
 	-webkit-box-shadow: 0 0 8px #D0D0D0;
 }
 
+hr{
+	border:none;
+	background: #f4f4f4;
+	height: 2px;
+	margin: 20px 0;
+}
+
 
 /* ///////////// HEADER //////////////*/
 
@@ -130,7 +137,7 @@ header li:hover{
 	border-bottom: 1px solid #efefef;
 }
 
-#content #col-gauche section.derniere-experience h1, #content #col-gauche h1.form, #content #col-gauche section.toutes-les-experiences h1{
+#content #col-gauche section.derniere-experience h1, #content #col-gauche h1.form, #content #col-gauche section.toutes-les-experiences h1, #content #col-gauche h1{
 	height: 40px;
 	background: #f3e7d2;
 	text-align: center;
@@ -142,24 +149,36 @@ header li:hover{
 	margin-bottom: 20px;
 }
 
-#content #col-gauche section.derniere-experience h2{
+#content #col-gauche section.derniere-experience h2, #content #col-gauche h2{
 	font-size: 16px;
 	color: #7ed2ec;
 	text-transform: uppercase;
 	font-family: 'ralewayextrabold';
+	font-weight: normal;
 }
 
-#content #col-gauche section.derniere-experience h3{
+#content #col-gauche h4{
+	font-size: 14px;
+	color: #E57E46;
+	text-transform: none;
+	font-family: 'ralewayextralight';
+	font-weight: normal;
+	margin: 2px 0
+}
+
+#content #col-gauche section.derniere-experience h3, #content #col-gauche h3{
 	font-size: 12px;
 	color: #6a6a6a;
 	font-family: 'ralewaylight';
+	font-weight: normal;
 }
 
-#content #col-gauche section.derniere-experience p{
+#content #col-gauche p{
 	font-size: 14px;
 	text-align: justify;
 	color: #c4c4c4;
 	font-family: 'ralewaylight';
+	margin-top: 5px;
 }
 
 #content #col-gauche section.derniere-experience a#en-savoir-plus{
@@ -200,12 +219,30 @@ header li:hover{
 
 /* ************************************************************************************ */
 /*  TOUTES LES EXPERIENCES  */
-#content #col-gauche section.toutes-les-experiences{
-	
+
+#content #col-gauche section.toutes-les-experiences ul li{
+	border-bottom: 2px solid #f4f4f4;
+	padding: 20px 0;
 }
 
-#content #col-gauche section.toutes-les-experiences{
-	
+#content #col-gauche section.toutes-les-experiences ul li:last-child{
+	border-bottom: none !important;
+}
+
+#content #col-gauche section a.lire-la-suite{
+	color: #7ED2EC;
+	text-align: right;
+	margin: 20px 0;
+	display: block;
+}
+
+#content #col-gauche section a.lire-la-suite:hover{
+	text-decoration: underline;
+}
+
+#content #col-gauche section div.pagination{
+	text-align: center;
+	color: #c4c4c4;
 }
 
 
@@ -272,7 +309,7 @@ form input[type="submit"]{
 	font-size: 16px;
 	display: block;
 	margin-top: 20px;
-	width: 94%;
+	width: 96%;
 	border:none;
 	cursor: pointer;
 }
@@ -301,14 +338,38 @@ form input[type="submit"]:hover{
 #content aside section.nombre-ecoacteur p{
 	color: #fff;
 	font-size: 50px;
-	font-family: 'ralewayextrabold';
+	font-family: 'ralewaymedium';
 	position: absolute;
 	top: 20px;
-	left: 101px;
+	left: 108px;
 	height: 50px;
+	letter-spacing: 10px;
 	width: 100px;
 	text-align: right;
 	text-shadow : 2px 2px 2px #999;
+}
+
+#content aside a#meilleur-eco-acteur{
+	display: block;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	background: #7ED2EC;
+	color: #fff;
+	font-size: 16px;
+	margin-bottom: 1px;
+}
+
+#content aside a#description-jeu-concours{
+	display: block;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	background: #629CAC;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 16px;
+	margin-bottom: 1px;
 }
 
 /* ************************************************************************************ */
@@ -338,7 +399,7 @@ form input[type="submit"]:hover{
 #content aside section.derniere-actualite{
 	width: 282px;
 	position: relative;
-	margin-top: 20px;
+	margin: 20px 0;
 }
 
 #content aside section.derniere-actualite h1{

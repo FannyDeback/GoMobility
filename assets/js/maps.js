@@ -18,6 +18,13 @@ function show_itineraire(experience_id)
 		success: function(data) {
 			initialize();
 
+			contenu = "<h2>"+data.titre+"</h2>" +
+					  "<h4><strong>Départ : </strong> "+data.start+" - <strong>Arrivée :</strong> "+data.arrival+"</h4>" +
+					  "<h3><strong>Moyen de transport :</strong> "+data.type+"</h3>" +
+					  "<p>"+data.description+"</p><br/>";
+			$("#une-experience").html(contenu);
+
+
 		    origin		= data.start;
 		    destination	= data.arrival;
 
@@ -80,11 +87,12 @@ function show_marker()
 						*/
 						google.maps.event.addListener(marker, 'click', (function(marker, i) {
 							return function() {
-								content = '<div style="width:150px;height:150px">'+
-										'<h2>'+exps[i].titre+'</h2>'+
-										exps[i].description+
-										'<br/><a href="experience/'+exps[i].id+'">Lire la suite</a>'+
-										'</div>';
+								content = 	'<div style="width:150px;height:150px">'+
+										  		'<h2>'+exps[i].titre+'</h2>'+
+										  		'<h3><strong>Moyen : </strong>'+exps[i].type+'</h3>'+
+												'<p>'+exps[i].description.substr(0,50)+'...</p>'+
+												'<br/><a href="experience/'+exps[i].id+'" class="lire-la-suite">[ Lire la suite ]</a>'+
+											'</div>';
 								infowindow.setContent(content);
 								infowindow.open(map, marker);
 							}

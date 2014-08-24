@@ -45,13 +45,12 @@
 			<section>
 				<?php
 				$url = base_url("experience"); 
-				echo '<a href="'.$url.'/'.$best->id.'">Meilleur eco-acteur</a><br />
-				<a href="' . base_url('jeu') . '">Description du jeu</a>'; ?>
+				echo '<a href="'.$url.'/'.$best->id.'" id="meilleur-eco-acteur">Meilleur eco-acteur</a>
+				<a href="' . base_url('jeu') . '" id="description-jeu-concours"><strong>Description</strong> du jeu</a>'; ?>
 			</section>
 
 			<section class="appli-mobile">
-				<?php echo image('appli-mobile.gif');
-					  echo'<a href="' . base_url('application_mobile') . '" id="appli-mobile">Télécharger<br/>
+				<?php echo'<a href="' . base_url('application_mobile') . '" id="appli-mobile">Télécharger<br/>
 							<span class="f15 light">L\'application Mobile</span></a>';?>
 			</section>
 
@@ -128,11 +127,6 @@
 				</li>
 			</ul>
 			<!-- FIN BOUTONS SOCIAL TAGS -->
-			<section class="facebook">
-				<a href="#">
-				<?php echo image('bouton-facebook.png') ?>
-				</a>
-			</section>
 		</aside>
 		<div class="clear"></div>
 

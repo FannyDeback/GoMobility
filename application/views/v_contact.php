@@ -1,22 +1,19 @@
 <div id="col-gauche">
+	<h1><strong>Contactez</strong>-nous</h1>
 	<?php
 		echo form_open('c_contact');
 
-		echo form_label('Nom', 'nom');
-		echo '<br/>';
-
+		echo form_label('Nom<span>*</span>', 'nom');
 		echo form_input(array(
 			'id' => 'nom',
 			'name' => 'nom',
-			'placeholder' => 'Nom',
 			'value' => set_value('nom')
 		));
 		echo form_error('nom');
 
-		echo '<br/>';
+		echo '<br/><br/><br/>';
 
-		echo form_label('E-mail', 'email');
-		echo '<br/>';
+		echo form_label('E-mail<span>*</span>', 'email');
 		echo form_input(array(
 			'id' => 'email',
 			'name' => 'email',
@@ -24,9 +21,9 @@
 		));
 		echo form_error('email');
 
-		echo '<br/>';
-		echo form_label('Votre message', 'message');
-		echo '<br/>';
+		echo '<br/><br/><br/>';
+
+		echo form_label('Votre message<span>*</span>', 'message');
 		echo form_textarea(array(
 			'id' => 'message',
 			'name' => 'message',
