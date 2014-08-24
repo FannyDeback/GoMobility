@@ -71,4 +71,59 @@ class actualite extends MY_Controller
 
 		redirect('admin/actualites');
 	}
+
+	public function update($id)
+	{
+		$actualite = $this->m_actu->actualiteById($id);
+		if ($actualite != null)
+		{
+			$actualite = $actualite[0];
+			$validation = array(
+				array(
+					'field' => 'titre',
+					'label' => 'Titre de l\'actualité',
+					'rules' => 'trim|required'
+				),
+				array(
+					'field' => 'description',
+					'label' => 'Description de l\actualité',
+					'rules' => 'trim|required'
+				)
+			);
+
+			$this->form_validation->set_rules($validation);
+			$this->form_validation->set_error_delimiters('<div class="error">','</div>');
+
+			if ($this->form_validation->run() == false)
+			{
+				$data['actualite'] = $actualite;
+
+				$this->layout->viewAdmin('admin/actualite/actualite', $data);
+			}
+			else
+			{
+				$data = array(
+					'titre' 		=> $this->input->post('titre'),
+					'description'	=> $this->input->post('description'),
+					"status"		=> ($this->input->post('status') == 'yes') ? 'published' : 'unpublished'
+				);
+
+				$this->m_actu->update((int) $id, $data);
+				redirect(base_url("admin/actualites"));
+			}
+		}
+		// Si l'expérience n'existe pas
+		else
+		{
+			$this->layout->viewAdmin("admin/actualite/actualite");
+		}
+	}
+
+	public function publish($id)
+	{
+		$status = array("status" => "published");
+		$this->m_actu->update((int) $id, $status);
+
+		redirect('admin/actualites');
+	}
 }

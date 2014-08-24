@@ -10,12 +10,12 @@ class m_actu extends MY_Model
 		$this->load->database();
 	}
 
-	public function actualiteById($id)
+	public function actualiteById($id, $where=array())
 	{
 		return $this->db->select("*")
 						->from($this->table)
-						->where("status", "published")
 						->where("id", $id)
+						->where($where)
 						->order_by("id", "desc")
 						->limit("1")
 						->get()
