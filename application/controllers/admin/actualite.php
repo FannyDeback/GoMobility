@@ -63,4 +63,12 @@ class actualite extends MY_Controller
 			redirect(base_url("admin/actualite"));
 		}
 	}
+
+	public function supprimer($id)
+	{
+		$data = array();
+		$data['actualite'] = $this->m_actu->delete((int) $id);
+
+		redirect('admin/actualites');
+	}
 }
