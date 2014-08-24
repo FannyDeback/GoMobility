@@ -18,6 +18,12 @@ class c_home extends CI_Controller {
 			$data['exp'] = $exp[0];
 		}
 
+		$dixexp = $this->m_actors->experiences(10, 0, array("status" => "published"));
+		if ($dixexp != null)
+		{
+			$data['dixexp'] = $dixexp;
+		}
+
 		$this->layout->view('v_home', $data);
 	}
 

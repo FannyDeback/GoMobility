@@ -18,7 +18,18 @@
 		?>
 	</section>
 
-	<section class="dernieres-experiences">
+	<section class="dix-dernieres-experiences">
 		<h1><strong>Les 10 dernières</strong> expériences</h1>
+		<?php
+		if (isset($dixexp)) {
+			foreach ($dixexp as $experience) {
+				var_dump($experience);
+				echo '<p>'.$experience->titre.'</p>';
+			}
+		}
+		else {
+			echo "Aucune expérience ne correspond.";
+		}
+		?>
 	</section>
 </div>
