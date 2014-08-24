@@ -1,11 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class message extends CI_Controller {
-
+class message extends MY_Controller
+{
 	public function __construct()
 	{
 		parent:: __construct();
-		$this->load->helper(array('form','url'));
+		$this->load->helper(array('form'));
 		$this->load->library('form_validation');
 		$this->load->model('admin/user');
 		$this->load->library('pagination');
