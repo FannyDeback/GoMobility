@@ -6,6 +6,7 @@
 			foreach ($experiences as $experience) {
 				var_dump($experience);
 				echo '<p>'.$experience->titre.'</p>';
+				echo "<a href='".base_url('experience').'/'.$experience->id."'>voir plus</a>";
 			}
 		}
 		else {
