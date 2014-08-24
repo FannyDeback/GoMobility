@@ -1,8 +1,9 @@
 <div id="col-gauche">
 	<section class="toutes-les-experiences">
-		<h1>Vos <strong>expériences</strong></h1>
+		<h1>Les <strong>expériences</strong></h1>
 		<?php
 		if ($experiences != null) {
+			echo $order_by . "<br/>";
 			echo $links . "<br/>";
 			foreach ($experiences as $experience) {
 				var_dump($experience);
