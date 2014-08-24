@@ -11,19 +11,50 @@ class experience extends MY_Controller
 
 	public function index()
 	{
-		$config['base_url'] = $this->config->base_url("admin/experiences");
-		$config['total_rows'] = $this->m_actors->count();
-		$config['per_page'] = 10;
+		$where = array();
+
+		$order_by = $_GET;
+		if (empty($order_by))
+			$order = "status desc";
+		else if (isset($order_by['ges']))
+		{
+			$order = "ges ";
+			$order .= ($order_by['ges'] == "desc") ? "desc" : "asc";
+		}
+		else
+			$order = "status desc";
+
+		if (isset($order_by['ges']))
+		{
+			$data['order_by'] = "<a href='".base_url('admin/experiences')."'>trier par status</a>";
+			$config['url_format'] = base_url('admin/experiences/{offset}?'.http_build_query($_GET));
+		}
+		else
+		{
+			$data['order_by'] = "<a href='".base_url('admin/experiences?ges=asc')."'>trier par meilleur eco acteur</a>";
+			$config['base_url'] = $this->config->base_url("admin/experiences");
+		}
+		
 		$config["uri_segment"] = 3;
+		$config['use_page_numbers'] = true;
+		$config['cur_page'] = $this->uri->segment($config["uri_segment"]);
+		$config['total_rows'] = $this->m_actors->count();
+		$config['per_page'] = 1;
 		$choice = $config["total_rows"] / $config["per_page"];
-		$config["num_links"] = round($choice);
+		$choice = round($choice);
+
+		if (isset($order_by['ges']))
+			$choice .= "?ges=desc";
+		$config["num_links"] = $choice;
 
 		$this->pagination->initialize($config);
 
-		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 1;
 
-		$data["experiences"] = $this->m_actors->experiences($config["per_page"], $page);
+		$data["experiences"] = $this->m_actors->experiences($config["per_page"], $page - 1, array(), $order);
 		$data["links"] = $this->pagination->create_links();
+		// To delete
+		$data['current_page'] = $this->uri->segment(3);
 
 		$this->layout->viewAdmin('admin/experience/experiences', $data);
 	}

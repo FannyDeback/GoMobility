@@ -41,7 +41,7 @@
 		echo "user: " . $id_user . "<br/>";
 
 		echo "<div>
-				Nombre d'éco-acteurs: <span>" . $exp_attente . "</span>
+				<a href='" . base_url('admin/experiences') . "'>Nombre d'éco-acteurs</a>: <span>" . $exp_attente . "</span>
 									  <span>" . $exp_ligne	   . "</span>
 			</div>";
 

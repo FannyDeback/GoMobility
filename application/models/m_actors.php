@@ -31,12 +31,13 @@ class m_actors extends MY_Model
 						->result();
 	}
 
-	public function experiences($limit, $start, $where=array())
+	public function experiences($limit, $start, $where=array(), $order_by="id desc")
 	{
 		$this->db->limit($limit, $start);
 		$result = $this->db->select("*")
 				 ->from($this->table)
 				 ->where($where)
+				 ->order_by($order_by)
 				 ->get()
 				 ->result();
 
