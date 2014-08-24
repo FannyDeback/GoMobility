@@ -39,7 +39,7 @@ class experience extends MY_Controller
 		$config['use_page_numbers'] = true;
 		$config['cur_page'] = $this->uri->segment($config["uri_segment"]);
 		$config['total_rows'] = $this->m_actors->count();
-		$config['per_page'] = 1;
+		$config['per_page'] = 10;
 		$choice = $config["total_rows"] / $config["per_page"];
 		$choice = round($choice);
 
