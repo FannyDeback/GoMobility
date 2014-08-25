@@ -34,8 +34,35 @@
 		)) . form_label(' Publier', 'status');
 
 		echo '<br/>';
+		?>
 
-		echo form_submit('submit', 'Envoyer');
+		<!-- Fenêtre modal de publication -->
+		<!-- Button trigger modal -->
+
+		<button class="btn btn-primary" data-toggle="modal" data-target="#publier<?php echo $actualite->id; ?>">
+			Mettre à jour
+		</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="publier<?php echo $actualite->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
+						<h4 class="modal-title" id="myModalLabel">Mettre à jour une actualité</h4>
+					</div>
+					<div class="modal-body">
+						Mettre à jour l'actualité n°<?php echo $actualite->id; ?>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+						<button type="submit" class="btn btn-primary">Modifier</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<?php
 		echo form_close();
 	?>
 </div>
