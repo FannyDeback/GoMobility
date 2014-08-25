@@ -60,7 +60,7 @@ class actualite extends MY_Controller
 			);
 
 			$this->m_actu->create($data);
-			redirect(base_url("admin/actualite"));
+			redirect(base_url("admin/actualites"));
 		}
 	}
 
