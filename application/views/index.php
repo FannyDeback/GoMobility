@@ -3,8 +3,11 @@
 <head>
 	<title>Go Mobility</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="<?php echo css_url('reset'); ?>">
 	<link rel="stylesheet" href="<?php echo css_url('styles'); ?>">
+	<link rel="stylesheet" href="<?php echo css_url('medias'); ?>">
 	<link rel="stylesheet" href="<?php echo css_url('font'); ?>">
 	<link rel="stylesheet" href="<?php echo css_url('rrssb'); ?>">
 

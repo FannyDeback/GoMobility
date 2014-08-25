@@ -328,7 +328,7 @@ form input[type="submit"]:hover{
 /* ************************************************************************************ */
 /*  NOMBRE ECO ACTEUR  */
 #content aside section.nombre-ecoacteur{
-	background: url(../image/nombre-eco-acteur.gif) no-repeat top left;
+	background: url(../image/nombre-eco-acteur.gif) no-repeat;
 	width: 280px;
 	height: 124px;
 	position: relative;
@@ -375,7 +375,7 @@ form input[type="submit"]:hover{
 /* ************************************************************************************ */
 /*  APPLICATION MOBILE  */
 #content aside section.appli-mobile{
-	width: 282px;
+	width: 100%;
 }
 
 #content aside section.appli-mobile a#appli-mobile{
@@ -397,9 +397,13 @@ form input[type="submit"]:hover{
 /* ************************************************************************************ */
 /*  DERNIERE ACTUALITE  */
 #content aside section.derniere-actualite{
-	width: 282px;
+	width: 100%;
 	position: relative;
 	margin: 20px 0;
+}
+
+#content aside section.derniere-actualite img{
+	width: 100%;
 }
 
 #content aside section.derniere-actualite h1{
@@ -417,11 +421,11 @@ form input[type="submit"]:hover{
 	position: absolute;
 	height: 40px;
 	line-height: 40px;
-	padding: 0 10px;
+	padding: 0 5%;
 	font-size: 16px;
 	color: #7a7a7a;
 	font-family: 'ralewaylight';
-	width: 262px;
+	width: 90%;
 	background: #fff;
 	opacity: 0.9;
 	bottom: 0;

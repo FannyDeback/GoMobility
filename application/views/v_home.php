@@ -20,13 +20,11 @@
 
 	<section class="dix-dernieres-experiences">
 		<h1><strong>Les 10 dernières</strong> expériences</h1>
-		<div id="col-gauche">
 			<section class="derniere-experience">
 				<div id="map-canvas">
 					<p>Un problème est survenue lors du chargement de la map...</p>
 				</div>
 			</section>
-		</div>
 		<?php
 		if (isset($exp)) {
 				echo '

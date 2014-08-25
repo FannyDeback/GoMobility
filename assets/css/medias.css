@@ -1,0 +1,223 @@
+@charset "utf-8";
+/* CSS Document */
+
+@media screen and (max-width:1000px){
+	/* HEADER */
+	header{
+		height: auto;
+		width: 100%;
+		background: #7ED2EC;
+	}
+
+	header #logo{
+		margin: 10px auto 0 auto;
+		float: none;
+		width: 311px;
+	}
+
+	header nav{
+		float: none;
+		margin: 10px auto 0 auto;
+	}
+
+	/* CONTENT */
+	#content{
+		width: 94%;
+		padding: 3%;
+	}
+
+	#content #col-gauche{
+		width: 65%;
+	}
+
+	#content #col-gauche img{
+		width: 100%;
+		height: auto;
+	}
+
+	/* ASIDE */
+	#content aside{
+		width: 30%;
+	}
+
+	#content aside img{
+		width: 100%;
+	}
+
+	#content aside section.nombre-ecoacteur{
+		width: 100%;
+		height: 100px;
+		background-image: url(../image/nombre-eco-acteur-2.png);
+		background-color: #7ED2EC;
+		background-size: 100%;
+	}
+
+	#content aside section.nombre-ecoacteur p{
+		top: 40%;
+		left: 30%;
+	}
+
+	/* FOOTER */
+	footer{
+		width: 90%;
+		padding: 0 5%;
+	}
+}
+
+		
+@media screen and (max-width:860px){
+	/* HEADER */
+	header nav{
+		float: none;
+		margin: 10px auto 0 auto;
+		width: 100%;
+	}
+
+	header li{
+		font-size: 16px;
+	}
+
+	/* ASIDE */
+	#content aside section.nombre-ecoacteur p{
+		left: 20%;
+	}
+
+	#content aside section.derniere-actualite footer{
+		font-size: 14px;
+	}
+
+}
+
+
+@media screen and (max-width:750px){
+
+	/* CONTENT */
+	#content #col-gauche{
+		width: 100%;
+	}
+
+	#content #col-gauche img{
+		width: 100%;
+		height: auto;
+	}
+
+	/* ASIDE */
+	#content aside{
+		width: 100%;
+		padding-top: 30px;
+		margin-top: 30px;
+		border-top: 1px #F4F4F4 solid;
+	}
+
+	#content aside section.nombre-ecoacteur{
+		background-image: url(../image/nombre-eco-acteur-3.png);
+		background-size: 100%;
+	}
+
+	#content aside section.nombre-ecoacteur p{
+		top: 45%;
+		left: 40%;
+	}
+
+	#content aside section.derniere-actualite footer{
+		font-size: 12px;
+	}
+
+	/* FOOTER */
+	footer{
+		height: auto;
+		padding: 5%;
+		width: 85%;
+	}
+
+	footer ul{
+		float: none;
+		width: 100%;
+		display: table;
+	}
+
+	footer ul li{
+		display: table-cell;
+		float: none;
+		text-align: center;
+	}
+
+	footer #logos-partenaires{
+		float: none;
+		margin: 20px auto 0 auto;
+	}
+
+}
+
+
+@media screen and (max-width:560px){
+	/*CONTENT */
+	#content #col-gauche section.derniere-experience h1, #content #col-gauche h1.form, #content #col-gauche section.toutes-les-experiences h1, #content #col-gauche h1{
+		height: auto;
+		padding: 5px;
+		line-height: 20px;
+	}
+	
+	/* ASIDE */
+	#content aside section.nombre-ecoacteur p{
+		left: 33%;
+	}	
+}
+
+@media screen and (max-width:400px){
+
+	/* HEADER */
+	header li{
+		display: block;
+	}
+
+	header li:hover{
+		background: none;
+		text-decoration: underline;
+	}
+
+	/* ASIDE */
+	#content aside section.nombre-ecoacteur p{
+		left: 28%;
+		top: 30%;
+	}
+
+	#content aside section.nombre-ecoacteur{
+		height: 80px;
+	}
+
+	/* FOOTER */
+	footer{
+		height: auto;
+		padding: 5%;
+		width: 85%;
+	}
+
+	footer ul{
+		float: none;
+		width: 100%;
+		display: block;
+	}
+
+	footer ul li{
+		display: block;
+		float: none;
+		text-align: center;
+		padding-right: 0px;
+		padding-left: 0px;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		border-right: none;
+		border-bottom: 1px solid #999;
+		margin-top: 0px;
+	}
+
+	footer li:last-child{
+		border-bottom: none;
+	}
+
+	footer #logos-partenaires{
+		float: none;
+		margin: 20px auto 0 auto;
+	}
+}
