@@ -13,6 +13,32 @@ if ($expStatus == 'published')
 			<p>Un problème est survenue lors du chargement de la map...</p>
 		</div>
 	</section>
+	<?php
+		// Formulaire d'envoie de nouveau commentaire
+		echo form_open('experience/'.$id);
+
+		echo form_label('Email<span>*</span>', 'titre');
+		echo form_input(array(
+			'id' => 'email',
+			'name' => 'email',
+			'value' => set_value('email')
+		));
+		echo form_error('email');
+
+		echo "<br/><br/><br/>";
+
+		echo form_label('Votre message<span>*</span>', 'titre');
+		echo form_textarea(array(
+			'id' => 'message',
+			'name' => 'message',
+			'value' => set_value('message')
+		));
+		echo form_error('message');
+
+
+		echo form_submit('submit', 'Commenter');
+		echo form_close();
+	?>
 </div>
 
 <!-- TODO panel d'affichage de la route  -->

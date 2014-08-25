@@ -4,8 +4,9 @@ class c_experience extends CI_Controller {
 	public function __construct()
 	{
 		parent:: __construct();
-		$this->load->helper('url');
-		$this->load->library('pagination');
+		$this->load->helper(array('url','form'));
+		$this->load->library(array('pagination','form_validation'));
+		$this->load->model('m_commentaire');
 	}
 
 	public function index()
@@ -37,20 +38,53 @@ class c_experience extends CI_Controller {
 
 	public function experience($id)
 	{
-		$exp = $this->m_actors->experienceById($id);
-		if ($exp != null)
+		$validation = array(
+			array(
+				'field' => 'email',
+				'label' => 'Email',
+				'rules' => 'trim|required|valid_email|xss_clean'
+			),
+			array(
+				'field' => 'message',
+				'label' => 'Message',
+				'rules' => 'trim|required'
+			)
+		);
+
+		$this->form_validation->set_rules($validation);
+		$this->form_validation->set_error_delimiters('<div class="error">','</div>');
+
+		if ($this->form_validation->run() == false)
 		{
-			if ($exp[0]->status == 'published')
-				$data['expStatus'] = 'published';
+			$exp = $this->m_actors->experienceById($id);
+			if ($exp != null)
+			{
+				if ($exp[0]->status == 'published')
+					$data['expStatus'] = 'published';
+				else
+					$data['expStatus'] = 'unpublished';
+			}
 			else
-				$data['expStatus'] = 'unpublished';
+				$data['expStatus'] = '';
+
+			$data["id"] = $id;
+
+			$this->layout->view('v_experience', $data);
 		}
 		else
-			$data['expStatus'] = '';
+		{
+			$data = array(
+				'email' 		=> $this->input->post('email'),
+				'message'		=> $this->input->post('message'),
+				'status'		=> "unpublished",
+				'spam'			=> "no-spam",
+				'date'			=> date('Y-m-d H:i:s'),
+				'id_eco_actors'	=> $id
+			);
 
-		$data["id"] = $id;
-
-		$this->layout->view('v_experience', $data);
+			$this->m_commentaire->create($data);
+			redirect(base_url("experience/".$id));
+		}
 	}
 
 	public function dixExperienceAjax()
