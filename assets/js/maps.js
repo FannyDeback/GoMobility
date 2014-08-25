@@ -11,9 +11,11 @@ var infowindow = new google.maps.InfoWindow({
 // Récupère les coordonnées de l'expérience et affiche la map
 function show_itineraire(experience_id)
 {
+	url = window.location.href;
+	url = url.substr(0, url.indexOf("GoMobility/") + 11);
 	$.ajax({
 		type: 'GET',
-		url: '../experience_ajax/' + experience_id,
+		url: url + '/experience_ajax/' + experience_id,
 		dataType: 'json',
 		success: function(data) {
 			initialize();

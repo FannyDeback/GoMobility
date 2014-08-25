@@ -55,6 +55,7 @@ $route['actualite/(:num)'] = "c_actualite/actualite/$1";
 $route['mentions_legales'] = "c_home/mentions";
 $route['contact'] = "c_contact";
 
+
 /* Routes pour l'administration */
 $route['admin'] = "admin/index";
 $route['admin/logout'] = "admin/index/logout";
