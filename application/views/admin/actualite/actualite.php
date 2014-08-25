@@ -1,11 +1,15 @@
 <div id="col-gauche">
-	<h4 class="form">Créer une actualité</h4>
-
 	<?php
 		if (isset($actualite))
+		{
+			echo "<h4 class='form'>Modifier une actualité</h4>";
 			echo form_open('admin/actualite/update/'.$actualite->id);
+		}			
 		else
+		{
+			echo "<h4 class='form'>Créer une actualité</h4>";
 			echo form_open('admin/actualite/create');
+		}
 
 		echo form_label('Titre de l\'actualité<span>*</span>', 'titre');
 		echo form_input(array(
@@ -34,6 +38,7 @@
 		)) . form_label(' Publier', 'status');
 
 		echo '<br/>';
+		if (isset($actualite)) {
 		?>
 
 		<!-- Fenêtre modal de publication -->
@@ -63,6 +68,11 @@
 		</div>
 
 		<?php
+		}
+		else
+		{
+			echo form_submit('submit','Créer');
+		}	
 		echo form_close();
 	?>
 </div>
