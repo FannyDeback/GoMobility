@@ -7,6 +7,13 @@ class experience extends MY_Controller
 		parent:: __construct();
 		$this->load->library('pagination');
 		$this->load->library('form_validation');
+
+		// Si le user n'est pas connecté
+		if (!$this->session->userdata('id_user'))
+		{
+			redirect('admin/index');
+			die();
+		}
 	}
 
 	public function index()

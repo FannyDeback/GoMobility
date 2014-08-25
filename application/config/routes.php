@@ -72,12 +72,7 @@ $route['admin/actualites'] = "admin/actualite/index/0";
 $route['admin/actualite'] = "admin/actualite/create";
 $route['admin/actualite/supprimer/(:num)'] = "admin/actualite/supprimer/$1";
 $route['admin/actualite/update/(:num)'] = "admin/actualite/update/$1";
-
-
-
-
-
-
+$route['admin/erreur'] = "admin/index/erreur";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
