@@ -45,7 +45,6 @@ class c_jeparticipe extends CI_Controller {
 			array(
 				'field' => 'jeu',
 				'label' => 'Je participe',
-				'rules' => 'trim|required'
 			)
 		);
 
@@ -65,7 +64,7 @@ class c_jeparticipe extends CI_Controller {
 				'start'			=> $this->input->post('start'),
 				'arrival'		=> $this->input->post('arrival'),
 				'description'	=> $this->input->post('description'),
-				'game'			=> $this->input->post('jeu'),
+				'game'			=> ($this->input->post('game') == 'yes') ? 'yes' : 'no', 	
 				'ges'			=> 210
 			);
 
