@@ -55,6 +55,7 @@ $route['actualite/(:num)'] = "c_actualite/actualite/$1";
 $route['mentions_legales'] = "c_home/mentions";
 $route['contact'] = "c_contact";
 
+
 /* Routes pour l'administration */
 $route['admin'] = "admin/index";
 $route['admin/logout'] = "admin/index/logout";
@@ -71,12 +72,7 @@ $route['admin/actualites'] = "admin/actualite/index/0";
 $route['admin/actualite'] = "admin/actualite/create";
 $route['admin/actualite/supprimer/(:num)'] = "admin/actualite/supprimer/$1";
 $route['admin/actualite/update/(:num)'] = "admin/actualite/update/$1";
-
-
-
-
-
-
+$route['admin/erreur'] = "admin/index/erreur";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

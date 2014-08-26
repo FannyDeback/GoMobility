@@ -31,4 +31,3 @@ if (!function_exists('image'))
 	return '<img src="' . image_url($nom) . '" alt="' . $alt . '" />';
 	}
 }
-?>

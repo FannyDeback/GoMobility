@@ -10,6 +10,18 @@ class message extends MY_Controller
 		$this->load->model('admin/user');
 		$this->load->library('pagination');
 		$this->load->model('messages');
+
+		// Si le user n'est pas connecté
+		if (!$this->session->userdata('id_user'))
+		{
+			redirect('admin/index');
+			die();
+		}
+		if ($this->session->userdata('droit') != "admin")
+		{
+			redirect('admin/erreur');
+			die();
+		}
 	}
 
 	public function index()
@@ -38,7 +50,6 @@ class message extends MY_Controller
 		$data['message'] = $this->messages->delete((int) $id);
 
 		redirect('admin/messages');
-		//$this->layout->viewAdmin('admin/message/messages', $data);
 	}
 /*
 	public function update($id)

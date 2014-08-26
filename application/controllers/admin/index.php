@@ -11,6 +11,11 @@ class index extends CI_Controller {
 		$this->load->model('messages');
 	}
 
+	public function erreur()
+	{
+		$this->layout->viewAdmin("admin/erreur");
+	}
+
 	public function index()
 	{
 		// Si le user n'est pas connecté

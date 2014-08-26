@@ -13,6 +13,62 @@ if ($expStatus == 'published')
 			<p>Un problème est survenue lors du chargement de la map...</p>
 		</div>
 	</section>
+	<?php
+		// Erreur d'instanciation de Akismet
+		if (isset($erreur))
+			echo $erreur;
+
+		// Formulaire d'envoie de nouveau commentaire
+		echo form_open('experience/'.$id);
+
+		echo form_label('Email<span>*</span>', 'email');
+		echo form_input(array(
+			'id' => 'email',
+			'name' => 'email',
+			'value' => set_value('email')
+		));
+		echo form_error('email');
+
+		echo "<br/><br/><br/>";
+
+		echo form_label('Votre message<span>*</span>', 'titre');
+		echo form_textarea(array(
+			'id' => 'message',
+			'name' => 'message',
+			'value' => set_value('message')
+		));
+		echo form_error('message');
+
+		echo "<br/><br/><br/>";
+
+		echo form_label('Auteur', 'auteur');
+		echo form_input(array(
+			'id' => 'auteur',
+			'name' => 'auteur',
+			'value' => set_value('auteur')
+		));
+
+		echo "<br/><br/><br/>";
+
+		echo form_label('Website', 'website');
+		echo form_input(array(
+			'id' => 'website',
+			'name' => 'website',
+			'value' => set_value('website')
+		));
+
+		echo form_submit('submit', 'Commenter');
+		echo form_close();
+
+		if (isset($commentaires))
+		{
+			foreach ($commentaires as $commentaire) {
+				var_dump($commentaire);
+			}
+		}
+		else
+			echo "Soyez le premier à donner votre avis sur cet expérience...";
+	?>
 </div>
 
 <!-- TODO panel d'affichage de la route  -->
@@ -28,7 +84,8 @@ if ($expStatus == 'published')
 <?php
 }
 else if ($expStatus == 'unpublished')
-	echo "Expérience en attente de validation par l'administrateur.";
+	// mettre un truc sympa pour l'eco-acteur avec un petite image genre :
+	echo "<p>Merci pour votre participation !<br /> Votre expérience en attente de validation par l'administrateur, à bientôt !</p><br /><a href=". base_url('home') .">Retour à l'accueil</a>";
 else
 	echo "Aucune expérience ne correspond.";
 ?>
