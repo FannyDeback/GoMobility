@@ -38,61 +38,6 @@
 	// Sinon affichage du dashboard
 	else
 	{
-		echo '<div id="user">
-				<strong>User :</strong> '.$id_user. ' | <a href="'.base_url('admin/logout').'">Déconnexion</a>
-			</div>
-			<div class="clear"></div>';
-
-
-
-		echo '<aside id="admin">';
-		echo	'<ul class="list-group">
-					<li id="home">
-		  				<a href="'.base_url('admin').'">
-		    				Dashboard
-		    			</a>
-		  			</li>
-
-		 			<li class="list-group-item" id="ecoacteur">
-		 				<a href="'.base_url('admin/experiences').'">
-		    				Eco-acteurs
-		    			</a>
-		  			</li>
-
-		  			<li class="list-group-item" id="message">
-						<a href="'.base_url('admin/messages').'">
-		    				Messages
-		    			</a>
-		  			</li>
-
-		  			<li class="list-group-item" id="commentaires">
-						<a href="'.base_url('admin/commentaires').'">
-		    				Commentaires
-		    			</a>
-		  			</li>
-
-		  			<li class="list-group-item" id="actualites">
-		 				<a href="'.base_url('admin/actualites').'">
-		    				Actualités
-		    			</a>
-		  			</li>
-
-		  			<li id="site">
-		  				<a href="'.base_url('home').'">
-		    				Site public
-		    			</a>
-		  			</li>
-
-		  			<li id="meilleur-ecoacteur" class="aside">
-		  				<a href="#">
-		  					<strong>Meilleur éco-acteur</strong>
-		  				</a>
-		  			</li>
-
-				</ul>';	
-		echo '</aside>';
-
-
 		echo '<div id="col-droite-admin">';
 		echo	'<ul class="list-group">
 		 			<li class="list-group-item">
@@ -121,10 +66,10 @@
 						<a href="'.base_url('admin/commentaires').'">
 		    				Nombre de commentaires
 		    			</a>
-		    			<div class="badge">'.$commentaires_nonlu.'</div>	
+		    			<div class="badge">commentaires_nonlu</div>	
 		    			<div class="clear"></div>	
 		    			<i>Non lus</i>
-		    			<div class="badge badge-attente">'.$commentaires_lu.'</div>	
+		    			<div class="badge badge-attente">commentaires_lu</div>	
 		    			<div class="clear"></div>
 		  			</li>
 

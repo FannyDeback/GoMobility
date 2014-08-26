@@ -34,6 +34,8 @@ class Layout
 
 	public function viewAdmin($name, $data = array())
 	{
+		if ($this->CI->session->userdata('id_user'))
+			$data['id_user'] = $this->CI->session->userdata('id_user');
 		$this->output .= $this->CI->load->view($name, $data, true);
 		$this->CI->load->view('admin/index.php', array('output' => $this->output));
 	}

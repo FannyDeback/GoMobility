@@ -38,6 +38,8 @@ class c_experience extends CI_Controller {
 
 	public function experience($id)
 	{
+		// formulaire de commentaires
+		
 		$validation = array(
 			array(
 				'field' => 'email',

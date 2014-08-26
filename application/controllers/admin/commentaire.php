@@ -51,4 +51,67 @@ class commentaire extends MY_Controller
 
 		redirect('admin/commentaires');
 	}
+
+	public function update($id)
+	{
+		$commentaire = $this->m_commentaire->commentById($id);
+		if ($commentaire != null)
+		{
+			$commentaire = $commentaire[0];
+			$validation = array(
+				array(
+					'field' => 'email',
+					'label' => 'Email',
+					'rules' => 'trim|required|valid_email|xss_clean'
+				),
+
+				array(
+					'field' => 'message',
+					'label' => 'Message',
+					'rules' => 'trim|required'
+				),
+				array(
+					'field' => 'auteur',
+					'label' => 'Auteur',
+					'rules' => 'trim'
+				),
+				
+				array(
+					'field' => 'website',
+					'label' => 'Website',
+					'rules' => 'trim'
+				)
+			);
+
+			$this->form_validation->set_rules($validation);
+			$this->form_validation->set_error_delimiters('<div class="error">','</div>');
+
+			if ($this->form_validation->run() == false)
+			{
+				$data['commentaire'] = $commentaire;
+
+				$this->layout->viewAdmin('admin/commentaire/commentaire', $data);
+			}
+			else
+			{
+				$data = array(
+					'email' 		=> $this->input->post('email'),
+					'message'		=> $this->input->post('message'),
+					'auteur'		=> $this->input->post('auteur'),
+					'website'		=> $this->input->post('website'),
+					'spam'			=> "no-spam",
+					'date'			=> date('Y-m-d H:i:s'),
+					"status"		=> ($this->input->post('status') == 'yes') ? 'published' : 'unpublished'
+				);
+
+				$this->m_commentaire->update((int) $id, $data);
+				redirect(base_url("admin/commentaires"));
+			}
+		}
+		// Si le commentaire n'existe pas
+		else
+		{
+			$this->layout->viewAdmin("admin/commentaire/commentaire");
+		}
+	}
 }

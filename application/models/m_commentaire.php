@@ -10,6 +10,16 @@ class m_commentaire extends MY_Model
 		$this->load->database();
 	}
 
+	public function commentById($id, $where=array())
+	{
+		return $this->db->select("*")
+						->from($this->table)
+						->where("id", $id)
+						->where($where)
+						->get()
+						->result();
+	}
+
 	public function comments($where, $limit, $start, $order_by="")
 	{
 		$order_by .= "date desc";
