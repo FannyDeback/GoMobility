@@ -77,7 +77,7 @@ class c_experience extends CI_Controller {
 			else
 				$data['expStatus'] = '';
 
-			$commentaires = $this->m_commentaire->comments($id, 10, 0);
+			$commentaires = $this->m_commentaire->comments((int)$id, 10, 0);
 			if ($commentaires != null)
 			{
 				$data['commentaires'] = $commentaires;
@@ -144,7 +144,7 @@ class c_experience extends CI_Controller {
 					else
 						$data['expStatus'] = '';
 
-					$commentaires = $this->m_commentaire->comments($id, 10, 0);
+					$commentaires = $this->m_commentaire->comments((int)$id, 10, 0);
 					if ($commentaires != null)
 					{
 						$data['commentaires'] = $commentaires;

@@ -65,6 +65,12 @@
 		    			</a>
 		  			</li>
 
+		  			<li class="list-group-item" id="commentaires">
+						<a href="'.base_url('admin/commentaires').'">
+		    				Commentaires
+		    			</a>
+		  			</li>
+
 		  			<li class="list-group-item" id="actualites">
 		 				<a href="'.base_url('admin/actualites').'">
 		    				Actualités
@@ -108,6 +114,17 @@
 		    			<div class="clear"></div>	
 		    			<i>Non lus</i>
 		    			<div class="badge badge-attente">'.$message_lu.'</div>	
+		    			<div class="clear"></div>
+		  			</li>
+
+		  			<li class="list-group-item">
+						<a href="'.base_url('admin/commentaires').'">
+		    				Nombre de commentaires
+		    			</a>
+		    			<div class="badge">'.$commentaires_nonlu.'</div>	
+		    			<div class="clear"></div>	
+		    			<i>Non lus</i>
+		    			<div class="badge badge-attente">'.$commentaires_lu.'</div>	
 		    			<div class="clear"></div>
 		  			</li>
 

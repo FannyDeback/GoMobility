@@ -33,7 +33,7 @@ function show_itineraire(experience_id)
 		    var request = {
 		    	origin: origin,
 		    	destination: destination,
-		    	travelMode: google.maps.TravelMode['WALKING']
+		    	travelMode: google.maps.TravelMode[data.type]
 		    };
 	        var directionsService = new google.maps.DirectionsService();
 	        directionsService.route(request, function(response, status){

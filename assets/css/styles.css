@@ -617,6 +617,10 @@ div #retour-site{
 	background: url(../image/admin-picto-message.png) no-repeat top left;
 }
 
+#content aside#admin ul li#commentaires{
+	background: url(../image/admin-picto-commentaires.png) no-repeat top left;
+}
+
 #content aside#admin ul li#actualites{
 	background: url(../image/admin-picto-actualites.png) no-repeat top left;
 }
