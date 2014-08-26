@@ -57,7 +57,7 @@
 	<?php
 		if (isset($actualite))
 		{
-			echo '<h1><strong>Modifier</strong> l\'actualité "'.substr($actualite->titre, 0, 20).'"...</h1>';
+			echo '<h1><strong>Modifier</strong> l\'actualité <i>"'.substr($actualite->titre, 0, 20).'"...</i></h1>';
 			echo form_open('admin/actualite/update/'.$actualite->id);
 		}			
 		else
@@ -100,10 +100,12 @@
 		<!-- Button trigger modal -->
 
 		<br/>
-		<br/>
-		<button class="maj btn btn-warning l100" data-toggle="modal" data-target="#publier<?php echo $actualite->id; ?>">
-			Mettre à jour
-		</button>
+		<div class="boutons">
+			<button class="maj btn btn-warning l100" data-toggle="modal" data-target="#publier<?php echo $actualite->id; ?>">
+				Mettre à jour
+			</button>
+		</div>
+		<div class="clear"></div>
 
 		<!-- Modal -->
 		<div class="modal fade" id="publier<?php echo $actualite->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

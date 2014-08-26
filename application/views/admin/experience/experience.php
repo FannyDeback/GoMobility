@@ -57,7 +57,7 @@
 	<?php
 		if (isset($experience))
 		{
-			echo "<h1>Expérience Eco-acteur <strong>" . $experience->titre . "</strong></h1>";
+			echo "<h1>Expérience Eco-acteur <strong><i>" . $experience->titre . "</i></strong></h1>";
 		  	echo form_open('admin/experience/update/'.$experience->id);
 
 		  	echo form_label('Titre<span>*</span>', 'titre');
@@ -139,10 +139,12 @@
 
 			?>
 			<br/>
-			<br/>
-			<button class="maj btn btn-warning l100" data-toggle="modal" data-target="#publier<?php echo $experience->id; ?>">
-				Mettre à jour
-			</button>
+			<div class="boutons">
+				<button class="maj btn btn-warning l100" data-toggle="modal" data-target="#publier<?php echo $experience->id; ?>">
+					Mettre à jour
+				</button>
+			</div>
+			<div class="clear"></div>
 
 			<!-- Modal -->
 			<div class="modal fade" id="publier<?php echo $experience->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

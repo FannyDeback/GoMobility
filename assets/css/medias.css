@@ -73,6 +73,14 @@
     	top: -22px;
 	}
 
+	#content aside#admin ul li#meilleur-ecoacteur a{
+		padding-left: 10px;
+	}
+
+	#content aside#admin ul li#meilleur-ecoacteur.aside{
+		background-position: 12px 9px;
+	}
+
 }
 
 
@@ -111,6 +119,10 @@
 	#content #col-droite-admin{
 		float: none;
 		width: 100%;
+	}
+
+	#content aside#admin ul li#meilleur-ecoacteur.aside{
+		background-position: 8px 9px;
 	}
 
 }
