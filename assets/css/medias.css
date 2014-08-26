@@ -65,6 +65,14 @@
 		width: 90%;
 		padding: 0 5%;
 	}
+
+	/* ADMIN */
+	#user{
+		position: absolute;
+		right: 10px;
+    	top: -22px;
+	}
+
 }
 
 
@@ -90,6 +98,19 @@
 
 	#content aside section.derniere-actualite footer{
 		font-size: 14px;
+	}
+
+	/* ADMIN */
+	#content aside#admin{
+		width: 94%;
+		float: none;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	#content #col-droite-admin{
+		float: none;
+		width: 100%;
 	}
 
 }

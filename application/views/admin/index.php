@@ -28,24 +28,10 @@
 
 	<div id="content">
 		<?php echo $output; ?>
-		<!-- Lien vers site public -->
-		<div id="retour-site">
-		<a href="<?php echo base_url('home'); ?>">Retour au site</a>
-		</div>
 	</div>
 
-	<footer>
-		<ul>
-			<li><strong>© 2014 GO MOBILITY</strong></li>
-			<li><a href="<?php echo base_url('mentions_legales'); ?>">Mentions l&eacute;gales</a></li>
-		</ul>
-
-		<div id="logos-partenaires">
-			<?php echo image('logo-ardeche.gif'); ?>
-			<?php echo image('logo-ardeche-2.gif'); ?>
-		</div>
-		<div class="clear"></div>
-
-	</footer>
+	<div id="copyright">
+		© 2014 GO MOBILITY | <a href="<?php echo base_url('home'); ?>">Retour au site</a>
+	</div>
 </body>
 </html>
