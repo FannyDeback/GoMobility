@@ -137,7 +137,7 @@ header li:hover{
 	border-bottom: 1px solid #efefef;
 }
 
-#content #col-gauche section.derniere-experience h1, #content #col-gauche h1.form, #content #col-gauche section.toutes-les-experiences h1, #content #col-gauche h1{
+#content #col-gauche section.derniere-experience h1, #content-central h1, #content #col-gauche h1.form, #content #col-gauche section.toutes-les-experiences h1, #content #col-gauche h1{
 	height: 40px;
 	background: #f3e7d2;
 	text-align: center;
@@ -275,7 +275,7 @@ form span{
 	color: red;
 }
 
-form input[type="text"]{
+form input[type="text"], form input[type="password"]{
 	width: 94%;
 	height: 30px;
 	border: 1px solid #d8d8d8;
@@ -432,6 +432,13 @@ form input[type="submit"]:hover{
 	left: 0;
 }
 
+/* hack Chrome / Safari */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	#content aside section.derniere-actualite footer {
+		width: 91%;
+	}
+}
+
 #content aside section.derniere-actualite h3{
 	position: absolute;
 	height: 20px;
@@ -492,6 +499,10 @@ footer{
 	margin-top: 20px;
 }
 
+footer a, footer a:hover, footer a:focus{
+	color: #999999 !important;
+}
+
 footer ul{
 	float: left;
 	width: 450px;
@@ -518,4 +529,33 @@ footer #logos-partenaires{
 
 footer #logos-partenaires img{
 	margin-right: 10px;
+}
+
+
+
+
+/* ///////////// BACKOFFICE //////////////*/
+/* ************************************************************************************ */
+/*  PAGE DE LOGIN  */
+#content-central{
+	width: 40%;
+	margin: 0 auto;
+}
+
+#content-central form .error{
+	color: red;
+}
+
+div #retour-site{
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+div #retour-site a{
+	color: #7ED2EC !important;
+}
+
+div #retour-site a:hover{
+	text-decoration: underline !important;
 }
