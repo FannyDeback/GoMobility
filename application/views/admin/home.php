@@ -56,6 +56,9 @@
 		echo "<div>
 			<a href='" . base_url('admin/actualites') . "'>Actualités</a></div>";
 
+		echo "<div>
+			<a href='" . base_url('admin/commentaires') . "'>Commentaires</a></div>";
+
 		echo "<a href='".base_url('admin/logout')."'>Déconnexion</a>";
 	}
 ?>

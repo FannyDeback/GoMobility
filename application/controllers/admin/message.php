@@ -51,24 +51,7 @@ class message extends MY_Controller
 
 		redirect('admin/messages');
 	}
-/*
-	public function update($id)
-	{
-		$data = array();
-		$message = $this->messages->messageById($id);
-		if ($message != null)
-		{
-			if ($message[0]->status == "unread")
-			{
-				$status = array("status" => "read");
-				$this->messages->update((int) $id, $status);
-			}
-			$data['message'] = $message[0];
-		}
 
-		$this->layout->viewAdmin('admin/message/message', $data);
-	}
-*/
 	public function read($id)
 	{
 		$data = array();

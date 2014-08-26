@@ -10,16 +10,22 @@ class m_commentaire extends MY_Model
 		$this->load->database();
 	}
 
-	public function comments($id_eco_actors, $limit, $start)
+	public function comments($where, $limit, $start, $order_by="")
 	{
+		$order_by .= "date desc";
+		//	Raccourci dans le cas où on sélectionne l'id
+		if(is_integer($where))
+		{
+			$where = array('id_eco_actors' => $where);
+		}
+
 		$this->db->limit($limit, $start);
 		$result = $this->db->select("*")
 				 ->from($this->table)
-				 ->where("id_eco_actors", $id_eco_actors)
-				 ->order_by("date", "desc")
+				 ->where($where)
+				 ->order_by($order_by)
 				 ->get()
 				 ->result();
-
 		if (count($result) > 0)
 		{
 			return $result;

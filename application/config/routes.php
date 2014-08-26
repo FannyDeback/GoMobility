@@ -69,9 +69,12 @@ $route['admin/experiences/(:num)'] = "admin/experience/index/$1";
 $route['admin/experience/publish/(:num)'] = "admin/experience/publish/$1";
 $route['admin/experience/update/(:num)'] = "admin/experience/update/$1";
 $route['admin/actualites'] = "admin/actualite/index/0";
+$route['admin/actualites/(:num)'] = "admin/actualite/index/$1";
 $route['admin/actualite'] = "admin/actualite/create";
 $route['admin/actualite/supprimer/(:num)'] = "admin/actualite/supprimer/$1";
 $route['admin/actualite/update/(:num)'] = "admin/actualite/update/$1";
+$route['admin/commentaires'] = "admin/commentaire/index/0";
+$route['admin/commentaires/(:num)'] = "admin/commentaire/index/$1";
 $route['admin/erreur'] = "admin/index/erreur";
 
 /* End of file routes.php */
