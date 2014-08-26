@@ -1,13 +1,68 @@
-<div id="col-gauche">
+<div id="user">
+	<!-- <strong>User :</strong><?php echo $id_user; ?> | -->
+	<a href="<?php echo base_url('admin/logout'); ?>">Déconnexion</a>
+</div>
+<div class="clear"></div>
+
+<?php 
+	echo '<aside id="admin">';
+	echo	'<ul class="list-group">
+				<li id="home">
+	  				<a href="'.base_url('admin').'">
+	    				Dashboard
+	    			</a>
+	  			</li>
+
+	 			<li class="list-group-item" id="ecoacteur">
+	 				<a href="'.base_url('admin/experiences').'">
+	    				Eco-acteurs
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="message">
+					<a href="'.base_url('admin/messages').'">
+	    				Messages
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="commentaires">
+					<a href="'.base_url('admin/commentaires').'">
+	    				Commentaires
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="actualites">
+	 				<a href="'.base_url('admin/actualites').'">
+	    				Actualités
+	    			</a>
+	  			</li>
+
+	  			<li id="site">
+	  				<a href="'.base_url('home').'">
+	    				Site public
+	    			</a>
+	  			</li>
+
+	  			<li id="meilleur-ecoacteur" class="aside">
+	  				<a href="#">
+	  					<strong>Meilleur éco-acteur</strong>
+	  				</a>
+	  			</li>
+
+			</ul>';	
+	echo '</aside>';
+?>
+
+<div id="col-droite-admin">
 	<?php
 		if (isset($actualite))
 		{
-			echo "<h4 class='form'>Modifier une actualité</h4>";
+			echo '<h1><strong>Modifier</strong> l\'actualité "'.substr($actualite->titre, 0, 20).'"...</h1>';
 			echo form_open('admin/actualite/update/'.$actualite->id);
 		}			
 		else
 		{
-			echo "<h4 class='form'>Créer une actualité</h4>";
+			echo "<h1><strong>Créer</strong> une actualité</h1>";
 			echo form_open('admin/actualite/create');
 		}
 
@@ -35,7 +90,7 @@
 			'id'	=> 'status',
 			'name'	=> 'status',
 			'value'	=> 'yes'
-		)) . form_label(' Publier', 'status');
+		)) .' Publier';
 
 		echo '<br/>';
 		if (isset($actualite)) {
@@ -44,7 +99,9 @@
 		<!-- Fenêtre modal de publication -->
 		<!-- Button trigger modal -->
 
-		<button class="btn btn-primary" data-toggle="modal" data-target="#publier<?php echo $actualite->id; ?>">
+		<br/>
+		<br/>
+		<button class="maj btn btn-warning l100" data-toggle="modal" data-target="#publier<?php echo $actualite->id; ?>">
 			Mettre à jour
 		</button>
 
@@ -54,14 +111,14 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
-						<h4 class="modal-title" id="myModalLabel">Mettre à jour une actualité</h4>
+						<h2 class="modal-title" id="myModalLabel">Mettre à jour une actualité</h2>
 					</div>
 					<div class="modal-body">
-						Mettre à jour l'actualité n°<?php echo $actualite->id; ?>
+						Mettre à jour l'actualité "<i><?php echo substr($actualite->titre, 0, 30); ?> ...</i>"
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-						<button type="submit" class="btn btn-primary">Modifier</button>
+						<button type="submit" class="btn btn-warning">Modifier</button>
 					</div>
 				</div>
 			</div>
@@ -76,3 +133,4 @@
 		echo form_close();
 	?>
 </div>
+<div class="clear"></div>

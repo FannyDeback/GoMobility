@@ -1,8 +1,63 @@
-<div id="col-gauche">
+<div id="user">
+	<!-- <strong>User :</strong><?php echo $id_user; ?> | -->
+	<a href="<?php echo base_url('admin/logout'); ?>">Déconnexion</a>
+</div>
+<div class="clear"></div>
+
+<?php 
+	echo '<aside id="admin">';
+	echo	'<ul class="list-group">
+				<li id="home">
+	  				<a href="'.base_url('admin').'">
+	    				Dashboard
+	    			</a>
+	  			</li>
+
+	 			<li class="list-group-item" id="ecoacteur">
+	 				<a href="'.base_url('admin/experiences').'">
+	    				Eco-acteurs
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="message">
+					<a href="'.base_url('admin/messages').'">
+	    				Messages
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="commentaires">
+					<a href="'.base_url('admin/commentaires').'">
+	    				Commentaires
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="actualites">
+	 				<a href="'.base_url('admin/actualites').'">
+	    				Actualités
+	    			</a>
+	  			</li>
+
+	  			<li id="site">
+	  				<a href="'.base_url('home').'">
+	    				Site public
+	    			</a>
+	  			</li>
+
+	  			<li id="meilleur-ecoacteur" class="aside">
+	  				<a href="#">
+	  					<strong>Meilleur éco-acteur</strong>
+	  				</a>
+	  			</li>
+
+			</ul>';	
+	echo '</aside>';
+?>
+
+<div id="col-droite-admin">
 	<?php
 		if (isset($experience))
 		{
-			echo "<h1 class='form'>Expérience <strong> " . $experience->id . "</strong></h1>";
+			echo "<h1>Expérience Eco-acteur <strong>" . $experience->titre . "</strong></h1>";
 		  	echo form_open('admin/experience/update/'.$experience->id);
 
 		  	echo form_label('Titre<span>*</span>', 'titre');
@@ -83,7 +138,9 @@
 			echo '<br/>';
 
 			?>
-			<button class="btn btn-primary" data-toggle="modal" data-target="#publier<?php echo $experience->id; ?>">
+			<br/>
+			<br/>
+			<button class="maj btn btn-warning l100" data-toggle="modal" data-target="#publier<?php echo $experience->id; ?>">
 				Mettre à jour
 			</button>
 
@@ -116,3 +173,4 @@
 		}
 	?>
 </div>
+<div class="clear"></div>

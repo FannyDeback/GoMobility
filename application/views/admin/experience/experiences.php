@@ -1,70 +1,141 @@
-<div id="col-gauche">
-	<section class="toutes-les-experiences">
-		<h1>Vos <strong>expériences</strong></h1>
+<div id="user">
+	<!-- <strong>User :</strong><?php echo $id_user; ?> | -->
+	<a href="<?php echo base_url('admin/logout'); ?>">Déconnexion</a>
+</div>
+<div class="clear"></div>
+
+<?php 
+	echo '<aside id="admin">';
+	echo	'<ul class="list-group">
+				<li id="home">
+	  				<a href="'.base_url('admin').'">
+	    				Dashboard
+	    			</a>
+	  			</li>
+
+	 			<li class="list-group-item" id="ecoacteur">
+	 				<a href="'.base_url('admin/experiences').'">
+	    				Eco-acteurs
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="message">
+					<a href="'.base_url('admin/messages').'">
+	    				Messages
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="commentaires">
+					<a href="'.base_url('admin/commentaires').'">
+	    				Commentaires
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="actualites">
+	 				<a href="'.base_url('admin/actualites').'">
+	    				Actualités
+	    			</a>
+	  			</li>
+
+	  			<li id="site">
+	  				<a href="'.base_url('home').'">
+	    				Site public
+	    			</a>
+	  			</li>
+
+	  			<li id="meilleur-ecoacteur" class="aside">
+	  				<a href="#">
+	  					<strong>Meilleur éco-acteur</strong>
+	  				</a>
+	  			</li>
+
+			</ul>';	
+	echo '</aside>';
+?>
+
+<div id="col-droite-admin">
+		<h1>Eco-<strong>acteurs</strong></h1>
 		<?php
 		if ($experiences != null) {
-			echo $links . "<br/>";
-			foreach ($experiences as $experience) {
-				var_dump($experience);
-				?>
-				<!-- Fenêtre modal de suppression -->
-				<!-- Button trigger modal -->
-				<button class="btn btn-danger btn-lg" data-toggle="modal" data-target="#<?php echo $experience->id; ?>">
-					Supprimer
-				</button>
+			echo '<div class="pagination">';
+				echo $links;
+			echo '</div>';
 
-				<!-- Modal -->
-				<div class="modal fade" id="<?php echo $experience->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
-								<h4 class="modal-title" id="myModalLabel">Supprimer experience</h4>
-							</div>
-							<div class="modal-body">
-								Supprimer experience n°<?php echo $experience->id; ?>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-								<a class="btn btn-danger" href="<?php echo base_url('admin/experience/supprimer') . '/' . $experience->id ?>">Supprimer</a>
+			echo '<ul>';
+				foreach ($experiences as $experience) {
+					//var_dump($experience);
+					echo '<li>';
+						echo '<a href="'.base_url('experience').'/'.$experience->id.'"><h2>'.$experience->titre.'</h2></a>';
+						echo '<h4><strong>Départ :</strong> '.$experience->start.' | <strong>Arrivée :</strong> '.$experience->arrival.'</h4>';
+						echo '<h3><strong>Moyen de transport :</strong> '.$experience->type.'</h3>';
+						echo substr('<p>'.$experience->description, 0, 200).'...</p><br/>';
+					?>
+					<!-- Fenêtre modal de suppression -->
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<?php echo $experience->id; ?>">
+						Supprimer
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="<?php echo $experience->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
+									<h2 class="modal-title" id="myModalLabel">Supprimer experience</h2>
+								</div>
+								<div class="modal-body">
+									Supprimer experience : "<i><?php echo substr($experience->titre, 0, 30); ?> ...</i>"
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+									<a type="button" class="btn btn-danger suppr" href="<?php echo base_url('admin/experience/supprimer') . '/' . $experience->id ?>">Supprimer</a>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
 
-				<!-- Fenêtre modal de publication -->
-				<!-- Button trigger modal -->
-				<button class="btn btn-primary" data-toggle="modal" data-target="#publier<?php echo $experience->id; ?>">
-					Publier
-				</button>
+					<!-- Fenêtre modal de publication -->
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#publier<?php echo $experience->id; ?>">
+						Publier
+					</button>
 
-				<!-- Modal -->
-				<div class="modal fade" id="publier<?php echo $experience->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
-								<h4 class="modal-title" id="myModalLabel">Mettre à jour une experience</h4>
-							</div>
-							<div class="modal-body">
-								Publier l'experience n°<?php echo $experience->id; ?>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-								<a class="btn btn-primary" href="<?php echo base_url('admin/experience/publish') . '/' . $experience->id ?>">Modifier</a>
+					<!-- Modal -->
+					<div class="modal fade" id="publier<?php echo $experience->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
+									<h2 class="modal-title" id="myModalLabel">Mettre à jour une experience</h2>
+								</div>
+								<div class="modal-body">
+									Publier l'experience : "<i><?php echo substr($experience->titre, 0, 30); ?> ...</i>"
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+									<a type="button" class="btn btn-warning maj" href="<?php echo base_url('admin/experience/publish') . '/' . $experience->id ?>">Modifier</a>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<a href="<?php echo base_url('admin/experience/update') . '/' . $experience->id ?>">Mettre à jour</a>
-				<?php
-			}
-			echo "<br/>" . $links;
+					<a class="maj btn btn-warning" href="<?php echo base_url('admin/experience/update') . '/' . $experience->id ?>">Mettre à jour</a>
+					<?php
+					echo '</li>';
+					echo '<br/>';
+					echo '<br/>';
+				}
+			echo '</ul>';
+			
+			echo '<div class="pagination">';
+				echo $links;
+			echo '</div>';
+
 		}
 		else {
 			echo "Aucune expérience correspond.";
 		}
 		?>
-	</section>
 </div>
+<div class="clear"></div>

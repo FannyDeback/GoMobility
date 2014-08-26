@@ -1,16 +1,77 @@
-<div id="col-gauche">
-	<a href="<?php echo base_url('admin/actualite'); ?>">Créer une actualité</a>
-	<section class="toutes-les-experiences">
+<div id="user">
+	<!-- <strong>User :</strong><?php echo $id_user; ?> | -->
+	<a href="<?php echo base_url('admin/logout'); ?>">Déconnexion</a>
+</div>
+<div class="clear"></div>
+
+<?php 
+	echo '<aside id="admin">';
+	echo	'<ul class="list-group">
+				<li id="home">
+	  				<a href="'.base_url('admin').'">
+	    				Dashboard
+	    			</a>
+	  			</li>
+
+	 			<li class="list-group-item" id="ecoacteur">
+	 				<a href="'.base_url('admin/experiences').'">
+	    				Eco-acteurs
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="message">
+					<a href="'.base_url('admin/messages').'">
+	    				Messages
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="commentaires">
+					<a href="'.base_url('admin/commentaires').'">
+	    				Commentaires
+	    			</a>
+	  			</li>
+
+	  			<li class="list-group-item" id="actualites">
+	 				<a href="'.base_url('admin/actualites').'">
+	    				Actualités
+	    			</a>
+	  			</li>
+
+	  			<li id="site">
+	  				<a href="'.base_url('home').'">
+	    				Site public
+	    			</a>
+	  			</li>
+
+	  			<li id="meilleur-ecoacteur" class="aside">
+	  				<a href="#">
+	  					<strong>Meilleur éco-acteur</strong>
+	  				</a>
+	  			</li>
+
+			</ul>';	
+	echo '</aside>';
+?>
+
+<div id="col-droite-admin">
+	<a class="creer btn btn-success" href="<?php echo base_url('admin/actualite'); ?>">Créer une actualité</a>
 		<h1><strong>Actualités</strong></h1>
 		<?php
 		if ($actualites != null) {
-			echo $links . "<br/>";
+			echo '<div class="pagination">';
+				echo $links;
+			echo '</div>';
+
+			echo '<ul>';
 			foreach ($actualites as $actualite) {
-				var_dump($actualite);
+				//var_dump($actualite);
+				echo '<li>';
+					echo '<a href="'.base_url('experience').'/'.$actualite->id.'"><h2>'.$actualite->titre.'</h2></a>';
+					echo substr('<p>'.$actualite->description, 0, 200).'...</p><br/>';
 				?>
 				<!-- Fenêtre modal de suppression -->
 				<!-- Button trigger modal -->
-				<button class="btn btn-danger btn-lg" data-toggle="modal" data-target="#<?php echo $actualite->id; ?>">
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#<?php echo $actualite->id; ?>">
 					Supprimer
 				</button>
 
@@ -20,14 +81,14 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
-								<h4 class="modal-title" id="myModalLabel">Supprimer actualité</h4>
+								<h2 class="modal-title" id="myModalLabel">Supprimer actualité</h2>
 							</div>
 							<div class="modal-body">
-								Supprimer actualité n°<?php echo $actualite->id; ?>
+								Supprimer l'actualité "<i><?php echo substr($actualite->titre, 0, 30); ?> ...</i>"
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-								<a class="btn btn-danger" href="<?php echo base_url('admin/actualite/supprimer') . '/' . $actualite->id ?>">Supprimer</a>
+								<a type="button" class="btn btn-danger suppr" href="<?php echo base_url('admin/actualite/supprimer') . '/' . $actualite->id ?>">Supprimer</a>
 							</div>
 						</div>
 					</div>
@@ -35,7 +96,7 @@
 
 				<!-- Fenêtre modal de publication -->
 				<!-- Button trigger modal -->
-				<button class="btn btn-primary" data-toggle="modal" data-target="#publier<?php echo $actualite->id; ?>">
+				<button type="button" class="btn btn-info" data-toggle="modal" data-target="#publier<?php echo $actualite->id; ?>">
 					Publier
 				</button>
 
@@ -45,26 +106,33 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
-								<h4 class="modal-title" id="myModalLabel">Mettre à jour une actualité</h4>
+								<h2 class="modal-title" id="myModalLabel">Mettre à jour une actualité</h2>
 							</div>
 							<div class="modal-body">
-								Publier l'actualité n°<?php echo $actualite->id; ?>
+								Publier l'actualité "<i><?php echo substr($actualite->titre, 0, 30); ?> ...</i>"
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-								<a class="btn btn-primary" href="<?php echo base_url('admin/actualite/publish') . '/' . $actualite->id ?>">Modifier</a>
+								<a type="button" class="btn btn-warning maj" href="<?php echo base_url('admin/actualite/publish') . '/' . $actualite->id ?>">Modifier</a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<a href="<?php echo base_url('admin/actualite/update') . '/' . $actualite->id ?>">Mettre à jour</a>
+				<a class="maj btn btn-warning" href="<?php echo base_url('admin/actualite/update') . '/' . $actualite->id ?>">Mettre à jour</a>
 				<?php
+				echo '</li>';
+				echo '<br/>';
+				echo '<br/>';
 				}
-				echo "<br/>" . $links;
+				echo '</ul>';
+			
+				echo '<div class="pagination">';
+				echo $links;
+				echo '</div>';
 			}
 			else {
 				echo "Aucune actualité ne correspond.";
 			}
 			?>
-	</section>
 </div>
+<div class="clear"></div>
