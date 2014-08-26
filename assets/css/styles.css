@@ -677,6 +677,8 @@ div #retour-site{
 }
 
 
+/* ************************************************************************************ */
+/*  PAGE GENERALE  */
 #content #col-droite-admin{
 	float: right;
 	width: 65%;
@@ -700,6 +702,9 @@ div #retour-site{
 	line-height: 18px;
 }
 
+
+/* ************************************************************************************ */
+/*  BOUTONS  */
 #col-droite-admin a.maj{
 	height: 30px;
 	line-height: 30px;
@@ -717,27 +722,43 @@ div #retour-site{
 }
 
 #col-droite-admin a.creer{
-	height: 30px;
-	line-height: 30px;
+	height: 20px;
+	line-height: 17px;
 	display: inline-block;
-	padding: 0 10px;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	width: 97%;
+	padding: 3px;
+	width: 20px;
+	border-radius: 30px;
+	float: right;
+	margin-top: 7px;
+	margin-right: 7px;
 }
 
 #col-droite-admin .btn{
-	width: 30%;
+	width: 85px;
 	border:none;
 	border-radius: 0px;
 	text-shadow: none;
 }
 
 #col-droite-admin button.l100, #col-droite-admin a.l100{
-	width: 97%;
+	width: 110px;
+	float: right;
+	margin-right: 30px;
 }
 
 #col-droite-admin input[type="radio"], #col-droite-admin input[type="checkbox"]{
 	margin-right: 5px;
 	margin-top: -2px;
 }
+
+#col-droite-admin div.boutons{
+	width: 300px;
+	float: right;
+}
+
+#col-droite-admin div.boutons-messages{
+	width: 200px;
+	float: right;
+}
+
 
