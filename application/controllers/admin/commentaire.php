@@ -114,4 +114,13 @@ class commentaire extends MY_Controller
 			$this->layout->viewAdmin("admin/commentaire/commentaire");
 		}
 	}
+
+	// status published
+	public function publish($id)
+	{
+		$status = array("status" => "published");
+		$this->m_commentaire->update((int) $id, $status);
+
+		redirect('admin/commentaires');
+	}
 }
