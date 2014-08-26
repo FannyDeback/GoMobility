@@ -32,7 +32,6 @@
 					</div>
 				</div>
 
-
 				<!-- Fenêtre modal de publication -->
 				<!-- Button trigger modal -->
 				<button class="btn btn-primary" data-toggle="modal" data-target="#publier<?php echo $experience->id; ?>">
