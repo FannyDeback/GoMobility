@@ -5,8 +5,8 @@ class c_jeparticipe extends CI_Controller {
 	public function __construct()
 	{
 		parent:: __construct();
-		$this->load->helper(array('form','url'));
-		$this->load->library('form_validation');
+		$this->load->helper(array('form','url','GMapAPI'));
+		$this->load->library(array('form_validation'));
 	}
 
 	public function index()
@@ -57,6 +57,7 @@ class c_jeparticipe extends CI_Controller {
 		}
 		else
 		{
+			$infoexp = get_experience_info($this->input->post('start'), $this->input->post('arrival'), $this->input->post('type'));
 			$data = array(
 				'titre' 		=> $this->input->post('titre'),
 				'type'			=> $this->input->post('type'),
@@ -65,7 +66,7 @@ class c_jeparticipe extends CI_Controller {
 				'arrival'		=> $this->input->post('arrival'),
 				'description'	=> $this->input->post('description'),
 				'game'			=> ($this->input->post('game') == 'yes') ? 'yes' : 'no', 	
-				'ges'			=> 210
+				'ges'			=> $infoexp['ges']
 			);
 
 			// $id = $this->m_actors->add_exp($data);

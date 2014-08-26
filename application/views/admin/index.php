@@ -3,8 +3,11 @@
 <head>
 	<title>Go Mobility</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="<?php echo css_url('reset'); ?>">
 	<link rel="stylesheet" href="<?php echo css_url('styles'); ?>">
+	<link rel="stylesheet" href="<?php echo css_url('medias'); ?>">
 	<link rel="stylesheet" href="<?php echo css_url('font'); ?>">
 	<link rel="stylesheet" href="<?php echo css_url('bootstrap.min'); ?>">
 
@@ -26,16 +29,15 @@
 	<div id="content">
 		<?php echo $output; ?>
 		<!-- Lien vers site public -->
-		<aside>
-		<a href="<?php echo base_url('home'); ?>">Go Mobility </a>
-		</aside>
-		<div class="clear"></div>
+		<div id="retour-site">
+		<a href="<?php echo base_url('home'); ?>">Retour au site</a>
+		</div>
 	</div>
 
 	<footer>
 		<ul>
 			<li><strong>© 2014 GO MOBILITY</strong></li>
-			<li><a href="#">Mentions l&eacute;gales</a></li>
+			<li><a href="<?php echo base_url('mentions_legales'); ?>">Mentions l&eacute;gales</a></li>
 		</ul>
 
 		<div id="logos-partenaires">

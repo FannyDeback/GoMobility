@@ -14,10 +14,14 @@ if ($expStatus == 'published')
 		</div>
 	</section>
 	<?php
+		// Erreur d'instanciation de Akismet
+		if (isset($erreur))
+			echo $erreur;
+
 		// Formulaire d'envoie de nouveau commentaire
 		echo form_open('experience/'.$id);
 
-		echo form_label('Email<span>*</span>', 'titre');
+		echo form_label('Email<span>*</span>', 'email');
 		echo form_input(array(
 			'id' => 'email',
 			'name' => 'email',
@@ -35,9 +39,35 @@ if ($expStatus == 'published')
 		));
 		echo form_error('message');
 
+		echo "<br/><br/><br/>";
+
+		echo form_label('Auteur', 'auteur');
+		echo form_input(array(
+			'id' => 'auteur',
+			'name' => 'auteur',
+			'value' => set_value('auteur')
+		));
+
+		echo "<br/><br/><br/>";
+
+		echo form_label('Website', 'website');
+		echo form_input(array(
+			'id' => 'website',
+			'name' => 'website',
+			'value' => set_value('website')
+		));
 
 		echo form_submit('submit', 'Commenter');
 		echo form_close();
+
+		if (isset($commentaires))
+		{
+			foreach ($commentaires as $commentaire) {
+				var_dump($commentaire);
+			}
+		}
+		else
+			echo "Soyez le premier à donner votre avis sur cet expérience...";
 	?>
 </div>
 

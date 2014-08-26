@@ -1,6 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
 
+
+/* ************************************************************************************ */
+/*  1000PX  */
 @media screen and (max-width:1000px){
 	/* HEADER */
 	header{
@@ -64,7 +67,10 @@
 	}
 }
 
-		
+
+
+/* ************************************************************************************ */
+/*  860PX  */		
 @media screen and (max-width:860px){
 	/* HEADER */
 	header nav{
@@ -89,11 +95,20 @@
 }
 
 
+
+/* ************************************************************************************ */
+/*  750PX  */
 @media screen and (max-width:750px){
 
 	/* CONTENT */
 	#content #col-gauche{
 		width: 100%;
+	}
+
+	#content #col-gauche section.derniere-experience h1, #content-central h1, #content #col-gauche h1.form, #content #col-gauche section.toutes-les-experiences h1, #content #col-gauche h1{
+		height: auto;
+		padding: 5px;
+		line-height: 20px;
 	}
 
 	#content #col-gauche img{
@@ -134,6 +149,8 @@
 		float: none;
 		width: 100%;
 		display: table;
+		padding: 0 !important;
+		margin: 0 !important;
 	}
 
 	footer ul li{
@@ -147,23 +164,35 @@
 		margin: 20px auto 0 auto;
 	}
 
+	/* ADMIN */
+	#content-central{
+		width: 80%;
+		margin: 0 auto;
+	}
+
 }
 
 
+
+/* ************************************************************************************ */
+/*  560PX  */
 @media screen and (max-width:560px){
-	/*CONTENT */
-	#content #col-gauche section.derniere-experience h1, #content #col-gauche h1.form, #content #col-gauche section.toutes-les-experiences h1, #content #col-gauche h1{
-		height: auto;
-		padding: 5px;
-		line-height: 20px;
-	}
-	
 	/* ASIDE */
 	#content aside section.nombre-ecoacteur p{
 		left: 33%;
+	}
+
+	/* ADMIN */
+	#content-central{
+		width: 100%;
+		margin: 0 auto;
 	}	
 }
 
+
+
+/* ************************************************************************************ */
+/*  400PX  */
 @media screen and (max-width:400px){
 
 	/* HEADER */
@@ -196,6 +225,8 @@
 	footer ul{
 		float: none;
 		width: 100%;
+		padding: 0 !important;
+		margin: 0 !important;
 		display: block;
 	}
 
