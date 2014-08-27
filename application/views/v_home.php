@@ -6,8 +6,10 @@
 		{
 			$url = base_url("experience");
 			echo '<h2>'.$exp->titre.'</h2>
+				  <h4><strong>Départ :</strong> '.$exp->start.' | <strong>Arrivée :</strong> '.$exp->arrival.'</h4>
 				  <h3>'.$exp->type. /* A REMPLACER PAR LA DATE */'</h3>
 				  <p>' . $exp->description . '</p>
+				  <h5><strong>Gaz à effet de serre :</strong> '.$exp->ges.'</h5><br/>
 				  <a href="'.$url.'/'.$exp->id.'" id="en-savoir-plus">En savoir plus</a>
 				  <div class="clear"></div>';
 		}
