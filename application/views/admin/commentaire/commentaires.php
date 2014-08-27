@@ -49,7 +49,7 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-								<a class="btn btn-primary" href="<?php echo base_url('admin/commentaire/publish') . '/' . $commentaire->id ?>">Modifier</a>
+								<a class="btn btn-primary" href="<?php echo base_url('admin/commentaire/publish') . '/' . $commentaire->id ?>">Publier</a>
 							</div>
 						</div>
 					</div>

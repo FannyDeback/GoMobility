@@ -75,6 +75,8 @@ $route['admin/actualite/supprimer/(:num)'] = "admin/actualite/supprimer/$1";
 $route['admin/actualite/update/(:num)'] = "admin/actualite/update/$1";
 $route['admin/commentaires'] = "admin/commentaire/index/0";
 $route['admin/commentaires/(:num)'] = "admin/commentaire/index/$1";
+$route['admin/commentaire/publish/(:num)'] = "admin/commentaire/publish/$1";
+$route['admin/commentaire/update/(:num)'] = "admin/commentaire/update/$1";
 $route['admin/erreur'] = "admin/index/erreur";
 
 /* End of file routes.php */

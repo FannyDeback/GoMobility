@@ -21,12 +21,70 @@
 		<div id="logo">
 			<a href="<?php echo base_url('admin'); ?>"><?php echo image('logo.png', 'Logo GoMobility'); ?></a>
 		</div>
-		<nav>
-		</nav>
-		<div class="clear"></div>
 	</header>
 
 	<div id="content">
+	<?php
+	if (isset($id_user))
+	{
+	?>
+		<div id="user">
+			<strong>User: </strong><?php echo $id_user; ?> | 
+			<a href="<?php echo base_url('admin/logout'); ?>">Déconnexion</a>
+		</div>
+		<div class="clear"></div>
+
+		<aside id="admin">
+		<ul class="list-group">
+					<li id="home">
+		  				<a href="<?php echo base_url('admin'); ?>">
+		    				Dashboard
+		    			</a>
+		  			</li>
+
+		 			<li class="list-group-item" id="ecoacteur">
+		 				<a href="<?php echo base_url('admin/experiences'); ?>">
+		    				Eco-acteurs
+		    			</a>
+		  			</li>
+
+		  			<li class="list-group-item" id="message">
+						<a href="<?php echo base_url('admin/messages'); ?>">
+		    				Messages
+		    			</a>
+		  			</li>
+
+		  			<li class="list-group-item" id="commentaires">
+						<a href="<?php echo base_url('admin/commentaires'); ?>">
+		    				Commentaires
+		    			</a>
+		  			</li>
+
+		  			<li class="list-group-item" id="actualites">
+		 				<a href="<?php echo base_url('admin/actualites'); ?>">
+		    				Actualités
+		    			</a>
+		  			</li>
+
+		  			<li id="site">
+		  				<a href="<?php echo base_url('home'); ?>">
+		    				Site public
+		    			</a>
+		  			</li>
+
+		  			<li id="meilleur-ecoacteur" class="aside">
+		  				<a href="#">
+		  					<strong>Meilleur éco-acteur</strong>
+		  				</a>
+		  			</li>
+
+				</ul>	
+		</aside>
+
+		<?php
+		}
+		?>
+
 		<?php echo $output; ?>
 	</div>
 
