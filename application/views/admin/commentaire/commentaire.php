@@ -46,11 +46,13 @@
 
 			echo '<br/><br/><br/>';
 
+			$style = array('style'	=> 'display: inline;');
 			echo form_checkbox(array(
 				'id'	=> 'status',
 				'name'	=> 'status',
-				'value'	=> 'yes'
-			)) . form_label(' Publier', 'status');
+				'value'	=> 'yes',
+				'checked'	=> ($commentaire->status == "published") ? TRUE : FALSE
+			)) . form_label(' Publier', 'status', $style);
 
 			echo '<br/>';
 

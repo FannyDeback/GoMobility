@@ -44,10 +44,13 @@
 		 				<a href="'.base_url('admin/experiences').'">
 		    				Nombre d\'éco-acteurs
 		    			</a>
-		    			<div class="badge">'.$exp_ligne.'</div>	
-		    			<div class="clear"></div>	
+		    			<div class="badge">'.$exp_total.'</div>	
+		    			<div class="clear"></div>
+		    			<i>En ligne</i>
+		    			<div class="badge badge-attente">'.$exp_ligne.'</div>
+		    			<div class="clear"></div>
 		    			<i>En attente</i>
-		    			<div class="badge badge-attente">'.$exp_attente.'</div>	
+		    			<div class="badge badge-attente">'.$exp_attente.'</div>
 		    			<div class="clear"></div>
 		  			</li>
 
@@ -55,10 +58,13 @@
 						<a href="'.base_url('admin/messages').'">
 		    				Nombre de messages
 		    			</a>
-		    			<div class="badge">'.$message_nonlu.'</div>	
-		    			<div class="clear"></div>	
+		    			<div class="badge">'.$message_total.'</div>	
+		    			<div class="clear"></div>
+		    			<i>Lus</i>
+		    			<div class="badge badge-attente">'.$message_lu.'</div>
+		    			<div class="clear"></div>
 		    			<i>Non lus</i>
-		    			<div class="badge badge-attente">'.$message_lu.'</div>	
+		    			<div class="badge badge-attente">'.$message_nonlu.'</div>
 		    			<div class="clear"></div>
 		  			</li>
 
@@ -66,10 +72,13 @@
 						<a href="'.base_url('admin/commentaires').'">
 		    				Nombre de commentaires
 		    			</a>
-		    			<div class="badge">commentaires_nonlu</div>	
-		    			<div class="clear"></div>	
+		    			<div class="badge">'.$commentaires_total.'</div>	
+		    			<div class="clear"></div>
+		    			<i>lus</i>
+		    			<div class="badge badge-attente">'.$commentaires_lu.'</div>	
+		    			<div class="clear"></div>
 		    			<i>Non lus</i>
-		    			<div class="badge badge-attente">commentaires_lu</div>	
+		    			<div class="badge badge-attente">'.$commentaires_nonlu.'</div>	
 		    			<div class="clear"></div>
 		  			</li>
 

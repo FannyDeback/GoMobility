@@ -67,9 +67,10 @@
 
 			$style = array('style'	=> 'display: inline;');
 			echo form_checkbox(array(
-				'id'	=> 'jeu',
-				'name'	=> 'jeu',
-				'value'	=> 'yes'
+				'id'		=> 'jeu',
+				'name'		=> 'jeu',
+				'value'		=> 'yes',
+				'checked'	=> ($experience->game == "yes") ? TRUE : FALSE
 			)) . form_label(' Je souhaite participer au jeu concours', 'jeu', $style);
 
 			echo '<br/><br/>';
@@ -77,7 +78,8 @@
 			echo form_checkbox(array(
 				'id'	=> 'status',
 				'name'	=> 'status',
-				'value'	=> 'yes'
+				'value'	=> 'yes',
+				'checked'	=> ($experience->status == "published") ? TRUE : FALSE
 			)) . form_label(' Publier', 'status', $style);
 
 			echo '<br/>';

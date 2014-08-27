@@ -7,8 +7,7 @@ class index extends CI_Controller {
 		parent:: __construct();
 		$this->load->helper(array('form','url'));
 		$this->load->library('form_validation');
-		$this->load->model('admin/user');
-		$this->load->model('messages');
+		$this->load->model(array('admin/user', 'messages', 'm_commentaire'));
 	}
 
 	public function erreur()
@@ -60,10 +59,15 @@ class index extends CI_Controller {
 		{
 			$data = array();
 			$data['id_user'] = $this->session->userdata('id_user');
-			$data['exp_ligne'] = count($this->m_actors->experienceByStatus("published"));
-			$data['exp_attente'] = count($this->m_actors->experienceByStatus("unpublished"));
-			$data['message_lu'] = count($this->messages->messageByStatus("read"));
-			$data['message_nonlu'] = count($this->messages->messageByStatus("unread"));
+			$data['exp_total'] = $this->m_actors->count();
+			$data['exp_ligne'] = $this->m_actors->count(array("status" => "published"));
+			$data['exp_attente'] = $this->m_actors->count(array("status" => "unpublished"));
+			$data['message_total'] = $this->messages->count();
+			$data['message_nonlu'] = $this->messages->count(array("status" => "unread"));
+			$data['message_lu'] = $this->messages->count(array("status" => "read"));
+			$data['commentaires_total'] = $this->m_commentaire->count();
+			$data['commentaires_nonlu'] = $this->m_commentaire->count(array("status" => "unpublished"));
+			$data['commentaires_lu'] = $this->m_commentaire->count(array("status" => "published"));
 			$bestactor = $this->m_actors->bestActor();
 			if ($bestactor != null)
 				$data['bestactor'] = $bestactor[0]->email;

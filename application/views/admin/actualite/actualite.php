@@ -31,11 +31,13 @@
 
 		echo '<br/><br/>';
 
+		$style = array('style'	=> 'display: inline;');
 		echo form_checkbox(array(
 			'id'	=> 'status',
 			'name'	=> 'status',
-			'value'	=> 'yes'
-		)) .' Publier';
+			'value'	=> 'yes',
+			'checked'	=> ($actualite->status == "published") ? TRUE : FALSE
+		)) . form_label(' Publier', 'status', $style);
 
 		echo '<br/>';
 		if (isset($actualite)) {
