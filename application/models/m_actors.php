@@ -22,7 +22,7 @@ class m_actors extends MY_Model
 						->result();
 	}
 
-	//requête retournant l'id d'une l'experience
+	//requête retournant l'id d'une experience
 	public function experienceById($id, $where=array())
 	{
 		return $this->db->select("*")
@@ -50,7 +50,7 @@ class m_actors extends MY_Model
 
 		return false;
 	}
-	//requête 
+	//requête retournant experience publiée
 	public function experienceByStatus($status)
 	{
 		return $this->db->select("*")
@@ -59,7 +59,7 @@ class m_actors extends MY_Model
 						->get()
 						->result();
 	}
-
+	// requête retournant l' id du meilleur eco_acteur
 	public function bestActorId()
 	{
 		return $this->db->select("id")
@@ -70,7 +70,7 @@ class m_actors extends MY_Model
 					 	->get()
 					 	->result();
 	}
-
+	// requête retournant l'email meilleur eco_acteur dans l'admin
 	public function bestActor()
 	{
 		return $this->db->select("email")

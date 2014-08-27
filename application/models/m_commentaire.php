@@ -9,7 +9,7 @@ class m_commentaire extends MY_Model
 		parent:: __construct();
 		$this->load->database();
 	}
-
+	//requête retournant l'id d'un commentaire
 	public function commentById($id, $where=array())
 	{
 		return $this->db->select("*")
@@ -19,7 +19,7 @@ class m_commentaire extends MY_Model
 						->get()
 						->result();
 	}
-
+	//requête retournant tous le commentaires
 	public function comments($where, $limit, $start, $order_by="")
 	{
 		$order_by .= "date desc";
