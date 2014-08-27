@@ -258,7 +258,27 @@ header li:hover{
 	color: #c4c4c4;
 }
 
+#col-droite-admin div.trier a, #col-droite-admin div.trier{
+	text-align: right;
+	color: #629CAC;
+	font-size: 13px;
+}
 
+#content  #col-gauche section.commentaires{
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #F4F4F4;
+}
+
+#content  #col-gauche section.commentaires div.image{
+	width: 45px;
+	float: left;
+}
+
+#content  #col-gauche section.commentaires div.infos{
+	width: 92%;
+	float: right;
+}
 
 /* ************************************************************************************ */
 

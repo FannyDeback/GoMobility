@@ -57,17 +57,33 @@ if ($expStatus == 'published')
 			'value' => set_value('website')
 		));
 
-		echo form_submit('submit', 'Commenter');
-		echo form_close();
-
 		if (isset($commentaires))
 		{
+			echo '</br></br><hr/><h3><strong>COMMENTAIRES :</strong></h3>';
 			foreach ($commentaires as $commentaire) {
-				var_dump($commentaire);
+				echo '</br>';
+				echo '<section class="commentaires">';
+				echo    '<div class="image">';
+				echo 		image('profil.png');
+				echo    '</div>';
+
+				echo    '<div class="infos">';
+				echo    	'<h2>'.$commentaire->auteur.'</h2>';
+				echo    	'<h3>'.$commentaire->date.'</h3>';
+				echo    	'<p>'.$commentaire->message.'</p>';
+				echo    '</div>';
+				echo    '<div class="clear"></div>';
+				echo '</section>';
 			}
 		}
 		else
-			echo "Soyez le premier à donner votre avis sur cet expérience...";
+			echo "<br/><br/>
+				  Soyez le premier à donner <strong>votre avis sur cet expérience !</strong>";
+
+		echo form_submit('submit', 'Commenter');
+		echo form_close();
+
+		
 	?>
 </div>
 
