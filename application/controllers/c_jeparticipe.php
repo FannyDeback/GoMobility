@@ -66,7 +66,8 @@ class c_jeparticipe extends CI_Controller {
 				'arrival'		=> $this->input->post('arrival'),
 				'description'	=> $this->input->post('description'),
 				'game'			=> ($this->input->post('game') == 'yes') ? 'yes' : 'no', 	
-				'ges'			=> $infoexp['ges']
+				'ges'			=> $infoexp['ges'],
+				'date'			=> date('Y-m-d H:i:s')
 			);
 
 			// $id = $this->m_actors->add_exp($data);

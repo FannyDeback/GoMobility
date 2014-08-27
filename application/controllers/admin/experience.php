@@ -57,7 +57,7 @@ class experience extends MY_Controller
 
 		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 1;
 
-		$data["experiences"] = $this->m_actors->experiences($config["per_page"], $page - 1, array(), $order);
+		$data["experiences"] = $this->m_actors->experiences($config["per_page"], ($page - 1) * 10, array(), $order);
 		$data["links"] = $this->pagination->create_links();
 		//Pour supprimer
 		$data['current_page'] = $this->uri->segment(3);

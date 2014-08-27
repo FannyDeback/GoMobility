@@ -32,6 +32,7 @@ class m_actors extends MY_Model
 						->get()
 						->result();
 	}
+
 	//requête retournant toutes les expériences
 	public function experiences($limit, $start, $where=array(), $order_by="id desc")
 	{
@@ -60,7 +61,7 @@ class m_actors extends MY_Model
 						->result();
 	}
 	
-	// requête retournant l' id du meilleur eco_acteur
+	// requête retournant l'id du meilleur eco_acteur
 	public function bestActorId($where=array())
 	{
 		return $this->db->select("id")
