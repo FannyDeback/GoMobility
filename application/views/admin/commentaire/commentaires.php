@@ -12,6 +12,7 @@
 				echo '<li>';
 				echo '<h2>'.$commentaire->email.'</h2>';
 				echo '<h3>'.$commentaire->date.'</h3>';
+				echo '<h3><strong>Statut : </strong>'.$commentaire->status.'</h3>';
 				echo substr('<p>'.$commentaire->message, 0, 300).'...</p><br/>';
 				?>
 				<div class="boutons">

@@ -2,7 +2,10 @@
 		<h1>Eco-<strong>acteurs</strong></h1>
 		<?php
 		if ($experiences != null) {
-			echo $order_by;
+			echo '<div class="trier">';
+				echo $order_by;
+			echo '</div>';
+
 			echo '<div class="pagination">';
 				echo $links;
 			echo '</div>';
@@ -13,6 +16,7 @@
 						echo '<h2>'.$experience->titre.'</h2>';
 						echo '<h4><strong>Départ :</strong> '.$experience->start.' | <strong>Arrivée :</strong> '.$experience->arrival.'</h4>';
 						echo '<h3><strong>Moyen de transport :</strong> '.$experience->type.'</h3>';
+						echo '<h3><strong>Statut : </strong>'.$experience->status.'</h3>';
 						echo substr('<p>'.$experience->description, 0, 200).'...</p>';
 						echo '<h5><strong>Gaz à effet de serre :</strong> '.$experience->ges.'</h5><br/>';
 					?>

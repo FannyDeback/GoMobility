@@ -9,7 +9,7 @@ class messages extends MY_Model
 		parent:: __construct();
 		$this->load->database();
 	}
-
+	//requête retournant statut lu et non message 
 	public function messageByStatus($status)
 	{
 		return $this->db->select("*")
@@ -18,7 +18,7 @@ class messages extends MY_Model
 						->get()
 						->result();
 	}
-
+	//requête retournant tous les messages
 	public function messages($limit, $start)
 	{
 		$order = array("status" => "desc", "id" => "desc");
@@ -37,7 +37,7 @@ class messages extends MY_Model
 
 		return false;
 	}
-
+	// requête retournant l'id du message
 	public function messageByID($id)
 	{
 		return $this->db->select("*")

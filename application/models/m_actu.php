@@ -9,7 +9,7 @@ class m_actu extends MY_Model
 		parent:: __construct();
 		$this->load->database();
 	}
-
+	//requête retournant l'id d'une actualité
 	public function actualiteById($id, $where=array())
 	{
 		return $this->db->select("*")
@@ -21,7 +21,7 @@ class m_actu extends MY_Model
 						->get()
 						->result();
 	}
-
+	//requête retournant la dernière actualité publiée
 	public function lastActu()
 	{
 		return $this->db->select("*")
@@ -32,7 +32,7 @@ class m_actu extends MY_Model
 						->get()
 						->result();
 	}
-
+	//requête retournant toutes les actualités
 	public function actualites($limit, $start, $where=array())
 	{
 		$this->db->limit($limit, $start);
