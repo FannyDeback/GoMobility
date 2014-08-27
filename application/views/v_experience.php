@@ -21,6 +21,31 @@ if ($expStatus == 'published')
 		// Formulaire d'envoie de nouveau commentaire
 		echo form_open('experience/'.$id);
 
+		if (isset($commentaires))
+		{
+			echo '</br></br><h3><strong>COMMENTAIRES :</strong></h3>';
+			foreach ($commentaires as $commentaire) {
+				echo '</br>';
+				echo '<section class="commentaires">';
+				echo    '<div class="image">';
+				echo 		image('profil.png');
+				echo    '</div>';
+
+				echo    '<div class="infos">';
+				echo    	'<h2>'.$commentaire->auteur.'</h2>';
+				echo    	'<h3>'.$commentaire->date.'</h3>';
+				echo    	'<p>'.$commentaire->message.'</p>';
+				echo    '</div>';
+				echo    '<div class="clear"></div>';
+				echo '</section>';
+			}
+		}
+		else
+			echo "<br/><br/>
+				  Soyez le premier à donner <strong>votre avis sur cet expérience !</strong>";
+
+
+		echo '</br><h3><strong>LAISSER UN COMMENTAIRE :</strong></h3><br/>';	  
 		echo form_label('Email<span>*</span>', 'email');
 		echo form_input(array(
 			'id' => 'email',
@@ -56,31 +81,12 @@ if ($expStatus == 'published')
 			'name' => 'website',
 			'value' => set_value('website')
 		));
-
-		if (isset($commentaires))
-		{
-			echo '</br></br><hr/><h3><strong>COMMENTAIRES :</strong></h3>';
-			foreach ($commentaires as $commentaire) {
-				echo '</br>';
-				echo '<section class="commentaires">';
-				echo    '<div class="image">';
-				echo 		image('profil.png');
-				echo    '</div>';
-
-				echo    '<div class="infos">';
-				echo    	'<h2>'.$commentaire->auteur.'</h2>';
-				echo    	'<h3>'.$commentaire->date.'</h3>';
-				echo    	'<p>'.$commentaire->message.'</p>';
-				echo    '</div>';
-				echo    '<div class="clear"></div>';
-				echo '</section>';
-			}
-		}
-		else
-			echo "<br/><br/>
-				  Soyez le premier à donner <strong>votre avis sur cet expérience !</strong>";
-
+		
 		echo form_submit('submit', 'Commenter');
+		
+		
+
+		
 		echo form_close();
 
 		
