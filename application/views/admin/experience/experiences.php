@@ -2,13 +2,13 @@
 		<h1>Eco-<strong>acteurs</strong></h1>
 		<?php
 		if ($experiences != null) {
+			echo $order_by;
 			echo '<div class="pagination">';
 				echo $links;
 			echo '</div>';
 
 			echo '<ul>';
 				foreach ($experiences as $experience) {
-					//var_dump($experience);
 					echo '<li>';
 						echo '<h2>'.$experience->titre.'</h2>';
 						echo '<h4><strong>Départ :</strong> '.$experience->start.' | <strong>Arrivée :</strong> '.$experience->arrival.'</h4>';
