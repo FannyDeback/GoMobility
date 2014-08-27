@@ -15,7 +15,8 @@
 				//var_dump($actualite);
 				echo '<li>';
 					echo '<h2>'.$actualite->titre.'</h2>';
-					echo '<h3><strong>Statut : </strong>'.$actualite->status.'</h3>';
+					echo '<h3><strong>Statut : </strong>';
+					echo ($actualite->status == "published") ? 'Publiée</h3>' : 'Non publiée</h3>';
 					echo substr('<p>'.$actualite->description, 0, 300).'...</p><br/>';
 				?>
 				<div class="boutons">
