@@ -10,9 +10,9 @@
 			foreach ($messages as $message) {
 				//var_dump($message);
 				echo '<li>';
-					echo '<a href="'.base_url('experience').'/'.$message->id.'"><h2>'.$message->nom.'</h2></a>';
+					echo '<a href="'.base_url('admin/message').'/'.$message->id.'"><h2>'.$message->nom.'</h2></a>';
 					echo '<h4><strong>Email :</strong> '.$message->email.'</h4>';
-					echo substr('<p>'.$message->message, 0, 100).'...</p><br/>';
+					echo substr('<p>'.$message->message, 0, 300).'...</p><br/>';
 				?>
 
 				<div class="boutons-messages">

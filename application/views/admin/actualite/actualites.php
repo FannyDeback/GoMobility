@@ -14,8 +14,8 @@
 			foreach ($actualites as $actualite) {
 				//var_dump($actualite);
 				echo '<li>';
-					echo '<a href="'.base_url('experience').'/'.$actualite->id.'"><h2>'.$actualite->titre.'</h2></a>';
-					echo substr('<p>'.$actualite->description, 0, 200).'...</p><br/>';
+					echo '<h2>'.$actualite->titre.'</h2>';
+					echo substr('<p>'.$actualite->description, 0, 300).'...</p><br/>';
 				?>
 				<div class="boutons">
 					<!-- Fenêtre modal de suppression -->

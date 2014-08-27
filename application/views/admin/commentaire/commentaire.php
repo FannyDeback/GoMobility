@@ -1,4 +1,5 @@
 <div id="col-droite-admin">
+	<h1><strong>Mettre à jour</strong> le commentaire de <i><?php echo $commentaire->email; ?></i></h1>
 	<?php
 		if (isset($commentaire))
 		{
@@ -69,7 +70,7 @@
 							<h2 class="modal-title" id="myModalLabel">Mettre à jour ce commentaire</h2>
 						</div>
 						<div class="modal-body">
-							Mettre à jour ce commentaire : "<i><?php echo character_limiter($commentaire->message, 30) ;?></i>"
+							Mettre à jour le commentaire : " <i><?php echo character_limiter($commentaire->message, 30) ;?></i> "
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
