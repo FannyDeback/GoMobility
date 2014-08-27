@@ -135,7 +135,8 @@ class experience extends MY_Controller
 					'description'	=> $this->input->post('description'),
 					'game'			=> ($this->input->post('jeu') == 'yes') ? 'yes' : 'no',
 					'ges'			=> 210,
-					"status"		=> ($this->input->post('status') == 'yes') ? 'published' : 'unpublished'
+					"status"		=> ($this->input->post('status') == 'yes') ? 'published' : 'unpublished',
+					'date'			=> date('Y-m-d H:i:s')
 				);
 
 				$this->m_actors->update((int) $id, $data);
