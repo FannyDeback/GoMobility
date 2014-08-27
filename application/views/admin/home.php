@@ -74,9 +74,12 @@
 		  			</li>
 
 		  			<li id="meilleur-ecoacteur">
-		  				<strong>Meilleur éco-acteur : </strong>
-		  				'.$bestactor.'
-		  			</li>
+		  				<strong>Meilleur éco-acteur : </strong>';
+		  				if (isset($bestactor))
+		  					echo $bestactor;
+		  				else
+		  					echo "";
+		  			echo '</li>
 
 				</ul>';
 		echo '</div>';

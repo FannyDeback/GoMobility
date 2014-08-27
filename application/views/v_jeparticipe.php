@@ -64,11 +64,12 @@
 
 		echo '<br/><br/><br/>';	
 
+		$style = array('style'	=> 'display: inline;');
 		echo form_checkbox(array(
-			'id'	=> 'game',
-			'name'	=> 'game',
+			'id'	=> 'jeu',
+			'name'	=> 'jeu',
 			'value'	=> 'yes'
-			)) . form_label(' Participer au jeu', 'game');
+		)) . form_label(' Je souhaite participer au <a href="'.base_url("jeu").'">jeu concours</a>', 'jeu', $style);
 
 		echo '<br/>';
 

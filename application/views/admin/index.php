@@ -73,9 +73,14 @@
 		  			</li>
 
 		  			<li id="meilleur-ecoacteur" class="aside">
-		  				<a href="#">
-		  					<strong>Meilleur éco-acteur</strong>
-		  				</a>
+		  				<?php 
+		  					if (isset($best))
+		  					{
+		  						echo '<a href="'.base_url('admin/experience/update').'/'.$best->id.'">
+		  							<strong>Meilleur éco-acteur</strong>
+		  						</a>';
+		  					}
+		  				?>
 		  			</li>
 
 				</ul>	

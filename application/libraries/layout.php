@@ -20,7 +20,10 @@ class Layout
 		}
 
 		$data['act'] = $this->CI->m_actors->count("status", "published");
-		$data['best'] = $this->CI->m_actors->bestActorId()[0];
+		
+		$best = $this->CI->m_actors->bestActorId(array("status" => "published"));
+		if ($best != null)
+			$data['best'] = $best[0];
 
 		$this->output .= $this->CI->load->view($name, $data, true);
 		$this->CI->load->view('index.php', array('output' => $this->output));
@@ -35,13 +38,19 @@ class Layout
 	public function viewAdmin($name, $data = array())
 	{
 		if ($this->CI->session->userdata('id_user'))
+		{
+			$best = $this->CI->m_actors->bestActorId();
+			if ($best != null)
+				$data['best'] = $best[0];
 			$data['id_user'] = $this->CI->session->userdata('id_user');
+		}
 		$this->output .= $this->CI->load->view($name, $data, true);
 		$this->CI->load->view('admin/index.php', array('output' => $this->output));
 	}
 
 	public function viewsAdmin($name, $data = array())
 	{
-		
+		$this->output .= $this->CI->load->viewAdmin($name, $data, true);
+		return $this;
 	}
 }

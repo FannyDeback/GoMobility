@@ -70,7 +70,7 @@
 				'id'	=> 'jeu',
 				'name'	=> 'jeu',
 				'value'	=> 'yes'
-			)) . form_label(' Je souhaite participer <a href="#" class="jeu">au jeu concours</a>', 'jeu', $style);
+			)) . form_label(' Je souhaite participer au jeu concours', 'jeu', $style);
 
 			echo '<br/><br/>';
 

@@ -64,7 +64,9 @@ class index extends CI_Controller {
 			$data['exp_attente'] = count($this->m_actors->experienceByStatus("unpublished"));
 			$data['message_lu'] = count($this->messages->messageByStatus("read"));
 			$data['message_nonlu'] = count($this->messages->messageByStatus("unread"));
-			$data['bestactor'] = $this->m_actors->bestActor()[0]->email;
+			$bestactor = $this->m_actors->bestActor();
+			if ($bestactor != null)
+				$data['bestactor'] = $bestactor[0]->email;
 
 			$this->layout->viewAdmin('admin/home', $data);
 		}
