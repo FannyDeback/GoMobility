@@ -702,6 +702,10 @@ div #retour-site{
 	line-height: 18px;
 }
 
+#content #col-droite-admin ul li:last-child{
+	border-bottom:none;
+}
+
 
 /* ************************************************************************************ */
 /*  BOUTONS  */
