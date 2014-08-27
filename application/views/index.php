@@ -47,9 +47,13 @@
 
 			<section>
 				<?php
-				$url = base_url("experience"); 
-				echo '<a href="'.$url.'/'.$best->id.'" id="meilleur-eco-acteur">Meilleur eco-acteur</a>
-				<a href="' . base_url('jeu') . '" id="description-jeu-concours"><strong>Description</strong> du jeu</a>'; ?>
+				if (isset($best))
+				{
+					$url = base_url("experience"); 
+					echo '<a href="'.$url.'/'.$best->id.'" id="meilleur-eco-acteur">Meilleur eco-acteur</a>';
+				}
+				?>
+				<a href="' . base_url('jeu') . '" id="description-jeu-concours"><strong>Description</strong> du jeu</a>
 			</section>
 
 			<section class="appli-mobile">

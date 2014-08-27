@@ -60,24 +60,24 @@ class m_actors extends MY_Model
 						->result();
 	}
 
-	public function bestActorId()
+	public function bestActorId($where=array())
 	{
 		return $this->db->select("id")
 						->limit(1)
 					 	->from($this->table)
-					 	->where('ges = (select max(ges) from eco_actors)')
-					 	->where('status', 'published')
+					 	->where('ges = (select min(ges) from eco_actors)')
+					 	->where($where)
 					 	->get()
 					 	->result();
 	}
 
-	public function bestActor()
+	public function bestActor($where=array())
 	{
 		return $this->db->select("email")
 						->limit(1)
 					 	->from($this->table)
-					 	->where('ges = (select max(ges) from eco_actors)')
-					 	->where('status', 'published')
+					 	->where('ges = (select min(ges) from eco_actors)')
+					 	->where($where)
 					 	->get()
 					 	->result();
 	}

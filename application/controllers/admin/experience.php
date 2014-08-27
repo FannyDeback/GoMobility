@@ -19,8 +19,6 @@ class experience extends MY_Controller
 	public function index()
 	{
 		//filtres affichage des expériences ges décroissant
-		$where = array();
-
 		$order_by = $_GET;
 		if (empty($order_by))
 			$order = "status desc";
@@ -125,8 +123,7 @@ class experience extends MY_Controller
 			}
 			else
 			{
-				// var_dump($this->input->post('jeu'), $this->input->post('status'));die();
-				$data = array(
+				$exp = array(
 					'titre' 		=> $this->input->post('titre'),
 					'type'			=> $this->input->post('type'),
 					'email'			=> $this->input->post('email'),
@@ -138,7 +135,7 @@ class experience extends MY_Controller
 					"status"		=> ($this->input->post('status') == 'yes') ? 'published' : 'unpublished'
 				);
 
-				$this->m_actors->update((int) $id, $data);
+				$this->m_actors->update((int) $id, $exp);
 				redirect(base_url("admin/experiences"));
 			}
 		}
