@@ -32,7 +32,7 @@ class m_actors extends MY_Model
 						->get()
 						->result();
 	}
-
+	//requête retournant toutes les expériences
 	public function experiences($limit, $start, $where=array(), $order_by="id desc")
 	{
 		$this->db->limit($limit, $start);
@@ -50,7 +50,7 @@ class m_actors extends MY_Model
 
 		return false;
 	}
-
+	//requête 
 	public function experienceByStatus($status)
 	{
 		return $this->db->select("*")
@@ -66,6 +66,7 @@ class m_actors extends MY_Model
 						->limit(1)
 					 	->from($this->table)
 					 	->where('ges = (select max(ges) from eco_actors)')
+					 	->where('status', 'published')
 					 	->get()
 					 	->result();
 	}
@@ -76,6 +77,7 @@ class m_actors extends MY_Model
 						->limit(1)
 					 	->from($this->table)
 					 	->where('ges = (select max(ges) from eco_actors)')
+					 	->where('status', 'published')
 					 	->get()
 					 	->result();
 	}
