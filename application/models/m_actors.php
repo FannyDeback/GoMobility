@@ -22,6 +22,7 @@ class m_actors extends MY_Model
 						->result();
 	}
 
+	//requête retournant l'id d'une l'experience
 	public function experienceById($id, $where=array())
 	{
 		return $this->db->select("*")
