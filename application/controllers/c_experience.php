@@ -3,6 +3,7 @@
 class c_experience extends CI_Controller {
 	public function __construct()
 	{
+		// chargement des librairies et helpers
 		parent:: __construct();
 		$this->load->helper(array('url','form'));
 		$this->load->library(array('pagination','form_validation'));
@@ -11,6 +12,7 @@ class c_experience extends CI_Controller {
 
 	public function index()
 	{
+		// Mise en place de la pagination
 		$config['base_url'] = $this->config->base_url("experiences");
 		$config['total_rows'] = $this->m_actors->count();
 		$config['per_page'] = 10;
@@ -26,9 +28,11 @@ class c_experience extends CI_Controller {
 		$data["experiences"] = $this->m_actors->experiences($config["per_page"], $page, $where);
 		$data["links"] = $this->pagination->create_links();
 
+		// Chargement content grâce au layout
 		$this->layout->view('v_experiences', $data);
 	}
 
+	// méthode pour appel ajax
 	public function experience_ajax($id)
 	{
 		$data = $this->m_actors->experienceById($id, array('status' => 'published'));
@@ -36,9 +40,10 @@ class c_experience extends CI_Controller {
 			echo json_encode($data[0]);
 	}
 
+	// Méthode create commentaires 
 	public function experience($id)
 	{
-		// formulaire de commentaires
+		// règles sur les champs du formulaire
 		
 		$validation = array(
 			array(
@@ -66,6 +71,7 @@ class c_experience extends CI_Controller {
 		$this->form_validation->set_rules($validation);
 		$this->form_validation->set_error_delimiters('<div class="error">','</div>');
 
+		//vérification des champs
 		if ($this->form_validation->run() == false)
 		{
 			$exp = $this->m_actors->experienceById($id);
@@ -90,6 +96,7 @@ class c_experience extends CI_Controller {
 
 			$this->layout->view('v_experience', $data);
 		}
+		// insertion des données dans la table comments
 		else
 		{
 			$base_url = $this->config->base_url();
@@ -114,7 +121,7 @@ class c_experience extends CI_Controller {
                 'permalink'	=> $url
         	);
 
-			// Vérification SPAM
+			// Vérification SPAM avec ASKIMET
 			$params = array($url, 'b52ecce6dc99', $comment_check);
 			$this->load->library('Akismet', $params);
 
@@ -167,6 +174,7 @@ class c_experience extends CI_Controller {
 		}
 	}
 
+	//méthode pour afficher les dix dernières expériences avec appel ajax
 	public function dixExperienceAjax()
 	{
 		$data = $this->m_actors->experiences(10, 0, array("status" => "published"));

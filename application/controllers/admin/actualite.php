@@ -16,6 +16,7 @@ class actualite extends MY_Controller
 		}
 	}
 
+	// pagination des actualités
 	public function index()
 	{
 		$config['base_url'] = $this->config->base_url("admin/actualites");
@@ -35,6 +36,7 @@ class actualite extends MY_Controller
 		$this->layout->viewAdmin('admin/actualite/actualites', $data);
 	}
 
+	// méhode création d'une actualité
 	public function create()
 	{
 		$validation = array(
@@ -70,7 +72,7 @@ class actualite extends MY_Controller
 			redirect(base_url("admin/actualites"));
 		}
 	}
-
+	// méthode pour supprimer une actualité via le MY_MODEL
 	public function supprimer($id)
 	{
 		$data = array();
@@ -79,6 +81,7 @@ class actualite extends MY_Controller
 		redirect('admin/actualites');
 	}
 
+	// méthode pour mettre à jour une actualité
 	public function update($id)
 	{
 		$actualite = $this->m_actu->actualiteById($id);
@@ -126,6 +129,7 @@ class actualite extends MY_Controller
 		}
 	}
 
+	//méthode pour mettre en statut "published" une actualité 
 	public function publish($id)
 	{
 		$status = array("status" => "published");

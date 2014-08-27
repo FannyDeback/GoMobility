@@ -8,7 +8,7 @@ class c_jeparticipe extends CI_Controller {
 		$this->load->helper(array('form','url','GMapAPI'));
 		$this->load->library(array('form_validation'));
 	}
-
+	// vérification du formulaire "je participe" et envoie des données dans table eco_actors
 	public function index()
 	{
 		$validation = array(

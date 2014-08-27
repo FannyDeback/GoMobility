@@ -10,6 +10,7 @@ class m_actors extends MY_Model
 		$this->load->database();
 	}
 
+	//requête retournant la dernière expérience publiée
 	public function last_exp()
 	{
 		return $this->db->select("*")

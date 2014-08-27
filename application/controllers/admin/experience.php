@@ -18,6 +18,7 @@ class experience extends MY_Controller
 
 	public function index()
 	{
+		//filtres affichage des expériences ges décroissant
 		$where = array();
 
 		$order_by = $_GET;
@@ -60,7 +61,7 @@ class experience extends MY_Controller
 
 		$data["experiences"] = $this->m_actors->experiences($config["per_page"], $page - 1, array(), $order);
 		$data["links"] = $this->pagination->create_links();
-		// To delete
+		//Pour supprimer
 		$data['current_page'] = $this->uri->segment(3);
 
 		$this->layout->viewAdmin('admin/experience/experiences', $data);

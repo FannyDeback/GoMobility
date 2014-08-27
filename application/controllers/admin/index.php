@@ -15,7 +15,7 @@ class index extends CI_Controller {
 	{
 		$this->layout->viewAdmin("admin/erreur");
 	}
-
+	// Vérification formulaire connexion à l'admin
 	public function index()
 	{
 		// Si le user n'est pas connecté
@@ -69,7 +69,7 @@ class index extends CI_Controller {
 			$this->layout->viewAdmin('admin/home', $data);
 		}
 	}
-
+	//méthode de déconnexion
 	public function logout()
 	{
 		$this->session->sess_destroy();

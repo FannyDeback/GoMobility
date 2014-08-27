@@ -51,7 +51,7 @@ class message extends MY_Controller
 
 		redirect('admin/messages');
 	}
-
+	// méthode pour marquer les commentaires comme lus
 	public function read($id)
 	{
 		$data = array();

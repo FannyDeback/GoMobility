@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+//contrôleur pour charger les vues de la home
 class c_home extends CI_Controller {
 
 	public function __construct()

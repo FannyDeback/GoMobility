@@ -8,10 +8,9 @@ class c_actualite extends CI_Controller {
 		$this->load->helper(array('url', 'text'));
 		$this->load->model('m_actu');		
 	}
-
 	public function actualite($id)
 	{
-		// derniere actu
+		// derniere actu mise en ligne
 		$actualite = $this->m_actu->actualiteById($id);
 		$data = array();
 		if ($actualite != null)
