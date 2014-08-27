@@ -130,6 +130,10 @@ header li:hover{
 	float: left;
 }
 
+#content #col-gauche p{
+	margin-bottom: 10px;
+}
+
 /* ************************************************************************************ */
 /*  DERNIERE EXPERIENCE HOME   */
 #content #col-gauche section.derniere-experience{
@@ -164,7 +168,15 @@ header li:hover{
 	text-transform: none;
 	font-family: 'ralewayextralight';
 	font-weight: normal;
-	margin: 2px 0
+	margin: 2px 0;
+}
+
+#content #col-gauche h5, #col-droite-admin h5{
+	font-size: 14px;
+	color: #629CAC;
+	text-transform: none;
+	font-family: 'ralewayextralight';
+	font-weight: normal;
 }
 
 #content #col-gauche section.derniere-experience h3, #content #col-gauche h3, #col-droite-admin h3{
@@ -696,7 +708,7 @@ div #retour-site{
 	margin-bottom: 20px;
 }
 
-#col-droite-admin h2, #col-droite-admin h3, #col-droite-admin h4, #col-droite-admin a{
+#col-droite-admin h2, #col-droite-admin h3, #col-droite-admin h4, #col-droite-admin h5, #col-droite-admin a{
 	margin: 0;
 	padding: 0;
 	line-height: 18px;

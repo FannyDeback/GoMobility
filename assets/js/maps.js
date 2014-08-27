@@ -23,7 +23,8 @@ function show_itineraire(experience_id)
 			contenu = "<h2>"+data.titre+"</h2>" +
 					  "<h4><strong>Départ : </strong> "+data.start+" - <strong>Arrivée :</strong> "+data.arrival+"</h4>" +
 					  "<h3><strong>Moyen de transport :</strong> "+data.type+"</h3>" +
-					  "<p>"+data.description+"</p><br/>";
+					  "<p>"+data.description+"</p>" +
+					  "<h5><strong>Gaz à effet de serre :</strong> "+data.ges+"</h5><br/>"; 
 			$("#une-experience").html(contenu);
 
 
