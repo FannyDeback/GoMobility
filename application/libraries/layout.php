@@ -53,4 +53,11 @@ class Layout
 		$this->output .= $this->CI->load->viewAdmin($name, $data, true);
 		return $this;
 	}
+
+	public function viewError404()
+	{
+		$this->output->set_status_header('404');
+		$data['content'] = 'v_error404'; // View name 
+        $this->load->view('index');//loading in my template
+	}
 }

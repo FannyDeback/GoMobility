@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "c_home";
-$route['404_override'] = '';
+$route['404_override'] = 'c_error404';
 $route['home'] = "c_home";
 $route['experiences'] = "c_experience/index/0";
 $route['experiences/(:num)'] = "c_experience/index/$1";
