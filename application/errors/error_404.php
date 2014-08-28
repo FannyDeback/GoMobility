@@ -54,6 +54,23 @@ p {
 </style>
 </head>
 <body>
+	<header>
+		<div id="logo">
+			<a href="<?php echo base_url('home'); ?>"><?php echo image('logo.png', 'Logo GoMobility'); ?></a>
+		</div>
+		<nav>
+			<ul>
+				<?php 
+				$url = base_url('jeparticipe');
+				echo '<li><a href="' . base_url('home') . '">Accueil</a></li>
+					  <li><a href="' .base_url('projet'). '">Le Projet</a></li>
+					  <li><a href="' .base_url('experiences'). '">Vos exp&eacute;riences</a></li>
+					  <li><a href="' .$url. '">Je participe</a></li>';
+				?>
+			</ul>
+		</nav>
+		<div class="clear"></div>
+	</header>
 	<div id="container">
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
