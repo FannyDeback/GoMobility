@@ -194,7 +194,7 @@ header li:hover{
 	margin-top: 5px;
 }
 
-#content #col-gauche section.derniere-experience a#en-savoir-plus{
+#content #col-gauche section.derniere-experience a#en-savoir-plus, #content #col-gauche a#en-savoir-plus{
 	background: #efefef;
 	height: 40px;
 	line-height: 40px;
@@ -206,7 +206,7 @@ header li:hover{
 	margin-top: 20px;
 }
 
-#content #col-gauche section.derniere-experience a#en-savoir-plus:hover{
+#content #col-gauche section.derniere-experience a#en-savoir-plus:hover, #content #col-gauche a#en-savoir-plus:hover{
 	background: #e1e1e1;
 }
 
