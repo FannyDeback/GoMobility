@@ -36,7 +36,7 @@
 			'id'	=> 'status',
 			'name'	=> 'status',
 			'value'	=> 'yes',
-			'checked'	=> ($actualite->status == "published") ? TRUE : FALSE
+			'checked'	=> (isset($actualite) && $actualite->status == "published") ? TRUE : FALSE
 		)) . form_label(' Publier', 'status', $style);
 
 		echo '<br/>';
