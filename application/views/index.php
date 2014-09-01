@@ -149,8 +149,12 @@
 		</ul>
 
 		<div id="logos-partenaires">
-			<?php echo image('logo-ardeche.gif'); ?>
-			<?php echo image('logo-ardeche-2.gif'); ?>
+			<a href="http://www.ardeche.fr/" target="_blank">
+				<?php echo image('logo-ardeche.gif'); ?>
+			</a>
+			<a href="http://www.pays-ardeche-meridionale.net/" target="_blank">
+				<?php echo image('logo-ardeche-2.gif'); ?>
+			</a>
 		</div>
 		<div class="clear"></div>
 
