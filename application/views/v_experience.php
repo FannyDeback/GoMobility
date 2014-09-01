@@ -107,7 +107,11 @@ if ($expStatus == 'published')
 }
 else if ($expStatus == 'unpublished')
 	// mettre un truc sympa pour l'eco-acteur avec un petite image genre :
-	echo "<p>Merci pour votre participation !<br /> Votre expérience en attente de validation par l'administrateur, à bientôt !</p><br /><a href=". base_url('home') .">Retour à l'accueil</a>";
+	echo '<div id="col-gauche">
+		  	<h2>Merci pour votre participation !</h2>
+		 	<p>Votre expérience en attente de validation par l\'administrateur, à bientôt !</p>
+		 	<a href="'. base_url('home') .'" id="en-savoir-plus">Retour à l\'accueil</a>
+		 </div>';
 else
 	echo "Aucune expérience ne correspond.";
 ?>
