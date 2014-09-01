@@ -53,7 +53,7 @@
 					echo '<a href="'.$url.'/'.$best->id.'" id="meilleur-eco-acteur">Meilleur eco-acteur</a>';
 				}
 				?>
-				<a href="' . base_url('jeu') . '" id="description-jeu-concours"><strong>Description</strong> du jeu</a>
+				<a href="<?php echo base_url('jeu'); ?>" id="description-jeu-concours"><strong>Description</strong> du jeu</a>
 			</section>
 
 			<section class="appli-mobile">

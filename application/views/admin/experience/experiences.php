@@ -16,7 +16,7 @@
 						echo '<h2>'.$experience->titre.'</h2>';
 						echo '<h4><strong>Départ :</strong> '.$experience->start.' | <strong>Arrivée :</strong> '.$experience->arrival.'</h4>';
 						echo '<h3><strong>Moyen de transport :</strong> '.$experience->type.'</h3>';
-						echo '<h3>'.$experience->date.'</h3>';
+						//echo '<h3>'.$experience->date.'</h3>';
 						echo '<h3><strong>Statut : </strong>';
 						echo ($experience->status == "published") ? 'Publiée</h3>' : 'Non publiée</h3>';
 						echo '<p>'.character_limiter($experience->description, 200).'...</p>';

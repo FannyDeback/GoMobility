@@ -2,9 +2,17 @@
 	<h1><strong>Mentions</strong> légales</h1>
 
 	<h2>Propiétaire du site :</h2>
-	<p><strong>Robert Dupont</strong><br/>
-	58 rue des fleurs blanche<br/>
-	75041 Paris</p>
+	<p>Kelly Breton<br/>
+	Fanny Deback</p>
+
+	<br/><br/>
+
+	<h2>Information générale :</h2>
+	<h4>Projet final</h4>
+	<p>Formation en alternance développeur L’école Multimédia - Août 2014<br/>
+	Auteur : Antoine Lucsko</p>
+	<h4>Réalisation du projet :</h4>
+	<p>Travail réalisé par les étudiants en graphisme de l’école Multimédia <strong>Rémi Bouchet</strong> et <strong>Gabriel List</strong></p>
 
 	<br/><br/>
 

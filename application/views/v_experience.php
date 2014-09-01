@@ -42,7 +42,7 @@ if ($expStatus == 'published')
 		}
 		else
 			echo "<br/><br/>
-				  Soyez le premier à donner <strong>votre avis sur cet expérience !</strong>";
+				  Soyez le premier à donner <strong>votre avis sur cet expérience !</strong><br/><br/>";
 
 
 		echo '</br><h3><strong>LAISSER UN COMMENTAIRE :</strong></h3><br/>';	  
