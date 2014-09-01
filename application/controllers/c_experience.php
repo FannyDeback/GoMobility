@@ -112,7 +112,7 @@ class c_experience extends CI_Controller {
 				'date'			=> date('Y-m-d H:i:s'),
 				'id_eco_actors'	=> $id
 			);
-
+			// akismet a besoin de ces 5 données
 			$comment_check = array (
                 'author'	=> $this->input->post('auteur'),
                 'email'		=> $this->input->post('email'),
@@ -137,7 +137,7 @@ class c_experience extends CI_Controller {
 
 					$data["id"] = $id;
 			}
-			// Sinon insert bdd
+			// vérification spam
 			else
 			{
 				// Pas d'erreur, check spam.
@@ -162,7 +162,7 @@ class c_experience extends CI_Controller {
 					}
 					$data['id'] = $id;
 
-					$data['erreur'] = "Votre message a été considéré comme spam. Veuillez contactez l'administrateur via le formulaire de <a href='".base_url('contact')."'>contact</a>";
+					$data['erreur'] = "<p>Votre message a été considéré comme spam. Veuillez contactez l'administrateur via le formulaire de <a href='".base_url('contact')."'>contact</a><p>";
 					$this->layout->view('v_experience', $data);
 				}
 				else
